@@ -1,0 +1,66 @@
+-- BORRAR USUARIOS SI EXISTEN
+DROP USER admin CASCADE;
+DROP USER biblio CASCADE;
+DROP USER userB CASCADE;
+DROP USER usuarioDCL CASCADE;
+
+-- BORRAR ROLES SI EXISTEN
+DROP ROLE administrador;
+DROP ROLE bibliotecario;
+DROP ROLE usuario;
+
+-- ========================================
+-- CREACIÓN DE USUARIO PRINCIPAL
+-- ========================================
+CREATE USER usuarioDCL IDENTIFIED BY usuarioDCL
+DEFAULT TABLESPACE users
+TEMPORARY TABLESPACE temp
+QUOTA UNLIMITED ON users;
+
+GRANT ALL PRIVILEGES TO usuarioDCL;
+
+-- ========================================
+-- CREACIÓN DE ROLES
+-- ========================================
+CREATE ROLE administrador;
+CREATE ROLE bibliotecario;
+CREATE ROLE usuario;
+
+-- ========================================
+-- PERMISOS PARA CADA ROL
+-- ========================================
+
+-- ADMINISTRADOR
+GRANT CREATE TABLE TO administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON usuarioDCL.Autores TO administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON usuarioDCL.Usuarios TO administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON usuarioDCL.Libros   TO administrador;
+GRANT SELECT ON usuarioDCL.Prestamos TO administrador;
+
+-- BIBLIOTECARIO
+GRANT SELECT ON usuarioDCL.Libros TO bibliotecario;
+GRANT SELECT ON usuarioDCL.Autores TO bibliotecario;
+GRANT SELECT, INSERT, UPDATE, DELETE ON usuarioDCL.Prestamos TO bibliotecario;
+
+-- USUARIO NORMAL
+GRANT SELECT ON usuarioDCL.Libros TO usuario;
+GRANT SELECT ON usuarioDCL.Autores TO usuario;
+GRANT SELECT ON usuarioDCL.Prestamos TO usuario;
+
+-- ========================================
+-- CREACIÓN DE USUARIOS DEL SISTEMA
+-- ========================================
+CREATE USER admin IDENTIFIED BY admin;
+CREATE USER biblio IDENTIFIED BY biblio;
+CREATE USER userB IDENTIFIED BY userB;
+
+GRANT CONNECT TO admin;
+GRANT CONNECT TO biblio;
+GRANT CONNECT TO userB;
+
+-- ========================================
+-- ASIGNAR ROLES A USUARIOS
+-- ========================================
+GRANT administrador TO admin;
+GRANT bibliotecario TO biblio;
+GRANT usuario TO userB;

@@ -1,0 +1,53 @@
+DROP TABLE Libros CASCADE CONSTRAINTS;
+DROP TABLE Autores CASCADE CONSTRAINTS;
+DROP TABLE Usuarios CASCADE CONSTRAINTS;
+DROP TABLE Prestamos CASCADE CONSTRAINTS;
+
+-- AUTORES
+CREATE TABLE Autores (
+    Id_Autor         NUMBER PRIMARY KEY,
+    Nombre           VARCHAR2(80),
+    Nacionalidad     VARCHAR2(50)
+);
+
+-- USUARIOS
+CREATE TABLE Usuarios (
+    Id_Usuario       NUMBER PRIMARY KEY,
+    Nombre           VARCHAR2(50),
+    Apellidos        VARCHAR2(100),
+    Fecha_Nacimiento DATE NOT NULL,
+    Fecha_Alta       DATE DEFAULT SYSDATE,
+    CONSTRAINT chk_fecha_alta CHECK (Fecha_Alta > Fecha_Nacimiento)
+);
+
+-- LIBROS
+CREATE TABLE Libros (
+    Id_Libro         NUMBER PRIMARY KEY,
+    Titulo           VARCHAR2(120),
+    Genero           VARCHAR2(50),
+    Fecha_Publicacion DATE,
+    Id_Autor         NUMBER,
+    CONSTRAINT fk_libro_autor
+        FOREIGN KEY (Id_Autor)
+        REFERENCES Autores(Id_Autor)
+        ON DELETE CASCADE
+);
+
+-- PRESTAMOS
+CREATE TABLE Prestamos (
+    Id_Prestamo      NUMBER PRIMARY KEY,
+    Id_Libro         NUMBER,
+    Fecha_Prestamo   DATE DEFAULT SYSDATE,
+    Fecha_Devolucion DATE,
+    Usuario          NUMBER,
+    CONSTRAINT fk_prestamo_libro
+        FOREIGN KEY (Id_Libro)
+        REFERENCES Libros(Id_Libro)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_prestamo_usuario
+        FOREIGN KEY (Usuario)
+        REFERENCES Usuarios(Id_Usuario)
+        ON DELETE CASCADE,
+    CONSTRAINT chk_fechas_prestamo
+        CHECK (Fecha_Devolucion > Fecha_Prestamo)
+);

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica DOM: Eventos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .contenedor {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .bloque {
+      margin-bottom: 22px;
+      padding: 18px;
+      border: 1px solid grey;
+      border-radius: 10px;
+      background: bisque;
+    }
+
+    .bloqueHover {
+      background-color: rgb(42, 160, 214);
+      /* el color que quieras */
+    }
+
+    button {
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      cursor: pointer;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+
+    #parrafoSaludo {
+      margin-top: 14px;
+      font-size: 18px;
+      padding: 12px;
+      background: white;
+      border-radius: 10px;
+      border: 1px dashed #bbb;
+    }
+
+
+
+    .imagen img {
+      width: 220px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .imagen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .textoAyuda {
+      color: #555;
+      line-height: 1.4;
+      max-width: 380px;
+    }
+
+    #listaNombres {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    #listaNombres li {
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #listaNombres button {
+      padding: 6px 10px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+  </style>
+
+  <script src="EjemploFunciones.js" defer></script>
+  <script src="EjerciciosEventos.js" defer></script>
+</head>
+
+<body>
+  <div class="contenedor">
+    <h1>Práctica eventos</h1>
+
+    <div class="bloque">
+      <button id="btn" type="button">Pulsa aquí</button>
+      <button id="btn1" type="button">Pulsa aquí</button>
+      <button id="btn2" type="button">Pulsa aquí</button>
+    </div>
+
+    <div class="bloque">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Escribe tu nombre y pulsa Enter" />
+      <p id="parrafoSaludo">Aquí aparecerá tu saludo.</p>
+      <ul id="listaNombres"></ul>
+
+    </div>
+
+    <div class="bloque">
+      <div class="imagen">
+
+        <img id="foto" src="oioioi.jpg" alt="Imagen de ejemplo" />
+        <button id="btnToggle">Ocultar Imagen</button>
+
+        <div class="textoAyuda">
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

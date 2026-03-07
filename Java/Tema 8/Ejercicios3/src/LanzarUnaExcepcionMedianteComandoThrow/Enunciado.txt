@@ -1,0 +1,17 @@
+Implementar la clase Operaciones. Debe tener dos atributos enteros.
+Desarrollar los métodos para calcular su suma, resta, multiplicación y división, imprimir dichos resultados.
+Lanzar una excepción en el método que calcula la división si el segundo valor es cero.
+
+Declarar una clase 'Cliente' que represente un cliente de un banco. Definir los siguientes atributos y métodos:
+
+    Cliente		
+        atributos
+            nombre
+            monto
+        métodos
+            constructor
+            depositar
+            extraer
+            imprimir
+
+Generar una excepción si se intenta extraer más dinero del que tiene el atributo 'monto'.

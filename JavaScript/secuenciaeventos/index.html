@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica DOM: Eventos</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .contenedor{
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+
+    h1{
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .bloque{
+      margin-bottom: 22px;
+      padding: 18px;
+      border: 1px solid grey;
+      border-radius: 10px;
+      background: bisque;
+    }
+
+    button{
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      cursor: pointer;
+    }
+    .saludoGrande {
+      margin-top: 20px;
+      padding: 20px;
+      background: #e0f7fa;
+      border: 2px solid #00acc1;
+      border-radius: 12px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      color: #006064;
+    }
+
+    input, textarea{
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+
+    #imagen img{
+      width: 220px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    #imagen{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .oculta {
+    display: none;
+    }
+    .miniOutput{
+      margin-top: 12px;
+      padding: 10px;
+      background: white;
+      border-radius: 10px;
+      border: 1px dashed #bbb;
+      min-height: 24px;
+    }
+
+    /* Cursos */
+    .curso{
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    .curso button{
+      width: 100%;
+      text-align: left;
+      background: #f7f7f7;
+    }
+
+    .cursoDetalle{
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px dashed #bbb;
+      display: none;
+      background: #fff;
+    }
+
+    .cursoDetalle.abierto{
+      display: block;
+    }
+  </style>
+
+  
+  <script src="scripts/scripts.js" type="module" defer></script>
+</head>
+
+<body>
+  <div class="contenedor">
+    <h1>Práctica eventos</h1>
+
+  
+    <div class="bloque">
+      <button id="btn" type="button">Pulsa aquí</button>
+      <button id="btn2" type="button">Pulsa de nuevo</button>
+      <button id="btn3" type="button">Pulsa de nuevo</button>
+      <p id="mensajeBienvenida"></p>
+    </div>
+
+    <div class="bloque">
+      <form id="form1">
+        <div>
+          <label for="fname">Nombre: </label>
+          <input id="fname" type="text" />
+        </div>
+        <div>
+          <label for="lname">Apellido: </label>
+          <input id="lname" type="text" />
+        </div>
+        <div>
+          <input id="submit" type="submit" />
+        </div>
+      </form>
+      <p id="mensaje" ></p>
+    </div>
+
+   
+    <div class="bloque">
+      <div id="imagen">
+        <img id="foto" src="img/img1.jpg" alt="Imagen de ejemplo" />
+        <button id="btnToggle" type="button">Ocultar Imagen</button>
+        
+      </div>
+    </div>
+
+    <div class="bloque">
+      <label for="mensajeTexto">Escribe un mensaje (textarea):</label>
+      
+      <textarea id="mensajeTexto" name="mensajetextArea" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+    <p id="infoTextarea"></p>
+    </div>
+
+    
+    
+    <div class="bloque">
+      <h2 style="margin-top:0;">Cursos</h2>
+
+      <div class="curso">
+        <button id="btnCurso1" type="button">1º SMR - Redes</button>
+        <div id="detalleCurso1" class="cursoDetalle">
+          <strong>Contenido:</strong> Cableado, TCP/IP, ICMP, Wireshark, subredes.<br>
+          <strong>Fechas:</strong> 10/03/2026 - 30/04/2026
+        </div>
+      </div>
+
+      <div class="curso">
+        <button id="btnCurso2" type="button">1º DAM - Web (HTML/CSS)</button>
+        <div id="detalleCurso2" class="cursoDetalle">
+          <strong>Contenido:</strong> Estructura HTML, formularios, CSS básico, layout.<br>
+          <strong>Fechas:</strong> 05/05/2026 - 20/06/2026
+        </div>
+      </div>
+
+      <div class="curso">
+        <button id="btnCurso3" type="button">Programación Python</button>
+        <div id="detalleCurso3" class="cursoDetalle">
+          <strong>Contenido:</strong> Variables, condicionales, bucles, archivos.<br>
+          <strong>Fechas:</strong> 01/04/2026 - 15/06/2026
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

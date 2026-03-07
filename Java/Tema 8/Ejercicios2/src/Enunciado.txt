@@ -1,0 +1,13 @@
+1- Ejercicio Excepciones predefinidas:
+Realizar un programa que permita realizar operaciones aritméticas básicas sobre dos
+números enteros: suma, resta, multiplicación y división.
+Realizar un menú con las opciones: Operando1: valor Operando2: valor 1.
+Introducir operadores 2. Suma 3. Resta 4. Multiplicación 5. División
+6. Salir Mostrar el resultado de la operación en cada opción controlando las
+siguientes excepciones: división por cero, introducción de caracteres no numéricos.
+
+2-Ejercicio Excepciones propias:
+Mejora el programa anterior con la siguiente excepción propia:
+
+- Controla que en la resta que el operando2 no sea mayor que el operando1.
+- Inventa otra y documéntala (Comentarios de código)

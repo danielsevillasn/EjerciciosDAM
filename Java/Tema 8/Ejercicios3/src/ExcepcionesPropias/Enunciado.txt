@@ -1,0 +1,12 @@
+Problema:
+
+Confeccionar una clase que administre una lista tipo pila (se debe poder insertar, extraer e imprimir los datos de la pila).
+
+En el método extraer lanzar una excepción si la pila se encuentra vacía, crear una excepción propia que herede de Exception.
+
+
+Problema propuesto
+
+    Plantear una clase llamada 'Termometro' que defina un atributo llamado
+    temperatura. Lanzar una excepción propia llamada 'TemperaturaFueraRangoException' 
+    si se intenta fijar una temperatura con un valor menor a -192 o superior a 100.

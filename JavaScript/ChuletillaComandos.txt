@@ -1,0 +1,166 @@
+# CHULETA RÁPIDA JAVASCRIPT 
+
+## Entrada/Salida
+
+alert(msg) | Muestra popup con mensaje
+prompt(msg) | Pide texto al usuario
+console.log(x) | Mensaje en consola
+console.warn(x) | Aviso en consola (amarillo)
+console.error(x) | Error en consola (rojo)
+console.clear() | Limpia consola
+
+## Variables/Tipos
+
+let x = val | Variable mutable
+const x = val | Constante
+typeof x | Tipo de x (string)
+Number(x) | Texto a número
+parseInt(x) | Texto a entero
+parseFloat(x) | Texto a decimal
+String(x) | Número a texto
+isNaN(x) | ¿No es número?
+Number.isInteger(x) | ¿Es entero?
+
+## Operadores
+
+/ % | Aritmética
++= -= *= /= %= | Asignación compuesta
+< >= <= == === != !== | Comparación
+&& || ! | Lógicos
+cond ? v1 : v2 | Ternario
+
+## Control Flujo
+
+if(cond) { ... } | Si condición
+if(cond) {} else {} | Si/no
+switch(x) {case v: ...} | Múltiples casos
+for(i=0;i<n;i++) {} | Bucle contable
+while(cond) {} | Mientras condición
+do {} while(cond) | Al menos 1 vez
+for(i in arr) {} | Índices array/objeto
+for(v of arr) {} | Valores array
+
+
+## Funciones
+
+function f(a,b){return x} | Función básica
+let f = () => x | Arrow function
+f(cb) | Callback
+f(a,b=1) | Parámetro defecto
+f(...args) | Parámetros variables
+
+## String (s)
+
+s.length | Longitud
+s.toUpperCase() | Mayúsculas
+s.toLowerCase() | Minúsculas
+s.charAt(i) | Carácter posición i
+s.indexOf(txt) | Primera posición txt
+s.lastIndexOf(txt) | Última posición txt
+s.substring(i,j) | Subcadena [i,j)
+s.slice(i,j) | Subcadena [i,j)
+s.split(sep) | Array por separador
+s.replace(a,b) | Sustituir primera
+s.replaceAll(a,b) | Sustituir todas
+s.includes(txt) | ¿Contiene txt?
+s.trim() | Quita espacios
+s.repeat(n) | Repite n veces
+s.padStart(len,char) | Rellena izquierda
+
+## Array (arr)
+
+arr.length | Número elementos
+arr.push(x) | Añade final
+arr.pop() | Quita final
+arr.unshift(x) | Añade principio
+arr.shift() | Quita principio
+arr.concat(arr2) | Une arrays
+arr.join(sep) | Texto por separador
+arr.reverse() | Invierte orden
+arr.map(f) | Transforma todos
+arr.filter(f) | Filtra condición
+arr.find(f) | Primer que cumple
+arr.includes(x) | ¿Contiene x?
+arr.indexOf(x) | Posición x
+arr.sort() | Ordena (lexicográfico)
+arr.forEach(f) | Aplica función
+arr.slice(i,j) | Subarray [i,j)
+
+## Number/Math
+
+n.toFixed(d) | Decimales fijos
+Math.random() | Número aleatorio [0,1)
+Math.floor(x) | Redondea abajo
+Math.ceil(x) | Redondea arriba
+Math.round(x) | Redondea normal
+Math.trunc(x) | Parte entera
+Math.sqrt(x) | Raíz cuadrada
+Math.abs(x) | Valor absoluto
+
+## Date
+
+new Date() | Fecha actual
+new Date(y,m,d,h,min) | Fecha específica
+d.getFullYear() | Año
+d.getMonth() | Mes (0-11)
+d.getDate() | Día mes
+d.getDay() | Día semana (0-6)
+d.getHours() | Hora
+d.getMinutes() | Minutos
+d.getSeconds() | Segundos
+
+## DOM Selección
+
+document | Documento completo
+document.getElementById(id)| Elemento por ID
+getElementsByTagName(tag) | Todos por etiqueta
+getElementsByName(name) | Por atributo name
+getElementsByClassName(cl) | Por clase
+querySelector(sel) | Primer selector CSS
+querySelectorAll(sel) | Todos selector CSS
+
+## DOM Recorrido
+
+document.documentElement | <html>
+document.body | <body>
+document.head | <head>
+elem.childNodes | Todos hijos (incl texto)
+elem.children | Solo elementos hijos
+elem.firstChild | Primer hijo
+elem.lastChild | Último hijo
+elem.parentNode | Padre
+elem.nextSibling | Hermano siguiente
+elem.previousSibling | Hermano anterior
+elem.matches(sel) | ¿Coincide selector?
+elem.closest(sel) | Ancestro más cercano
+
+## DOM Contenido
+
+elem.innerHTML | HTML interno (lectura/escritura)
+elem.outerHTML | HTML completo elemento
+elem.textContent | Solo texto (seguro)
+nodo.data/nodeValue | Contenido nodo texto
+elem.hidden = true/false | Ocultar/mostrar
+
+## DOM Atributos/Estilos
+
+elem.hasAttribute(name) | ¿Tiene atributo?
+elem.getAttribute(name) | Valor atributo
+elem.setAttribute(n,v) | Establece atributo
+elem.removeAttribute(name) | Borra atributo
+elem.id / href / value | Propiedades directas
+elem.style.propiedad | Estilo en línea (backgroundColor)
+elem.style.display = "" | Resetear estilo
+elem.className | Cadena clases
+elem.classList.add("cl") | Añade clase
+elem.classList.remove("cl")| Quita clase
+elem.classList.toggle("cl")| Alterna clase
+elem.classList.contains() | ¿Tiene clase?
+
+## DOM Crear/Borrar
+
+createElement(tag) | Crea elemento vacío
+createTextNode(text) | Crea nodo texto
+parent.appendChild(hijo) | Añade hijo final
+parent.removeChild(hijo) | Borra hijo
+parent.replaceChild(n,v) | Sustituye hijo
