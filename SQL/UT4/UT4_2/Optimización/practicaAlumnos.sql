@@ -100,7 +100,8 @@ WHERE id_alumno IN (
 --¿Son equivalentes?
 --¿Cuál escala mejor y por qué?
 --¿Cuál permite cortar antes?
---No, ya que gracias a utilizar el exists los valores nulos no afectan tanto que con el IN
+--Producen el mismo resultado cuando no hay NULLs. EXISTS es más seguro con NULLs y escala mejor 
+--porque detiene la búsqueda al encontrar la primera coincidencia.
 --La A ya que detiene la búsqueda en cuanto encuentra la primera coincidencia
 --La A ya que si encuentra una coincidencia deja de ejecutarse y devuelve lo encontrado
 
