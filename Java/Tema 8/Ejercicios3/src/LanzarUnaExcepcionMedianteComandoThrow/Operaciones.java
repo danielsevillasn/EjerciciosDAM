@@ -1,5 +1,3 @@
-package LanzarUnaExcepcionMedianteComandoThrow;
-
 public class Operaciones {
     private int n1;
     private int n2;

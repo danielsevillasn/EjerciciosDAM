@@ -1,5 +1,3 @@
-package LanzarUnaExcepcionMedianteComandoThrow;
-
 import java.util.Scanner;
 
 public class PruebaOperaciones {
@@ -19,5 +17,6 @@ public class PruebaOperaciones {
                 System.out.println("El segundo numero es un 0");
             }
         } while (!datoValido);
+        s.close();
     }
 }

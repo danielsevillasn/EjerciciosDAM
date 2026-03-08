@@ -1,5 +1,3 @@
-package LanzarUnaExcepcionMedianteComandoThrow;
-
 import java.util.Scanner;
 
 public class PruebaCliente {
@@ -20,5 +18,6 @@ public class PruebaCliente {
             System.out.println(e.getMessage());
         }
         System.out.println(c1);
+        s.close();
     }
 }

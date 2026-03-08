@@ -1,5 +1,3 @@
-package LanzarUnaExcepcionMedianteComandoThrow;
-
 public class PersonaAdulta {
     private String nombre;
     private int edad;

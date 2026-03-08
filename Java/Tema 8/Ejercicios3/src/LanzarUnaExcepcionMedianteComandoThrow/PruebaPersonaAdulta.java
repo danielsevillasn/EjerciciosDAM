@@ -1,5 +1,3 @@
-package LanzarUnaExcepcionMedianteComandoThrow;
-
 public class PruebaPersonaAdulta {
     public static void main(String[] ar) {
         try {

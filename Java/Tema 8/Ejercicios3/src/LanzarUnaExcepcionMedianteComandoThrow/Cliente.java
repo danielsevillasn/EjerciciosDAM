@@ -1,5 +1,3 @@
-package LanzarUnaExcepcionMedianteComandoThrow;
-
 public class Cliente {
     private String nombre;
     private float monto;
