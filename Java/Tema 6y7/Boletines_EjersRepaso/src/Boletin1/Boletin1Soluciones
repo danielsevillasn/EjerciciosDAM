@@ -1,0 +1,31 @@
+1-Descomposición de un partido de fútbol
+
+    ¿Cuántos objetos “jugador” hay?
+        22
+    ¿Puede variar el número de objetos jugador?
+        Sí, ya que puedes incluir suplentes
+    ¿Tiene sentido que haya objetos arbitro?
+        Sí, ya que realiza otras funciones
+    ¿Tiene sentido que haya las clases Defensa o Portero? 
+        No, solo un atributo llamado rol
+    ¿Tiene sentido que el número de la camiseta sea un atributo de jugador? 
+        Sí, ya que sirve para identificar a los jugadores
+    ¿Y si dos jugadores se pueden cambiar la camiseta entre ellos? 
+        Entonces no pondremos ese atributo como estático
+    ¿Tiene sentido que un objeto árbitro tenga una operación recibirTarjeta?
+        No, ya que este no recibe tarjetas sino que las muestra
+
+2-Descomponer en objetos una pantalla del juego Pacman
+    1.Personajes
+        1.1.Comecocos
+        1.2.Fantasmas
+    2.Objetos
+        2.1.MiniCirculo
+        2.2.Circulo
+        2.3.Fruta
+    3.Escenario
+        3.1.Paredes
+        3.2.CaminosTeletransporte
+    4.SistemasControl
+        4.1.Puntuación
+        4.2.Estado
