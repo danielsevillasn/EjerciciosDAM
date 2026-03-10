@@ -29,3 +29,49 @@
     4.SistemasControl
         4.1.Puntuación
         4.2.Estado
+
+3- El juego de los barcos
+    1.Jugador
+        nombre
+    2.Barcos
+        nCasillas
+        2.1.Portaavion
+        2.2.Destructor
+        2.3.Fragata
+        2.4.Submarino
+    3.Tablero
+        dimensiones
+    4.Turno
+        turnoActual
+    5.Juego
+        cantidadJugadores
+    6.Casilla
+        coordenada
+
+4- Servicio de transportes
+Infraestructura
+    Estación
+        nombre, ubicaciónGPS, esTransbordo (booleano), capacidadMáxima
+    Línea
+        númeroLínea, colorIdentificador, listaEstaciones, longitudTotal
+    Vía
+        anchoVía, estadoMantenimiento, estáOcupada
+Maquinaria (Unidades Móviles)
+    Tren
+        idTren, modelo, velocidadActual, capacidadPasajeros, kilometrajeAcumulado
+    Vagón
+        idVagón, tieneAireAcondicionado, asientosDisponibles
+Personal (Recursos Humanos)
+    Empleado
+        idEmpleado, nombre, turno
+        Maquinista (Hereda de Empleado)
+            licenciaConducción, trenAsignado
+        Seguridad / Revisor (Hereda de Empleado)
+            zonaAsignada, rango
+Gestión y Control
+    Billete
+        precio, tipoTarifa, fechaValidez
+    Horario
+        horaSalida, frecuenciaPaso
+    CentralControl
+        listaTrenesActivos, alertasSistema
