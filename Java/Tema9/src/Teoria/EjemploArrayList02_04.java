@@ -12,7 +12,7 @@ public class EjemploArrayList02_04 {
         a.add("blanco");
         a.add("amarillo");
         System.out.println("Contenido de la lista: ");
-        for(int i = 0;i<a.size()+1;i++){
+        for(int i = 0;i<a.size();i++){
             System.out.println(a.get(i));
         }
         System.out.println("Contenido de la lista: ");
