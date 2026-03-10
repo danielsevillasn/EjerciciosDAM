@@ -43,11 +43,8 @@ yarn-error.log*
 
 # --- EDITORES E IDEs ---
 # Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+**/.vscode/
+.vscode/
 *.code-workspace
 
 # IntelliJ IDEA
