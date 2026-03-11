@@ -1,6 +1,7 @@
 package Teoria;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class EjemploArrayList07 {
     public static void main(String[] args) {
@@ -12,6 +13,10 @@ public class EjemploArrayList07 {
         a.add(32);
         a.add(3);
 
+        System.out.println("Contenido de la lista: ");
+        System.out.println(a);
+
+        Collections.sort(a);
         System.out.println("Contenido de la lista: ");
         System.out.println(a);
 
