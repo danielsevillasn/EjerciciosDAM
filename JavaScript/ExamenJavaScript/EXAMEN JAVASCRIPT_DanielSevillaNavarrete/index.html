@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante La Terraza</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <header class="cabecera">
+      <h1>Restaurante La Terraza</h1>
+      <p class="subtitulo">Cocinado con cariño: del fogón a tu mesa</p>
+
+      <div class="imagenPrincipal">
+        <img id="imagenRestaurante" src="img/imagen1.png" alt="Imagen principal del restaurante">
+        <div id="enlaceUbicacion"></div>
+      </div>
+    </header>
+
+    <section class="menu">
+
+      <div class="plato oferta">
+        <button id="btnOfertas">Descubre nuestras ofertas</button>
+
+        <div id="ofertaContenido">
+          <img id="imgOferta" class="oculta" src="img/menu.png" alt="Menú especial del día">
+        </div>
+      </div>
+
+      <div class="plato">
+        <img src="img/carne.png" alt="Carne confitada al romero">
+        <h3>Carne confitada al romero</h3>
+        <p id="Plato1">
+          Entrecot de ternera a la brasa con romero y flores de guarnición.
+        </p>
+        <button id="btnCarne">Ver plato</button>
+        <div id="detalleCarne" class="carneDetalle"></div>
+      </div>
+
+      <div class="plato">
+        <img src="img/ensalada.png" alt="Ensalada César">
+        <h3>Ensalada César</h3>
+        <p id="Ensalada">
+          Ensalada fresca con pollo, queso y salsa César.
+        </p>
+        <button id="btnEnsalada">Ver plato</button>
+        <div id="detalleEnsalada" class="ensaladaDetalle"></div>
+      </div>
+
+      <div class="plato">
+        <img src="img/tarta.png" alt="Tarta de queso">
+        <h3>Tarta de queso</h3>
+        <p id="Tarta">
+          Postre casero con base de galleta y crema de queso.
+        </p>
+        <button id="btnTarta">Ver plato</button>
+        <div id="detalleTarta" class="tartaDetalle"></div>
+      </div>
+
+    </section>
+
+    <section class="reserva">
+      <h2>Reserva tu mesa</h2>
+
+      <form id="formReserva">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+
+        <label for="personas">Personas:</label>
+        <input type="number" id="personas">
+
+        <button type="submit">Reservar</button>
+      </form>
+
+      <p id="mensajeReserva"></p>
+      <p id="plazasDisponibles">Plazas disponibles: 30</p>
+      <h3>Reservas realizadas</h3>
+      <ul id="listaReservas"></ul>
+      
+    </section>
+
+  </div>
+
+</body>
+</html>
