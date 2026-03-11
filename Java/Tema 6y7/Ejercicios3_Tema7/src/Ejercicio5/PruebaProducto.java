@@ -1,5 +1,3 @@
-package Ejercicio5;
-
 public class PruebaProducto {
     public static void main(String[] args) throws ExcepcionPrecioNegativo{
 

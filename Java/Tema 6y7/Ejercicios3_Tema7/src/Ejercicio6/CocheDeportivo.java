@@ -1,5 +1,3 @@
-package Ejercicio6;
-
 public class CocheDeportivo extends Coche{
     boolean descapotable;
 

@@ -1,5 +1,3 @@
-package Ejercicio7;
-
 public abstract class Aeropuerto {
     private int id;
     private static int idIncrementado;

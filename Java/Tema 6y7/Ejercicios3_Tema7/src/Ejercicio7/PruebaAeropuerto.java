@@ -1,5 +1,3 @@
-package Ejercicio7;
-
 public class PruebaAeropuerto {
     public static void main(String[] args) {
 

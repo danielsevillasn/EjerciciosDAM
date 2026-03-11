@@ -1,5 +1,3 @@
-package Ejercicio3;
-
 public class Validator {
 
     public static void validarDNI(String DNI) throws Exception {

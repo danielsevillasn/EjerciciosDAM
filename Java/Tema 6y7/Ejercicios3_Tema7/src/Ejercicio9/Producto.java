@@ -1,5 +1,5 @@
-public class Producto {
-    private static int idIncrementado;
+public class Producto implements Comparable<Producto>{
+    private static int idIncrementado = 1;
     private int id;
     private String nombre;
     private double precio;
@@ -66,5 +66,15 @@ public class Producto {
     @Override
     public String toString() {
         return "Producto "+id+" [nombre=" + nombre + ", precio=" + precio + "]";
+    }
+
+    @Override
+    public int compareTo(Producto o){
+        if(this.precio < o.getPrecio()){
+            return -1;
+        }else if (this.precio > o.getPrecio()){
+            return 1;
+        }
+        return 0;
     }
 }

@@ -1,5 +1,3 @@
-package Ejercicio8;
-
 public class VideoJuego implements Prestable{
     private String nombre;
     private double precio;

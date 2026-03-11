@@ -1,5 +1,3 @@
-package Ejercicio2;
-
 public class PruebaOrdenador {
     public static void main(String[] args) throws ExcepcionTranseferenciaInvalida,ExcepcionRamNoValida{
 

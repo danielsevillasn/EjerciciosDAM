@@ -75,3 +75,63 @@ Gestión y Control
         horaSalida, frecuenciaPaso
     CentralControl
         listaTrenesActivos, alertasSistema
+
+5- El blackjack
+    1.Personas
+        1.1.Crupier
+        1.2.Jugador
+    2.Partida
+    3.Cartas
+        3.1.Normales
+        3.2.Especiales
+        3.3.Ases
+
+6- Gestión de la docencia
+    Pues que en un curso hay asignaturas y personas, personas compuestas por estudiantes y profesores
+
+    Deberia de ser un atributo ya que el dinero en si como objeto no tendría ninguna función pero si se le quiere agregar
+    realismo entonces si que se podria emplear objeto con el uso de listas
+
+7- Un MUD
+    1.Personajes
+    Nombre
+    Id
+    Fuerza
+    Destreza
+    Sabiduría
+    ...
+        1.1.Enemigos
+        Ratio de spawn
+        Peligrosidad
+        Tipo
+            Atacar
+            Romper
+            Apoyo
+        1.2.Jugador
+        Armas
+        Armadura
+            Atacar
+            Defender
+            Recoger
+            Avanzar
+            Retroceder
+    2.Partida
+    Turno
+    Nivel
+    3.Tableros
+    Id
+    Nombre
+    Extension
+    Tipo
+        Flujo del juego
+        Establecer configuracion partida
+    4.Estadisticas
+    Daño
+    Tiempo
+    Puntos
+    5.Objeto
+    Nombre
+    Peso
+    Valor
+        Equipar
+        Soltar

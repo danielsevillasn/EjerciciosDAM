@@ -23,6 +23,4 @@ public class ProductoRefrigerado extends Producto{
     public String toString() {
         return super.toString()+"ProductoRefrigerado [nCajon=" + nCajon + "]";
     }
-
-    
 }

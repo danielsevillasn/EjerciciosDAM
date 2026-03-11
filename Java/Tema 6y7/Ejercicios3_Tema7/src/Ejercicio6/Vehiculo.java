@@ -1,5 +1,3 @@
-package Ejercicio6;
-
 public class Vehiculo {
     private String Marca;
     private String Modelo;

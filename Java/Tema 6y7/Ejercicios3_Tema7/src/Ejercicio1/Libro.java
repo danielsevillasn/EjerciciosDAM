@@ -1,5 +1,3 @@
-package Ejercicio1;
-
 public class Libro {
     private String ISBN;
     private String titulo;

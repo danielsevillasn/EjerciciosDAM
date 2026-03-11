@@ -1,5 +1,3 @@
-package Ejercicio8;
-
 public class Prestamo implements Prestable{
     private double cantidad;
     private double adeudo;

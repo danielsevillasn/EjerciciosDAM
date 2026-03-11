@@ -1,5 +1,3 @@
-package Ejercicio8;
-
 public class PruebaPrestable {
     public static void main(String[] args) {
         VideoJuego v = new VideoJuego("Super mario", 60);

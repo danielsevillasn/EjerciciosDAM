@@ -1,5 +1,3 @@
-package Ejercicio6;
-
 public class PruebaVehiculo {
     public static void main(String[] args) {
         

@@ -1,5 +1,3 @@
-package Ejercicio3;
-
 public class Empresa {
 
     private String CIF;

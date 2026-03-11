@@ -1,5 +1,3 @@
-package Ejercicio3;
-
 import java.util.Objects;
 
 public class Empleado {

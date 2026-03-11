@@ -1,5 +1,3 @@
-package Ejercicio7;
-
 public class AeropuertoPrivado extends Aeropuerto{
     private int nSocios;
 
