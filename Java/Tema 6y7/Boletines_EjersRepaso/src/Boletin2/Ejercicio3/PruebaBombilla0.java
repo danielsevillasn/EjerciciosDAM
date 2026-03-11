@@ -1,9 +1,7 @@
-package Boletin2.Ejercicio3;
-
-public class PruebaBombilla {
+public class PruebaBombilla0 {
     public static void main(String[] args) {
         // 1. Creamos el objeto bombilla
-        Bombilla miBombilla = new Bombilla();
+        Bombilla0 miBombilla = new Bombilla0();
         
         // 2. Mostramos estado inicial
         System.out.println("Al inicio: " + miBombilla);

@@ -1,5 +1,3 @@
-package Boletin2.Ejercicio1;
-
 public class Fraccion {
     private int numerador;
     private int denominador;

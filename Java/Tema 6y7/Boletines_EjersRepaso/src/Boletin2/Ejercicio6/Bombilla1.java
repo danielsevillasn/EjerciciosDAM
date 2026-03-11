@@ -1,10 +1,8 @@
-package Boletin2.Ejercicio6;
-
-public class Bombilla {
+public class Bombilla1 {
     protected static boolean interruptorGeneral;
     private boolean encendida;
 
-    public Bombilla(boolean encendida) {
+    public Bombilla1(boolean encendida) {
         this.encendida = encendida;
     }
 

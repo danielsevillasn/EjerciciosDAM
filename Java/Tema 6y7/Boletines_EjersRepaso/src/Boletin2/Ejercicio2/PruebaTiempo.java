@@ -1,5 +1,3 @@
-package Boletin2.Ejercicio2;
-
 public class PruebaTiempo {
     public static void main(String[] args) {
         // Caso del enunciado: 30m 40s

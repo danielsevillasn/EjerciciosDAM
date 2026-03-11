@@ -1,5 +1,3 @@
-package Boletin2.Ejercicio4;
-
 public class Monedero {
     // Atributo privado: solo se puede consultar mediante el método disponible()
     private double cantidad;

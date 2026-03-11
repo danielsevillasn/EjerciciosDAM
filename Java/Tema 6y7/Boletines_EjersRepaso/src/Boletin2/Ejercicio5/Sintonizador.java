@@ -1,5 +1,3 @@
-package Boletin2.Ejercicio5;
-
 public class Sintonizador implements Controlable{
     private double frecuencia;
 

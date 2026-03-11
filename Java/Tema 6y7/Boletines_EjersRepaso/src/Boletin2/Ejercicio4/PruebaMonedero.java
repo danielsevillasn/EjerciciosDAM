@@ -1,5 +1,3 @@
-package Boletin2.Ejercicio4;
-
 public class PruebaMonedero {
     public static void main(String[] args) {
         // 1. Creamos un monedero con 50 euros iniciales

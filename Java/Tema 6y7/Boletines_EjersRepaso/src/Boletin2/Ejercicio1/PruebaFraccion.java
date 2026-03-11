@@ -1,5 +1,3 @@
-package Boletin2.Ejercicio1;
-
 public class PruebaFraccion {
     public static void main(String[] args) {
         // 1. Creamos dos fracciones

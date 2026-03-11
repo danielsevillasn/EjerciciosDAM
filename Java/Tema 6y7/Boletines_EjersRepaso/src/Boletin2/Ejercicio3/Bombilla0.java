@@ -1,11 +1,9 @@
-package Boletin2.Ejercicio3;
-
-public class Bombilla {
+public class Bombilla0 {
     // Atributo: true si está encendida, false si está apagada
     private boolean encendida;
 
     // Constructor: por defecto las bombillas suelen estar apagadas al fabricarse
-    public Bombilla() {
+    public Bombilla0() {
         this.encendida = false;
     }
 

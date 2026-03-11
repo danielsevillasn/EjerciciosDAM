@@ -1,5 +1,3 @@
-package Boletin2.Ejercicio2;
-
 public class Tiempo {
     private int horas;
     private int minutos;
