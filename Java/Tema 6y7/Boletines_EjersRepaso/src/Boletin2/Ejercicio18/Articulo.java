@@ -14,6 +14,7 @@ public class Articulo {
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.stock = stock;
+        nProductos++;
     }
     
 
@@ -71,5 +72,15 @@ public class Articulo {
     public String toString() {
         return "Articulo [codigo=" + codigo + ", descripcion=" + descripcion + ", precioCompra=" + precioCompra
                 + ", precioVenta=" + precioVenta + ", stock=" + stock + "]";
+    }
+
+
+    public static int getnProductos() {
+        return nProductos;
+    }
+
+
+    public static void setnProductos(int nProductos) {
+        Articulo.nProductos = nProductos;
     }
 }
