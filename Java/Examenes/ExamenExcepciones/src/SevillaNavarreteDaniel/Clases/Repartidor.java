@@ -23,13 +23,20 @@ public class Repartidor extends Empleado {
     // Constructor para instanciar objeto con varios parametros
     public Repartidor(String nombre, int edad, double salarioMensual, ZonaReparto zonasReparto)
             throws ExcepcionesEmpleado {
-        super(nombre, edad, salarioMensual);
+        super(nombre, edad, salarioMensual); // Primero el super (obligatorio)
+
+        // Ahora validamos el sueldo del Vendedor
+        if (!(salarioMensual >= 1800 && salarioMensual <= 4000)) {
+            // ¡ERROR! Deshacemos lo que hizo el constructor de Empleado
+            setnEmpleados(getnEmpleados() - 1);
+            setSalarioMensualTotal(getSalarioMensualTotal() - salarioMensual);
+            setIdIncrementado(getIdIncrementado() - 1); // Para no perder el ID
+
+            throw new ExcepcionesEmpleado("Sueldo de vendedor no válido...");
+        }
+
         this.zonasReparto = zonasReparto;
         cobraPlus();
-        if (!(salarioMensual >= 900 && salarioMensual <= 2000)) {
-            throw new ExcepcionesEmpleado(
-                    "El sueldo mensual del repartidor debe estar entre 900euros y 2000euros, ambos inclusive");
-        }
     }
 
     // Getter
@@ -50,10 +57,10 @@ public class Repartidor extends Empleado {
      */
     public void cobraPlus() {
         double salarioMensual = getSalarioMensual();
-        if ((getEdad() > 25) && (zonasReparto == ZonaReparto.ZONA3)) {
-            setSalarioMensual(salarioMensual + getPLUS() + 150);
+        if ((getEdad() < 25) && (zonasReparto == ZonaReparto.ZONA3)) {
+            setSalarioMensual(salarioMensual + getPLUS());
             double salarioMensualTotalActual = getSalarioMensualTotal();
-            setSalarioMensualTotal(salarioMensualTotalActual+getSalarioMensual());
+            setSalarioMensualTotal(salarioMensualTotalActual+getPLUS());
         }
     }
 

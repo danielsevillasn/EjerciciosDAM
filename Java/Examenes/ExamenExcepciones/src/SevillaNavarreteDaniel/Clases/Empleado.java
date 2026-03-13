@@ -33,12 +33,12 @@ public abstract class Empleado implements Salarios {
     public Empleado(String nombre, int edad, double salarioMensual) throws ExcepcionesEmpleado{
         this.nombre = nombre;
         this.edad = edad;
-        this.salarioMensual = salarioMensual;
-        salarioMensualTotal += salarioMensual;
-        nEmpleados++;
         if (!(edad >= 18 && edad <= 65)) {
             throw new ExcepcionesEmpleado("La edad del empleado deber ser entre 18 y 65 años ambos inclusive.");
         }
+        nEmpleados++;
+        this.salarioMensual = salarioMensual;
+        salarioMensualTotal += salarioMensual;
         id = idIncrementado++;
     }
 

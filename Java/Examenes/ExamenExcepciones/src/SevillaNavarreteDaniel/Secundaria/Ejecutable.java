@@ -18,6 +18,7 @@ public class Ejecutable {
         int opcion1 = -1;
         int opcion2 = -2;
         boolean datoValido = false;
+        int numEmpleadosActuales = 0;
         Empleado[] empleadosEmpresa = new Empleado[4];
         while (!salir) {
             opcion = Salida.menu("menu", "Vendedor", "Repartidor");
@@ -34,22 +35,27 @@ public class Ejecutable {
                             "Consulta Vendedores");
                     switch (opcion1) {
                         case 1:
-                            datoValido = false;
-                            do {
-                                try {
-                                    String nombre = Entrada.pedirCadena("Dame el nombre del vendedor: ");
-                                    int edad = Entrada.pedirEntero("Dame la edad del vendedor: ");
-                                    double salarioMensual = Entrada
-                                            .pedirDouble("Dame el salario mensual del vendedor: ");
-                                    double comision = Entrada.pedirDouble("Dame la comision del vendedor: ");
-                                    empleadosEmpresa[Empleado.getIdIncrementado()] = new Vendedor(nombre, edad,
-                                            salarioMensual, comision);
-                                    System.out.println("\nEmpleado creado correctamente");
-                                    datoValido = true;
-                                } catch (ExcepcionesEmpleado e) {
-                                    System.out.println(e.getMessage());
-                                }
-                            } while (!datoValido);
+                            if (numEmpleadosActuales < empleadosEmpresa.length) {
+                                datoValido = false;
+                                do {
+                                    try {
+                                        String nombre = Entrada.pedirCadena("Dame el nombre del vendedor: ");
+                                        int edad = Entrada.pedirEntero("Dame la edad del vendedor: ");
+                                        double salarioMensual = Entrada
+                                                .pedirDouble("Dame el salario mensual del vendedor: ");
+                                        double comision = Entrada.pedirDouble("Dame la comision del vendedor: ");
+                                        empleadosEmpresa[numEmpleadosActuales] = new Vendedor(nombre, edad,
+                                                salarioMensual, comision);
+                                        numEmpleadosActuales++;
+                                        System.out.println("\nEmpleado creado correctamente");
+                                        datoValido = true;
+                                    } catch (ExcepcionesEmpleado e) {
+                                        System.out.println(e.getMessage());
+                                    }
+                                } while (!datoValido);
+                            } else {
+                                System.out.println("No caben más empleados en la empresa (máximo 4).");
+                            }
                             break;
                         case 2:
                             datoValido = false;
@@ -74,7 +80,9 @@ public class Ejecutable {
                                     System.out.println(empleadosEmpresa[i]);
                                 }
                             }
-                            System.out.println("El sueldo mensual de la empresa es: "+Empleado.getSalarioMensualTotal());
+                            System.out
+                                    .println("El sueldo mensual de la empresa es: " + Empleado.getSalarioMensualTotal()
+                                            + " euros entre " + Empleado.getnEmpleados() + " empleados");
                             break;
                         default:
                             break;
@@ -89,27 +97,32 @@ public class Ejecutable {
                             "Consulta Repartidores");
                     switch (opcion2) {
                         case 1:
-                            datoValido = false;
-                            do {
-                                try {
-                                    String nombre = Entrada.pedirCadena("Dame el nombre del repartidor: ");
-                                    int edad = Entrada.pedirEntero("Dame la edad del repartidor: ");
-                                    double salarioMensual = Entrada
-                                            .pedirDouble("Dame el salario mensual del repartidor: ");
-                                    int nZona = Entrada.pedirEntero("Dame el numero de la zona: ");
-                                    if(nZona >= 0 && nZona<=2){
-                                        ZonaReparto zona= ZonaReparto.values()[nZona];
-                                        empleadosEmpresa[Empleado.getIdIncrementado()] = new Repartidor(nombre, edad,
-                                                salarioMensual, zona);
-                                        System.out.println("\nEmpleado creado correctamente");
-                                        datoValido = true;
-                                    }else{
-                                        System.out.println("El numero de la zona no es valido");
+                            if (numEmpleadosActuales < empleadosEmpresa.length) {
+                                datoValido = false;
+                                do {
+                                    try {
+                                        String nombre = Entrada.pedirCadena("Dame el nombre del repartidor: ");
+                                        int edad = Entrada.pedirEntero("Dame la edad del repartidor: ");
+                                        double salarioMensual = Entrada
+                                                .pedirDouble("Dame el salario mensual del repartidor: ");
+                                        int nZona = Entrada.pedirEntero("Dame el numero de la zona: ");
+                                        if (nZona >= 0 && nZona <= 2) {
+                                            ZonaReparto zona = ZonaReparto.values()[nZona];
+                                            empleadosEmpresa[numEmpleadosActuales] = new Repartidor(nombre, edad,
+                                                    salarioMensual, zona);
+                                            System.out.println("\nEmpleado creado correctamente");
+                                            numEmpleadosActuales++;
+                                            datoValido = true;
+                                        } else {
+                                            System.out.println("El numero de la zona no es valido");
+                                        }
+                                    } catch (ExcepcionesEmpleado e) {
+                                        System.out.println(e.getMessage());
                                     }
-                                } catch (ExcepcionesEmpleado e) {
-                                    System.out.println(e.getMessage());
-                                }
-                            } while (!datoValido);
+                                } while (!datoValido);
+                            } else {
+                                System.out.println("No caben más empleados en la empresa (máximo 4).");
+                            }
                             break;
                         case 2:
                             datoValido = false;
@@ -134,7 +147,9 @@ public class Ejecutable {
                                     System.out.println(empleadosEmpresa[i]);
                                 }
                             }
-                            System.out.println("El sueldo mensual de la empresa es: "+Empleado.getSalarioMensualTotal());
+                            System.out
+                                    .println("El sueldo mensual de la empresa es: " + Empleado.getSalarioMensualTotal()
+                                            + " euros entre " + Empleado.getnEmpleados() + " empleados");
                             break;
                         default:
                             break;

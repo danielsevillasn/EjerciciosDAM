@@ -20,14 +20,21 @@ public class Vendedor extends Empleado {
     }
 
     // Constructor para instanciar objeto con varios parametros
-    public Vendedor(String nombre, int edad, double salarioMensual, double comision) throws ExcepcionesEmpleado{
-        super(nombre, edad, salarioMensual);
+    public Vendedor(String nombre, int edad, double salarioMensual, double comision) throws ExcepcionesEmpleado {
+        super(nombre, edad, salarioMensual); // Primero el super (obligatorio)
+
+        // Ahora validamos el sueldo del Vendedor
+        if (!(salarioMensual >= 1800 && salarioMensual <= 4000)) {
+            // ¡ERROR! Deshacemos lo que hizo el constructor de Empleado
+            setnEmpleados(getnEmpleados() - 1);
+            setSalarioMensualTotal(getSalarioMensualTotal() - salarioMensual);
+            setIdIncrementado(getIdIncrementado() - 1); // Para no perder el ID
+
+            throw new ExcepcionesEmpleado("Sueldo de vendedor no válido...");
+        }
+
         this.comision = comision;
         cobraPlus();
-        if (!(salarioMensual >= 1800 && salarioMensual <= 4000)) {
-            throw new ExcepcionesEmpleado(
-                    "El sueldo mensual del vendedor debe estar entre 1800euros y 4000euros, ambos inclusive");
-        }
     }
 
     // Getter
@@ -52,13 +59,13 @@ public class Vendedor extends Empleado {
         if ((getEdad() > 30) && (comision > 200)) {
             setSalarioMensual(salarioMensual + getPLUS() + 150);
             double salarioMensualTotalActual = getSalarioMensualTotal();
-            setSalarioMensualTotal(salarioMensualTotalActual+getSalarioMensual());
+            setSalarioMensualTotal(salarioMensualTotalActual + getPLUS() + 150);
         }
     }
 
     // toString
     @Override
     public String toString() {
-        return super.toString()+" Vendedor [comision=" + comision + "]";
+        return super.toString() + " Vendedor [comision=" + comision + "]";
     }
 }
