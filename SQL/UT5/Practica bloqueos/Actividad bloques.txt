@@ -1,0 +1,22 @@
+Parte 1 – Test conceptual
+Pregunta 1: La respuesta correcta es la b) Bloquea solo la fila.
+Oracle usa bloqueos a nivel de fila, no de tabla. Cuando haces un UPDATE sobre una fila concreta, solo esa fila queda bloqueada para otras escrituras. El resto de filas de la tabla siguen siendo accesibles con total normalidad.
+Pregunta 2: La respuesta correcta es la c) No bloquea.
+En Oracle, un SELECT normal nunca bloquea nada. Esto es posible gracias al sistema MVCC (Multi-Version Concurrency Control): 
+Oracle guarda versiones anteriores de los datos en los segmentos de undo, de forma que un lector siempre puede ver una instantánea consistente sin interferir con los escritores.
+
+Parte 2 – Análisis de código
+Escenario 1
+La sesión B sí se ejecuta sin ningún bloqueo ni espera. Oracle no bloquea lectores. En cuanto al valor que ve, la sesión B ve el stock anterior al UPDATE de la sesión A, porque el COMMIT todavía no se ha producido. 
+Oracle le sirve la versión consistente del dato desde los segmentos de undo.
+Escenario 2
+La sesión B queda bloqueada. El SELECT FOR UPDATE de la sesión A es un caso especial: no es una lectura pasiva, sino que adquiere explícitamente un bloqueo de escritura sobre la fila con id=10 para reservarla. 
+Cuando la sesión B intenta hacer el UPDATE sobre esa misma fila, encuentra el bloqueo y se queda esperando hasta que la sesión A haga COMMIT o ROLLBACK y libere la fila.
+j
+Parte 3 – Verdadero / Falso razonado
+Un lector bloquea a un escritor → FALSO
+En Oracle los lectores nunca bloquean a los escritores ni viceversa. Un SELECT no adquiere ningún bloqueo, por lo que un UPDATE puede ejecutarse sobre una fila que otra sesión está leyendo al mismo tiempo.
+Oracle permite lecturas mientras hay escrituras → VERDADERO
+Gracias al MVCC, cuando una fila está siendo modificada por una escritura sin confirmar, Oracle no bloquea al lector sino que le devuelve la versión anterior del dato desde el undo. El lector siempre ve datos consistentes sin esperar a nadie.
+Los bloqueos se liberan automáticamente tras COMMIT → VERDADERO
+Cuando una transacción termina, ya sea con COMMIT o con ROLLBACK, Oracle libera automáticamente todos los bloqueos de fila que esa transacción había adquirido. No hay que liberarlos manualmente.

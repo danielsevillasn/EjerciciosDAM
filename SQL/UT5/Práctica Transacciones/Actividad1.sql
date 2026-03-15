@@ -1,10 +1,6 @@
 --Guion de operaciones:
 
 ---1. Consultar el saldo de las cuentas 1 y 2.
-SELECT SALDO
-FROM CUENTAS
-WHERE ID_CUENTA<=1;
-
 SELECT id_cuenta, saldo
 FROM cuentas
 WHERE id_cuenta IN (1,2);

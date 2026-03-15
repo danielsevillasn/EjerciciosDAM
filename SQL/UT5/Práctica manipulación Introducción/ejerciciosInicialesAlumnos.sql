@@ -40,12 +40,6 @@ WHERE nombre = 'Zapatos Nike';
 --Ejercicio: Aumentar 50 a todos los productos que están en ProductosBackup.
 --Esto permite actualizar en función de otra tabla.
 UPDATE PRODUCTOS P
-SET precio = (SELECT pb.precio +50
-            FROM PRODUCTOSBACKUP pb
-            WHERE pb.id_producto = p.id_producto)
-WHERE id_producto IN (SELECT id_producto FROM PRODUCTOSBACKUP);
-
-UPDATE PRODUCTOS P
 SET precio = PRECIO +50
 WHERE id_producto IN (SELECT id_producto FROM PRODUCTOSBACKUP);
 
@@ -63,12 +57,15 @@ WHERE nombre = 'Cafetera DeLonghi';
 DELETE FROM PRODUCTOS
 WHERE id_producto IN (SELECT id_producto FROM PRODUCTOSBACKUP);
 
-DELETE FROM PRODUCTOS
-WHERE EXISTS (SELECT id_producto FROM PRODUCTOSBACKUP);
+DELETE FROM PRODUCTOS P
+WHERE EXISTS (SELECT 1 
+                FROM PRODUCTOSBACKUP PB
+                WHERE PB.id_producto = P.id_producto);
 
 --Consultas de verificación
 --Realiza algunas consultas que te permitan comprobar las manipulaciones que has hecho a la información, como:
 -- Ver todos los productos
+SELECT * FROM PRODUCTOS;
 
 -- Ver productos de la tabla de backup
-
+SELECT * FROM PRODUCTOSBACKUP;

@@ -3,7 +3,7 @@
 --1. Consultar el saldo de la cuenta 1.
 SELECT id_cuenta, saldo
 FROM cuentas
-WHERE id_cuenta IN 1;
+WHERE id_cuenta = 1;
 
 --2. Intentar realizar una transferencia de 10.000 € desde la cuenta 1 a la cuenta 2.
 UPDATE CUENTAS
