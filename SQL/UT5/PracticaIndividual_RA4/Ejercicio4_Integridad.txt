@@ -1,0 +1,12 @@
+Escenario 1:
+
+    1. No ya que implicaria el cambio de una clave primaria que se emplea como referencia en otras tablas.
+    
+    2. Se tendria que suprimir todo lo que utiliza esa clave primaria en cascascada.
+    
+Escenario 2:
+
+    1. Sí, si se emplea una supresión en cascada
+
+    2. Se podria hacer una supresión en cascada del usuario eliminando asi automáticamente todos los
+        registros hijos que lo referenciaban.

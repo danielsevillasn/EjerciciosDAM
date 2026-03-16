@@ -1,0 +1,21 @@
+Escenario 1:
+
+    1. El valor del saldo que estaba antes de la sesion A
+    
+    2. No, ya que el lector ve los datos anteriores al cambio 
+        del escritor hasta que este haga COMMIT.
+
+Escenario 2:
+
+    1. Salta un bloqueo
+
+    2. Se podrá ejecutar cuando el de la sesion A haga commit de lo cambiado
+
+    3. Bloqueo exclusivo, que es cuando un escritor modifica una fila, Oracle la bloquea, y
+        ningún otro escritor puede modificarla hasta que el primero haga COMMIT
+
+Escenario 3:
+    
+    1. El bloqueo desaparece y le habilita poder modificarla
+
+    2. El valor inicial o el valor que actualiza la sesion B si se hace commit
