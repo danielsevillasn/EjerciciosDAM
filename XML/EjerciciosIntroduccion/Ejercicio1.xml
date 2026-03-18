@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+
+    <producto id="1">
+        <nombre>Laptop UltraBook Pro 15</nombre>
+        <descripcion>Portátil de alto rendimiento con pantalla Full HD y procesador de última generación, ideal para profesionales y estudiantes.</descripcion>
+        <precio moneda="EUR">1299.99</precio>
+        <caracteristicas>
+            <caracteristica>
+                <nombre>Procesador</nombre>
+                <valor>Intel Core i7-1355U 13ª Gen, 3.7GHz</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Memoria RAM</nombre>
+                <valor>16 GB DDR5</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Almacenamiento</nombre>
+                <valor>SSD NVMe 512 GB</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Pantalla</nombre>
+                <valor>15.6 pulgadas Full HD IPS 144Hz</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Batería</nombre>
+                <valor>72 Wh, autonomía de hasta 10 horas</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Sistema Operativo</nombre>
+                <valor>Windows 11 Home</valor>
+            </caracteristica>
+        </caracteristicas>
+    </producto>
+
+    <producto id="2">
+        <nombre>Smartphone Galaxy X20</nombre>
+        <descripcion>Teléfono inteligente con cámara cuádruple de 108 MP, pantalla AMOLED y carga rápida de 65W para un uso intensivo todo el día.</descripcion>
+        <precio moneda="EUR">849.00</precio>
+        <caracteristicas>
+            <caracteristica>
+                <nombre>Pantalla</nombre>
+                <valor>6.7 pulgadas Super AMOLED 120Hz, resolución 2400x1080</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Procesador</nombre>
+                <valor>Snapdragon 8 Gen 2, Octa-core 3.2GHz</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Cámara Principal</nombre>
+                <valor>108 MP + 12 MP ultra gran angular + 10 MP teleobjetivo + 5 MP macro</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Batería</nombre>
+                <valor>5000 mAh con carga rápida 65W</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Almacenamiento</nombre>
+                <valor>256 GB interno, expandible con microSD</valor>
+            </caracteristica>
+            <caracteristica>
+                <nombre>Conectividad</nombre>
+                <valor>5G, Wi-Fi 6E, Bluetooth 5.3, NFC</valor>
+            </caracteristica>
+        </caracteristicas>
+    </producto>
+
+</catalogo>
