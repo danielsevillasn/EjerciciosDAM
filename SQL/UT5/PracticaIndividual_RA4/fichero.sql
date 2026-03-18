@@ -45,6 +45,8 @@ VALUES (102,'Xiaomi Pro 2', 'DISPONIBLE', 1);
 INSERT INTO Patinetes (id_patinete,modelo, estado, id_estacion)
 VALUES (105,'Xiaomi Lite', 'DISPONIBLE', 3);
 
+COMMIT;
+
 --2--
 INSERT INTO Historial_Alquileres (id_usuario, total_alquileres, gasto_total)
 VALUES((SELECT id_usuario
@@ -105,43 +107,53 @@ VALUES((SELECT id_usuario
     WHERE id_usuario IN (SELECT id_usuario
                             FROM Usuarios
                             WHERE nombre = 'Mario Díaz')));
+
+COMMIT;
 --3--
 
 --Guion 1
 
 INSERT INTO Alquileres (id_alquiler,id_usuario, id_patinete, coste)
-VALUES(4,
-    (SELECT id_usuario
-    FROM Usuarios
-    WHERE nombre = 'Mario Díaz'),
-    (SELECT id_patinete
-    FROM Patinetes
-    WHERE modelo = 'Xiaomi Pro 2'), 3);
-
-UPDATE Usuarios
-SET saldo = saldo - 3
-WHERE nombre = 'Mario Díaz';
-
-COMMIT;
-
---Guion 2
-INSERT INTO Alquileres (id_alquiler,id_usuario, id_patinete, coste)
-VALUES(5,
-    (SELECT id_usuario
-    FROM Usuarios
-    WHERE nombre = 'Lucía Pérez'),
-    (SELECT id_patinete
-    FROM Patinetes
-    WHERE modelo = 'Xiaomi Lite'), 4);
-
-SAVEPOINT sp_t1;
+VALUES((SELECT MAX(id_alquiler)
+        FROM Alquileres)+1,
+        (SELECT id_usuario
+        FROM Usuarios
+        WHERE nombre = 'Mario Díaz'),
+        (SELECT id_patinete
+        FROM Patinetes
+        WHERE modelo = 'Xiaomi Pro 2') AND id_estacion = (SELECT id_estacion
+                                                        FROM Estaciones
+                                                        WHERE nombre = 'Biblioteca'), 3);
 
 UPDATE Usuarios
 SET saldo = saldo - 3
 WHERE nombre = 'Mario Díaz';
 
 UPDATE Patinetes
-SET estado = 'NO DISPONIBLE'
+SET estado = 'ALQUILADO'
+WHERE modelo = 'Xiaomi Pro 2';
+
+COMMIT;
+
+--Guion 2
+INSERT INTO Alquileres (id_alquiler,id_usuario, id_patinete, coste)
+VALUES((SELECT MAX(id_alquiler)
+        FROM Alquileres)+1,
+        (SELECT id_usuario
+        FROM Usuarios
+        WHERE nombre = 'Lucía Pérez'),
+        (SELECT id_patinete
+        FROM Patinetes
+        WHERE modelo = 'Xiaomi Lite'), 4);
+
+SAVEPOINT sp_t1;
+
+UPDATE Usuarios
+SET saldo = saldo - 4
+WHERE nombre = 'Lucía Pérez';
+
+UPDATE Patinetes
+SET estado = 'ALQUILADO'
 WHERE modelo = 'Xiaomi Lite';
 
 ROLLBACK TO sp_t1;
@@ -150,13 +162,14 @@ COMMIT;
 
 --Guion 3
 INSERT INTO Alquileres (id_alquiler,id_usuario, id_patinete)
-VALUES(6,
-    (SELECT id_usuario
-    FROM Usuarios
-    WHERE nombre = 'Carlos Ruiz'),
-    (SELECT id_patinete
-    FROM Patinetes
-    WHERE modelo = 'Xiaomi Pro 1'));
+VALUES((SELECT MAX(id_alquiler)
+        FROM Alquileres)+1,
+        (SELECT id_usuario
+        FROM Usuarios
+        WHERE nombre = 'Carlos Ruiz'),
+        (SELECT id_patinete
+        FROM Patinetes
+        WHERE modelo = 'Xiaomi Pro 1'));
 
 UPDATE Usuarios
 SET saldo = saldo + 100
@@ -169,14 +182,15 @@ WHERE modelo = 'Xiaomi Pro 1';
 ROLLBACK;
 
 --Guion 4
-INSERT INTO Alquileres (id_alquiler,id_usuario, id_patinete)
-VALUES(6,
-    (SELECT id_usuario
-    FROM Usuarios
-    WHERE nombre = 'Ana López'),
-    (SELECT id_patinete
-    FROM Patinetes
-    WHERE modelo = 'Segway Ninebot 1'));
+INSERT INTO Alquileres (id_alquiler,id_usuario, id_patinete, coste)
+VALUES((SELECT MAX(id_alquiler)
+        FROM Alquileres)+1,
+        (SELECT id_usuario
+        FROM Usuarios
+        WHERE nombre = 'Ana López'),
+        (SELECT id_patinete
+        FROM Patinetes
+        WHERE modelo = 'Segway Ninebot 1'), 100);
 
 UPDATE Patinetes
 SET estado = 'Alquilado'
@@ -185,7 +199,7 @@ WHERE modelo = 'Xiaomi Pro 1';
 SAVEPOINT sp_t2;
 
 UPDATE Usuarios
-SET saldo = saldo - 3
+SET saldo = saldo - 100
 WHERE nombre = 'Ana López';
 
 ROLLBACK TO sp_t2;
