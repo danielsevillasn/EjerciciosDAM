@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <entrantes>
+        <plato id = "1">
+            <nombre>adgwfjks</nombre>
+            <descripcion>jklahdcjakdlsgclaks</descripcion>
+            <precio>10</precio>
+            <listaIngredientes>
+                <ingrediente id = "1" nombre = "sal"></ingrediente>
+                <ingrediente id = "2" nombre = "pimienta"></ingrediente>
+                <ingrediente id = "3" nombre = "jcahsbjas"></ingrediente>
+            </listaIngredientes>
+        </plato>
+    </entrantes>
+    <platosPrincipales>
+        <plato id = "2">
+            <nombre>adgwfjks</nombre>
+            <descripcion>jklahdcjakdlsgclaks</descripcion>
+            <precio>20</precio>
+            <listaIngredientes>
+                <ingrediente id = "1" nombre = "sal"></ingrediente>
+                <ingrediente id = "2" nombre = "pimienta"></ingrediente>
+                <ingrediente id = "3" nombre = "jcahsbjas"></ingrediente>
+            </listaIngredientes>
+        </plato>
+    </platosPrincipales>
+    <postres>
+        <plato id = "3">
+            <nombre>adgwfjks</nombre>
+            <descripcion>jklahdcjakdlsgclaks</descripcion>
+            <precio>16</precio>
+            <listaIngredientes>
+                <ingrediente id = "1" nombre = "sal"></ingrediente>
+                <ingrediente id = "2" nombre = "pimienta"></ingrediente>
+                <ingrediente id = "3" nombre = "jcahsbjas"></ingrediente>
+            </listaIngredientes>
+        </plato>
+    </postres>
+</menu>

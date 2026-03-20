@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Biblioteca>
+    <Libro id = "1">
+        <titulo>Pepe</titulo>
+        <autor>Pepe</autor>
+        <anioPublicacion>1999</anioPublicacion>
+        <genero>accion</genero>
+        <listaValoraciones>
+            <valoracion id = "1" usuario = "Juan" puntuacion = "10"></valoracion>
+            <valoracion id = "2" usuario = "Mario" puntuacion = "9"></valoracion>
+            <valoracion id = "3" usuario = "Pedro" puntuacion = "6"></valoracion>
+        </listaValoraciones>
+    </Libro>
+    <Libro id = "2">
+        <titulo>Mario</titulo>
+        <autor>Mario</autor>
+        <anioPublicacion>1998</anioPublicacion>
+        <genero>terror</genero>
+        <listaValoraciones>
+            <valoracion id = "1" usuario = "Juan" puntuacion = "10"></valoracion>
+            <valoracion id = "2" usuario = "Mario" puntuacion = "9"></valoracion>
+            <valoracion id = "3" usuario = "Pedro" puntuacion = "6"></valoracion>
+        </listaValoraciones>
+    </Libro>
+    <Libro id = "3">
+        <titulo>Dani</titulo>
+        <autor>Dani</autor>
+        <anioPublicacion>1999</anioPublicacion>
+        <genero>romance</genero>
+        <listaValoraciones>
+            <valoracion id = "1" usuario = "Juan" puntuacion = "10"></valoracion>
+            <valoracion id = "2" usuario = "Mario" puntuacion = "9"></valoracion>
+            <valoracion id = "3" usuario = "Pedro" puntuacion = "6"></valoracion>
+        </listaValoraciones>
+    </Libro>
+</Biblioteca>

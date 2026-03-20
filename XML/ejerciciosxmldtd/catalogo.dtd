@@ -1,0 +1,23 @@
+<!-- Elemento raíz -->
+<!ELEMENT catalogo (producto+)>
+
+<!-- Cada producto tiene: nombreProducto, descripcion, precio y caracteristicas -->
+<!ELEMENT producto (nombreProducto, descripcion,precio,caracteristicas)>
+<!ATTLIST producto id CDATA #REQUIRED>
+
+<!-- Elementos de texto -->
+<!ELEMENT nombreProducto (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+
+<!-- Precio con texto y un atributo moneda -->
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda CDATA #REQUIRED>
+
+<!-- Conjunto de características -->
+<!ELEMENT caracteristicas (caracteristica+)>
+
+<!-- Cada caracteristica está vacía y se define solo con atributos -->
+<!ELEMENT caracteristica EMPTY>
+<!ATTLIST caracteristica
+          tipo CDATA #REQUIRED
+          valor CDATA #REQUIRED>

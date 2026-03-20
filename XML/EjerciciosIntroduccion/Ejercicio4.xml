@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Concesionario>
+    <Coche id = "1">
+        <matricula>1234-ABC</matricula>
+        <marca>Toyota</marca>
+        <modelo>Corolla</modelo>
+        <anio>2020</anio>
+        <color>Rojo</color>
+    </Coche>
+    <Coche id = "2">
+        <matricula>5678-DEF</matricula>
+        <marca>Ford</marca>
+        <modelo>Focus</modelo>
+        <anio>2018</anio>
+        <color>Azul</color>
+    </Coche>
+    <Coche id = "3">
+        <matricula>9012-GHI</matricula>
+        <marca>Seat</marca>
+        <modelo>Ibiza</modelo>
+        <anio>2022</anio>
+        <color>Blanco</color>
+    </Coche>
+</Concesionario>
