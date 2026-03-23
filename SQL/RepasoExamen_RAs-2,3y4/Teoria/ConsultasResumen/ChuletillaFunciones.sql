@@ -10,11 +10,7 @@ SELECT UPPER('hola') FROM DUAL;
 SELECT LOWER('HOLA') FROM DUAL;
 -- hola
 
---INITCAP(cadena) (Capitalizar palabras)
-SELECT INITCAP('hola mundo') FROM DUAL;
--- Hola Mundo
-
---LENGTH(cadena) (Longitud de texto). Filtrar textos largos/cortos.
+--LENGTH(cadena) (Longitud de texto)
 SELECT LENGTH('Hola') FROM DUAL;
 -- 4
 
@@ -85,22 +81,35 @@ SELECT EXTRACT(MONTH FROM SYSDATE) FROM DUAL;
 --Mes actual
 
 -- =====================================================
---      4. CONVERSIÓN - EVITA ERRORES DE TIPOS
+--                   4. CONVERSIÓN 
 -- =====================================================
 --TO_CHAR(valor, 'formato') (Número/Fecha → Texto)
 SELECT TO_CHAR(SYSDATE,'DD/MM/YYYY') FROM DUAL;
 
---TO_NUMBER(texto) (Texto → Número)
+--TO_NUMBER(texto, 'formato') (Texto → Número)
 SELECT TO_NUMBER('1234') FROM DUAL;
 
 --TO_DATE(texto, 'formato') (Texto → Fecha)
 SELECT TO_DATE('01/02/2024','DD/MM/YYYY') FROM DUAL;
 
+-- Fecha estándar:    'DD/MM/YYYY'
+--  YYYY / MM / DD | Año 4 dígitos / Mes / Día
+-- Fecha con hora:    'DD/MM/YYYY HH24:MI:SS'
+--  HH24:MI:SS  | Hora 24h : Minutos : Segundos
+-- Fecha con nombre:  'DAY DD "de" MONTH "de" YYYY'
+--  DAY Nombre día
+-- Número europeo:    '9G999D99'   → 1.234,56
+--  D / G | Posición símbolo decimal (,) / separador de miles (.)
+--  9 / 0   | Posición (blanco / cero si falta), el texto con el numero de digitos indicado
+-- Moneda europea:    'L9G999D99'  → €1.234,56
+--  L / $   | Moneda local / símbolo dólar
+
 -- =====================================================
 --                5. CONTROL DE NULLS
 -- =====================================================
 --NVL(columna, valor_sustituto) (NULL → valor)
-SELECT NVL(direccion,'Sin dirección') FROM empleados;
+SELECT NVL(direccion,'Sin dirección') FROM empleados
+--Si hay un null en direccion imprime por pantalla sin direccion
 
 -- =====================================================
 --              6. CONDICIONALES - COMO IF
@@ -112,7 +121,7 @@ SELECT nombre,
     ELSE 'ALTO' END AS nivel
 FROM empleados;
 
---DECODE(expr, val1, res1, val2, res2, ..., default)
+--DECODE(expr, valor1, resultado1, valor2, resultado2, ..., default)
 SELECT DECODE(sexo,'M','Hombre','F','Mujer','Otro') FROM personas;
 
 -- =====================================================
