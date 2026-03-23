@@ -1,146 +1,142 @@
 -- =====================================================
--- **1. TEXTO (UNA SOLA FILA) - MÁS USADAS EN WHERE/SELECT**
+--              1. TEXTO (UNA SOLA FILA)
 -- =====================================================
--- **UPPER/LOWER/INITCAP(cadena)**: Cambian mayúsc./min./Capitalizar palabras.
---   Paráms: 1 (cadena).
---   Uso: Normalizar búsquedas (ej: WHERE UPPER(nombre) = 'PEPE').
---   Ej:
-SELECT UPPER('hola') FROM DUAL; -- HOLA
-SELECT LOWER('HOLA') FROM DUAL; -- hola
-SELECT INITCAP('hola mundo') FROM DUAL; -- Hola Mundo
---   Error común: No usar en WHERE → fallan comparaciones case-sensitive.
 
--- **LENGTH(cadena)**: Longitud de texto.
---   Uso: Filtrar textos largos/cortos.
---   Ej:
-SELECT LENGTH('Hola') FROM DUAL; -- 4
+--UPPER(cadena) (Cambia todo a mayúculas)
+SELECT UPPER('hola') FROM DUAL;
+-- HOLA
 
--- **SUBSTR(cadena, inicio, longitud])**: Extrae parte.
---   Ej:
-SELECT SUBSTR('1234567',3,2) FROM DUAL; -- 34 (pos 3-4)
+--LOWER(cadena) (Cambia todo a minúsculas)
+SELECT LOWER('HOLA') FROM DUAL;
+-- hola
 
--- **INSTR(cadena, buscada [, inicio])**: Posición de subcadena.
---   Ej:
-SELECT INSTR('usuarios','u') FROM DUAL; -- 1
-SELECT INSTR('usuarios','u',2) FROM DUAL; -- 3 (2da 'u')
+--INITCAP(cadena) (Capitalizar palabras)
+SELECT INITCAP('hola mundo') FROM DUAL;
+-- Hola Mundo
 
--- **TRIM/LTRIM/RTRIM([BOTH|LEADING|TRAILING] cadena)**: Quita espacios.
---   Ej:
-SELECT TRIM(' Hola ') FROM DUAL; -- Hola
---   Error: Espacios invisibles rompen JOINs.
+--LENGTH(cadena) (Longitud de texto). Filtrar textos largos/cortos.
+SELECT LENGTH('Hola') FROM DUAL;
+-- 4
 
--- **REPLACE(cadena, vieja, nueva)**: Sustituye.
---   Ej:
-SELECT REPLACE('correo@gmail.es','es','com') FROM DUAL; -- correo@gmail.com
+--SUBSTR(cadena, inicio, longitud) (Extrae parte)
+SELECT SUBSTR('1234567',3,2) FROM DUAL;
+-- 34 (pos 3-4)
 
--- =====================================================
--- **2. NUMÉRICAS (UNA SOLA FILA)**
--- =====================================================
--- **ROUND(número, decimales)**: Redondea.
---   Ej:
-SELECT ROUND(12.5874,2) FROM DUAL; -- 12.59
---   Uso: Reportes financieros.
+--INSTR(cadena, buscada , inicio) (Posición de subcadena)
+SELECT INSTR('usuarios','u') FROM DUAL;
+-- 1
+SELECT INSTR('usuarios','u',2) FROM DUAL;
+-- 3 (2da 'u')
 
--- **TRUNC(número [, decimales])**: Trunca (quita decimales).
---   Ej:
-SELECT TRUNC(127.4567,2) FROM DUAL; -- 127.45
-SELECT TRUNC(4572.5678,-2) FROM DUAL; -- 4500
+--TRIM(cadena) (Quita espacios al principio y al final)
+SELECT TRIM(' Hola ') FROM DUAL;
+-- Hola
 
--- **MOD(n1, n2)**: Resto de división.
---   Ej:
-SELECT MOD(15,2) FROM DUAL; -- 1
-
--- **ABS(número)**: Valor absoluto.
---   Ej:
-SELECT ABS(-17) FROM DUAL; -- 17
+-- REPLACE(cadena, vieja, nueva) (Sustituye cadenas por otras)
+SELECT REPLACE('correo@gmail.es','es','com') FROM DUAL;
+-- correo@gmail.com
 
 -- =====================================================
--- **3. FECHAS (UNA SOLA FILA)**
+--            2. NUMÉRICAS (UNA SOLA FILA)
 -- =====================================================
--- **SYSDATE**: Fecha/hora actual.
---   Ej:
+
+--ROUND(número, decimales) (Redondea decimales)
+SELECT ROUND(12.5874,2) FROM DUAL;
+-- 12.59
+
+--TRUNC(número, nDecimales) (Quita decimales)
+SELECT TRUNC(127.4567,2) FROM DUAL;
+-- 127.45
+SELECT TRUNC(4572.5678,-2) FROM DUAL;
+-- 4500
+
+--MOD(n1, n2) (Resto de división)
+SELECT MOD(15,2) FROM DUAL;
+-- 1
+
+--ABS(número) (Valor absoluto)
+SELECT ABS(-17) FROM DUAL;
+-- 17
+
+-- =====================================================
+--               3. FECHAS (UNA SOLA FILA)
+-- =====================================================
+--SYSDATE (Fecha/hora actual)
 SELECT SYSDATE FROM DUAL;
 
--- **ADD_MONTHS(fecha, meses)**: Suma meses.
---   Ej:
+--ADD_MONTHS(fecha, meses) (Suma meses)
 SELECT ADD_MONTHS('27/07/11',5) FROM DUAL;
+--'27/12/2011'
 
--- **MONTHS_BETWEEN(f1, f2)**: Diferencia en meses.
---   Ej:
+--MONTHS_BETWEEN(f1, f2) (Diferencia en meses)
 SELECT MONTHS_BETWEEN('12/07/11','12/03/11') FROM DUAL;
+--4
 
--- **NEXT_DAY(fecha, 'DIA')**: Próximo día (ej: LUNES).
---   Ej:
+--NEXT_DAY(fecha, 'DIA') Próximo día (ej: LUNES).
 SELECT NEXT_DAY('31/12/11','LUNES') FROM DUAL;
+-- '02/01/2012'
 
--- **TRUNC(fecha)**: Quita hora (inicio día).
---   Ej:
+--TRUNC(fecha) (Quita hora)
 SELECT TRUNC(SYSDATE) FROM DUAL;
+--Fecha actual sin horas (00:00)
 
--- **EXTRACT(parte FROM fecha)**: Año/Mes/Día.
---   Ej:
-SELECT EXTRACT(MONTH FROM SYSDATE) FROM DUAL; -- Más claro que TO_CHAR para filtros.
+--EXTRACT(parte(DAY, MONTH, YEAR) FROM fecha) (Año/Mes/Día)
+SELECT EXTRACT(MONTH FROM SYSDATE) FROM DUAL;
+--Mes actual
 
 -- =====================================================
--- **4. CONVERSIÓN - EVITA ERRORES DE TIPOS**
+--      4. CONVERSIÓN - EVITA ERRORES DE TIPOS
 -- =====================================================
--- **TO_CHAR(valor, 'formato')**: Número/Fecha → Texto.
---   Ej:
+--TO_CHAR(valor, 'formato') (Número/Fecha → Texto)
 SELECT TO_CHAR(SYSDATE,'DD/MM/YYYY') FROM DUAL;
---   Error típico: Comparar fechas como texto → ORA-01858.
 
--- **TO_NUMBER(texto [, formato])**: Texto → Número.
---   Ej:
+--TO_NUMBER(texto) (Texto → Número)
 SELECT TO_NUMBER('1234') FROM DUAL;
 
--- **TO_DATE(texto, 'formato')**: Texto → Fecha.
---   Ej:
+--TO_DATE(texto, 'formato') (Texto → Fecha)
 SELECT TO_DATE('01/02/2024','DD/MM/YYYY') FROM DUAL;
 
 -- =====================================================
--- **5. CONTROL DE NULLS - ESENCIALES EN DATOS REALES**
+--                5. CONTROL DE NULLS
 -- =====================================================
--- **NVL(columna, valor_sustituto)**: NULL → valor.
---   Ej:
+--NVL(columna, valor_sustituto) (NULL → valor)
 SELECT NVL(direccion,'Sin dirección') FROM empleados;
---   Uso: Evita errores en SUM/AVG.
-
--- **NVL2(columna, valor_si_no_null, valor_si_null)**: IF simple.
---   Ej:
-SELECT NVL2(telefono, telefono, 'Sin tel') FROM alumnos;
-
--- **COALESCE(val1, val2, ...)**: Primer no-NULL.
---   Ej:
-SELECT COALESCE(telefono_movil, telefono_fijo, 'SIN TELÉFONO') AS contacto FROM alumnos;
 
 -- =====================================================
--- **6. CONDICIONALES - COMO IF**
+--              6. CONDICIONALES - COMO IF
 -- =====================================================
--- **CASE WHEN condición THEN resultado ... END**: Potente.
---   Ej:
+-- CASE WHEN condición THEN resultado ... END AS 'alias'
 SELECT nombre,
     CASE WHEN salario < 1200 THEN 'BAJO'
     WHEN salario BETWEEN 1200 AND 2000 THEN 'MEDIO'
     ELSE 'ALTO' END AS nivel
 FROM empleados;
 
--- **DECODE(expr, val1, res1, val2, res2, default)**: Solo igualdad.
---   Ej:
+--DECODE(expr, val1, res1, val2, res2, ..., default)
 SELECT DECODE(sexo,'M','Hombre','F','Mujer','Otro') FROM personas;
 
 -- =====================================================
--- **7. DE GRUPO - ALTERAN Nº FILAS (REQUIERE GROUP BY)**
+--  7. DE GRUPO - ALTERAN Nº FILAS (REQUIERE GROUP BY)
 -- =====================================================
--- WHERE filtra antes, HAVING después.
--- **COUNT(*)/COUNT(columna/DISTINCT)**: Cuenta.
---   Ej:
+--WHERE filtra antes, HAVING después.
+
+--COUNT(*) o COUNT(columna/DISTINCT)**: Cuenta.
 SELECT COUNT(DISTINCT ciudad) FROM clientes;
--- **SUM/AVG(columna)**: Suma/media.
--- **MIN/MAX(columna)**: Mín/Máx.
---   Error: Mezclar sin GROUP BY → ORA-00937.
+
+--SUM(columna) (Suma columnas)
+SELECT SUM(ciudad) FROM clientes;
+
+--AVG(columna) (Media columnas)
+SELECT AVG(ciudad) FROM clientes;
+
+--MIN(columna) (Valor minimo)
+SELECT MIN(ciudad) FROM clientes;
+
+--MAX(columna) (Valor maximo)
+SELECT MAX(ciudad) FROM clientes;
 
 -- =====================================================
--- **FUNCIONES SECUNDARIAS (ORIGINAL FORMATO .SQL)**
+--                FUNCIONES SECUNDARIAS
 -- =====================================================
 -- =====================================================
 -- 1. FUNCIONES NUMÉRICAS (ARITMÉTICAS)
