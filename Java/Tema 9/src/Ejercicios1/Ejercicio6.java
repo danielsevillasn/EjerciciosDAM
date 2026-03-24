@@ -29,5 +29,6 @@ public class Ejercicio6 {
                 }
             }
         }
+        s.close();
     }
 }
