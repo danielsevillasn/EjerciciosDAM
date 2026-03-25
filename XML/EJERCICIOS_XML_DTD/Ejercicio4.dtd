@@ -1,0 +1,15 @@
+<!ELEMENT personal (persona+)>
+<!ELEMENT persona (datos, email*, url*, relacion?)>
+<!ATTLIST persona id ID #REQUIRED>
+<!ATTLIST persona nota CDATA #IMPLIED>
+<!ATTLIST persona contr (true | false) 'false'>
+<!ATTLIST persona salario CDATA #IMPLIED>
+<!ELEMENT datos ((nombre, apellido) | (apellido, nombre))>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT url EMPTY>
+<!ATTLIST url href CDATA #REQUIRED>
+<!ELEMENT relacion EMPTY>
+<!ATTLIST relacion director IDREF #IMPLIED>
+<!ATTLIST relacion trabajador IDREFS #IMPLIED>

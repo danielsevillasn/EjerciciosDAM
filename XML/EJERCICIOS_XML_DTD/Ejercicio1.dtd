@@ -1,0 +1,8 @@
+<!ELEMENT matricula (ciclo, alumnos)>
+<!ELEMENT ciclo (#PCDATA)>
+<!ELEMENT alumnos (alumno+)>
+<!ELEMENT alumno (nombre, año, módulos)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT módulos (módulo+)>
+<!ELEMENT módulo (#PCDATA)>

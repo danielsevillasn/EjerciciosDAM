@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE personal SYSTEM "Ejercicio4.dtd">
+<personal>
+  <persona id="p1" contr="true" salario="3500">
+    <datos>
+      <nombre>Pedro</nombre>
+      <apellido>García</apellido>
+    </datos>
+    <email>pedro@gmail.com</email>
+    <relacion trabajador="p2 p3 p4"/>
+  </persona>
+
+  <persona id="p2" nota="En pruebas" salario="1500">
+    <datos>
+      <apellido>López</apellido>
+      <nombre>Ana</nombre>
+    </datos>
+    <email>ana@gmail.com</email>
+    <url href="http://ana.com"/>
+    <relacion director="p1"/>
+  </persona>
+
+  <persona id="p3" salario="1800">
+    <datos>
+      <nombre>Luis</nombre>
+      <apellido>Sanz</apellido>
+    </datos>
+    <email>luis@gmail.com</email>
+    <relacion director="p1"/>
+  </persona>
+
+  <persona id="p4" salario="1800">
+    <datos>
+      <nombre>Marta</nombre>
+      <apellido>Ruiz</apellido>
+    </datos>
+    <email>marta@gmail.com</email>
+    <relacion director="p1"/>
+  </persona>
+</personal>

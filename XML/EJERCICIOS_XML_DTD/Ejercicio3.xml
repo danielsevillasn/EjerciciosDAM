@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE albaran SYSTEM "Ejercicio3.dtd">
+<albaran>
+    <numero>452</numero>
+    <fecha>20/10/2010</fecha>
+    <cliente id="c458">
+        <nombre>Vinos y licores S.A.</nombre>
+        <poblacion>Valdepeñas</poblacion>
+    </cliente>
+    <articulos>
+        <compra>
+            <articulo codigo="54">
+                <descripcion>Vino Valdepeñas gran reserva. Viña Albali 75cl</descripcion>
+                <botella />
+                <precio>4.98</precio>
+            </articulo>
+            <cantidad>3</cantidad>
+            <descuento>5%</descuento>
+        </compra>
+        <compra>
+            <articulo codigo="12">
+                <descripcion>Vino tinto Rioja reserva. Marques de Riscal 75 cl</descripcion>
+                <botella />
+                <precio>12.85</precio>
+            </articulo>
+            <cantidad>1</cantidad>
+        </compra>
+    </articulos>
+</albaran>

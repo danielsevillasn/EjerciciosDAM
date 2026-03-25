@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE matricula SYSTEM "Ejercicio1.dtd">
+<matricula>
+    <ciclo>Administración de sistemas informáticos y redes</ciclo>
+    <alumnos>
+        <alumno>
+            <nombre>Federico Pérez</nombre>
+            <año>2010</año>
+            <módulos>
+                <módulo>XML</módulo>
+                <módulo>Redes Locales</módulo>
+            </módulos>
+        </alumno>
+    </alumnos>
+</matricula>

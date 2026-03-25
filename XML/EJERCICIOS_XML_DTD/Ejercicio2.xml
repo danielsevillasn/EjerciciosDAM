@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "Ejercicio2.dtd">
+<biblioteca>
+    <editorial>
+        <idsocial>Editorial Anaya</idsocial>
+        <direccion>
+            <calle>Despliegue</calle>
+            <numero>5</numero>
+            <codipostal>17600</codipostal>
+            <poblacion>Orense</poblacion>
+        </direccion>
+        <contacto>manuel@bib.ort</contacto>
+        <libro>
+            <titulo>El Quijote</titulo>
+            <publicacion>1605</publicacion>
+            <autor>
+                <nombre>Miguel</nombre>
+                <apellido>de Cervantes</apellido>
+                <direccion>
+                    <calle>Mayor</calle>
+                    <numero>2</numero>
+                    <codipostal>28001</codipostal>
+                    <poblacion>Madrid</poblacion>
+                </direccion>
+            </autor>
+            <premios>
+                <premio>Premio Nacional de Literatura</premio>
+            </premios>
+            <argumento>Las aventuras de un hidalgo loco.</argumento>
+        </libro>
+    </editorial>
+</biblioteca>
