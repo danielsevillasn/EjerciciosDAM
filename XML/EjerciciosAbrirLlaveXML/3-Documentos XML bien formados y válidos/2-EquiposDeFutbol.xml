@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="2-EquiposDeFutbol.dtd" type="application/xml-dtd"?>
+<equipos_de_futbol>
+    <equipo id_equipo= "E1">
+        <nombre>Levante</nombre>
+        <ciudad>Valencia</ciudad>
+        <entrenador/>
+        <jugadores>
+            <jugador posicion="portero" nacionalidad="española">
+                <nombre>Javier Jiménez</nombre>
+            </jugador>
+            <jugador posicion="delantero" nacionalidad="camerunés">
+                <nombre>Nong</nombre>
+            </jugador>
+        </jugadores>
+    </equipo>
+    <equipo id_equipo="E2">
+        <nombre>Real Sociedad</nombre>
+        <ciudad>San Sebastián</ciudad>
+        <!--Etiqueta vacía, sustituyendo a las dos etiquetas normales sin nada dentro-->
+        <entrenador/>
+        <jugadores>
+            <jugador posicion="portero" nacionalidad="chilena">
+                <nombre>Claudio Bravo</nombre>
+            </jugador>
+            <jugador posicion="defensa" nacionalidad="española">
+                <nombre>Mikel González</nombre>
+            </jugador>
+        </jugadores>
+    </equipo>
+</equipos_de_futbol>

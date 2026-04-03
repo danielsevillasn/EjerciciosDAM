@@ -1,0 +1,10 @@
+<!--Sirve para implementar el elemento raíz que contendra 1 o más páginas-->
+<!ELEMENT marcadores (pagina+)>
+
+<!--Sirve para implementar un elemento padre que recoge el nombre, la descripcion y la url de una pagina-->
+<!ELEMENT pagina (nombre, descripcion, url)>
+
+<!--Sirve para crear los elementos hijos de pagina y solo se puede escribir texto-->
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT url (#PCDATA)>

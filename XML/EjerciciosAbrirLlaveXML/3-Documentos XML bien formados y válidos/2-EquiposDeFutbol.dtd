@@ -1,0 +1,24 @@
+<!--Sirve para implementar el elemento raíz que contendra 1 o más equipos-->
+<!ELEMENT equipos_de_futbol (equipo+)>
+
+<!--Sirve para desglosar equipo atribuyendole una serie de elementos hijos-->
+<!ELEMENT equipo (nombre, ciudad, entrenador, jugadores+)>
+<!ATTLIST equipo id_equipo ID #REQUIRED>
+
+<!--Sirve para que el contenido de cada uno de los elementos solo tengan texto-->
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT ciudad (#PCDATA)>
+
+<!ELEMENT entrenador EMPTY>
+
+<!--Creacion de un elemento padre con varios jugadores-->
+<!ELEMENT jugadores (jugador+)>
+
+<!--Creacion del elemento hijo jugador con sus respectivos elementos-->
+<!ELEMENT jugador (nombre)>
+
+<!--Creacion de atributo enumerado obligatorio para el elemento jugador-->
+<!ATTLIST jugador posicion (portero | defensa |medio | delantero) #REQUIRED>
+
+<!ATTLIST jugador nacionalidad CDATA #REQUIRED>
