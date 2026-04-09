@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NEWSPAPER SYSTEM "Ejercicio2.dtd">
+<NEWSPAPER>
+    <ARTICLE AUTHOR="Pedro Sanz">
+        <HEADLINE>Victoria histórica en el último minuto</HEADLINE>
+        <BYLINE>Enviado especial a París</BYLINE>
+        <LEAD>El equipo local remonta un partido que parecía perdido.</LEAD>
+        <BODY>Con dos goles en el tiempo de descuento, se aseguran el pase a la final.</BODY>
+        <NOTES>Verificar estadísticas del delantero.</NOTES>
+    </ARTICLE>
+    <ARTICLE AUTHOR="Laura M." EDITOR="Julián Fox" DATE="11/04/2026" EDITION="Mañana">
+        <HEADLINE>Récord mundial en atletismo</HEADLINE>
+        <BYLINE>Agencia de prensa</BYLINE>
+        <LEAD>La corredora de 20 años bate la marca de los 100 metros lisos.</LEAD>
+        <BODY>El estadio entero se puso en pie tras ver el cronómetro oficial.</BODY>
+        <NOTES>Entrevista exclusiva programada para el lunes.</NOTES>
+    </ARTICLE>
+</NEWSPAPER>

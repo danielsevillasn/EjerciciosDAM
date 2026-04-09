@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CICLO SYSTEM "Ejercicio1.dtd">
+<CICLO>
+    <MODULO>
+        <DENOMINACION>Formación y Orientación Laboral</DENOMINACION>
+        <SIGLAS>IPE</SIGLAS>
+        <PROFESOR>Pepe</PROFESOR>
+        <PROFESOR>Juan</PROFESOR>
+        <PROFESOR>Carlos</PROFESOR>
+        <DESCRIPCION>Informática</DESCRIPCION>
+    </MODULO>
+    <MODULO>
+        <DENOMINACION>Sistemas Informáticos</DENOMINACION>
+        <SIGLAS>DAW</SIGLAS>
+        <PROFESOR>Maria</PROFESOR>
+        <PROFESOR>Luisa</PROFESOR>
+        <DESCRIPCION>Configuración y explotación de sistemas</DESCRIPCION>
+    </MODULO>
+</CICLO>

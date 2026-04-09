@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "Ejercicio4.dtd">
+<biblioteca>
+    <libro nick="sole tura">
+        <titulo>Constituciones y períodos constituyentes de España</titulo>
+        <autor id="tura">Solé Tura</autor>
+        <editorial id="grigalbo">Grigalbo</editorial>
+        <fechapublicacion>01-04-1980</fechapublicacion>
+    </libro>
+    <libro nick="la pepa">
+        <titulo>La incleible historia de Pepe Bayo</titulo>
+        <autor idref="tura" />
+        <autor id="garcía">Antonio García Fernández</autor>
+        <editorial idref="grigalbo" />
+        <fechapublicacion>21-10-1990</fechapublicacion>
+    </libro>
+    <libro nick="condemor">
+        <titulo>Aquí llega Condemor, el pecador de la pradera</titulo>
+        <autor id="chiquito">Gregorio Sánchez Fernández</autor>
+        <editorial>Anaya</editorial>
+        <fechapublicacion>01-05-1996</fechapublicacion>
+    </libro>
+</biblioteca>

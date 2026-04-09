@@ -1,0 +1,16 @@
+<!ELEMENT biblioteca (libro+)>
+
+<!ELEMENT libro (titulo, autor+,editorial,fechapublicacion)>
+<!ATTLIST libro nick CDATA #REQUIRED>
+
+<!ELEMENT titulo (#PCDATA)>
+
+<!ELEMENT autor (#PCDATA)>
+<!ATTLIST autor id ID #IMPLIED>
+<!ATTLIST autor idref IDREF #IMPLIED>
+
+<!ELEMENT editorial (#PCDATA)>
+<!ATTLIST editorial id ID #IMPLIED>
+<!ATTLIST editorial idref IDREF #IMPLIED>
+
+<!ELEMENT fechapublicacion (#PCDATA)>

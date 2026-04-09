@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NEWSPAPER SYSTEM "Ejercicio2.dtd">
+<NEWSPAPER>
+    <ARTICLE AUTHOR="Elena G.">
+        <HEADLINE>Nueva IA revoluciona el mercado</HEADLINE>
+        <BYLINE>Redacción Tecnología</BYLINE>
+        <LEAD>Una empresa emergente lanza un modelo capaz de razonar.</LEAD>
+        <BODY>Los expertos aseguran que este avance cambiará la industria para siempre.</BODY>
+        <NOTES>Publicar en la sección de portada.</NOTES>
+    </ARTICLE>
+    <ARTICLE AUTHOR="Marc V." EDITOR="Sara Ruiz" DATE="10/04/2026" EDITION="1">
+        <HEADLINE>Lanzamiento del nuevo smartphone X</HEADLINE>
+        <BYLINE>Corresponsal en San Francisco</BYLINE>
+        <LEAD>El dispositivo cuenta con una batería que dura una semana.</LEAD>
+        <BODY>Miles de personas hicieron cola para adquirir el terminal ayer por la mañana.</BODY>
+        <NOTES>Adjuntar galería de fotos en la web.</NOTES>
+    </ARTICLE>
+</NEWSPAPER>
