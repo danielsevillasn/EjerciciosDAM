@@ -38,8 +38,13 @@ yarn-error.log*
 # SQL
 *.db
 *.sqlite
-# Si usas dumps de bases de datos muy grandes, podrías ignorar .sql, 
-# pero como son ejercicios de clase, MEJOR NO LO IGNORES.
+
+
+# XML
+# Solo ignoramos archivos temporales o de backup de editores XML.
+*.xml.bak
+*.xml.old
+*.xml~
 
 # --- EDITORES E IDEs ---
 # Visual Studio Code
