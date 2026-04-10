@@ -1,20 +1,68 @@
-# --- SISTEMAS OPERATIVOS ---
+# ==========================================
+# SISTEMAS OPERATIVOS
+# ==========================================
 # Windows
 Thumbs.db
 desktop.ini
 $RECYCLE.BIN/
 
-# Linux (Fedora/Ubuntu)
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+
+# Linux
 .fuse_hidden*
 .directory
 .Trash-*
 
-# --- LENGUAJES ---
-# Java (Compilados y binarios)
+# ==========================================
+# IDEs E EDITORES
+# ==========================================
+# Visual Studio Code
+**/.vscode/
+.vscode/
+*.code-workspace
+.devcontainer/
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+*.iws
+*.idea_modules
+
+# Eclipse
+.classpath
+.project
+.settings/
+.c9/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Netbeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ==========================================
+# JAVA
+# ==========================================
 *.class
-*.log
-*.ctxt
 *.jar
 *.war
 *.nar
@@ -22,43 +70,73 @@ $RECYCLE.BIN/
 *.zip
 *.tar.gz
 *.rar
+
+# Maven
 target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+
+# Gradle
+build/
+.gradle
+gradle-app.setting
+.gradletasknamecache
+
+# Archivos compilados
 bin/
 out/
+*.log
+*.ctxt
 
-# JavaScript (Node.js)
+# ==========================================
+# JAVASCRIPT / NODE.JS
+# ==========================================
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.npm
+package-lock.json
+yarn.lock
+
+# Entorno
 .env
 .env.local
 .env.development.local
+.env.test.local
+.env.production.local
 
-# SQL
+# ==========================================
+# SQL / BASES DE DATOS
+# ==========================================
 *.db
 *.sqlite
+*.sqlite3
+*.dbf
+.backup/
 
-
+# ==========================================
 # XML
-# Solo ignoramos archivos temporales o de backup de editores XML.
+# ==========================================
 *.xml.bak
 *.xml.old
 *.xml~
 
-# --- EDITORES E IDEs ---
-# Visual Studio Code
-**/.vscode/
-.vscode/
-*.code-workspace
+# ==========================================
+# SISTEMA
+# ==========================================
+# Archivos temporales
+*.tmp
+*.temp
+*.cache
 
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
-out/
-
-# --- ARCHIVOS QUE SÍ QUEREMOS (Reglas de excepción) ---
-# Nos aseguramos de que los PDFs de enunciados NUNCA se ignoren
+# ==========================================
+# ARCHIVOS QUE SÍ QUEREMOS (EXCEPCIONES)
+# ==========================================
 !*.pdf
+!.gitkeep
