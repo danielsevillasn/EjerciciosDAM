@@ -12,10 +12,13 @@ INSERT INTO CLIENTES VALUES (99, 'MARTÍN RODRIGO RUIZ');
 INSERT INTO CLIENTES VALUES (55, 'REMEDIOS RETUERTA RAMÍREZ');
 
 DECLARE 
-v_nom CLIENTES.NOMBRE%TYPE; --(ejemplo uso %TYPE) 
+    -- v_nom tendrá exactamente el mismo tipo que la columna NOMBRE de CLIENTES
+    v_nom CLIENTES.NOMBRE%TYPE; 
 BEGIN 
-SELECT nombre INTO v_nom 
-FROM clientes 
-WHERE CLIENTE_NO=&vn_cli; 
-DBMS_OUTPUT.PUT_LINE(v_nom); 
+    -- &vn_cli es una variable de sustitución; SQL Plus te pedirá el valor al ejecutar
+    SELECT nombre INTO v_nom 
+    FROM clientes 
+    WHERE CLIENTE_NO=&vn_cli; 
+    
+    DBMS_OUTPUT.PUT_LINE(v_nom); 
 END;
