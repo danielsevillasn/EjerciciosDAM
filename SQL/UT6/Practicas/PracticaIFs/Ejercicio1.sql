@@ -1,0 +1,43 @@
+--Funcion para validar el stock
+CREATE OR REPLACE FUNCTION VALIDASTOCK (V_STOCKM NUMBER, V_STOCKA NUMBER)
+RETURN VARCHAR2
+AS
+    CADENA VARCHAR2(40);
+BEGIN
+    IF V_STOCKA = 0 THEN
+    CADENA := 'Reponer urgente';
+    ELSIF V_STOCKA < V_STOCKM THEN
+    CADENA := 'Reponer'; 
+    ELSE
+    CADENA := 'Normal'; END IF;
+
+    RETURN CADENA;
+
+END VALIDASTOCK;
+
+--Consulta prueba funcion
+SELECT CODIGO, STOCKMINIMO, STOCKACTUAL, VALIDASTOCK(stockminimo, stockactual) AS ESTADO_PRODUCTO
+FROM PRODUCTOS;
+
+--Funcion para indicar el stock a reponer
+CREATE OR REPLACE FUNCTION REPONESTOCK (V_STOCKM NUMBER, V_STOCKA NUMBER)
+RETURN VARCHAR2
+AS
+    CADENA VARCHAR2(40);
+    OPERACION NUMBER;
+BEGIN
+    OPERACION := V_STOCKM-V_STOCKA;
+    IF V_STOCKA = 0 THEN
+    CADENA := 'Cantidad necesaria: ' || OPERACION;
+    ELSIF V_STOCKA < V_STOCKM THEN
+    CADENA := 'Cantidad necesaria: ' || OPERACION;
+    ELSE
+    CADENA := 'No hace falta reponer'; END IF;
+
+    RETURN CADENA;
+
+END REPONESTOCK;
+
+--Consulta prueba funcion 2
+SELECT CODIGO, STOCKMINIMO, STOCKACTUAL, VALIDASTOCK(stockminimo, stockactual) AS ESTADO_PRODUCTO, REPONESTOCK(stockminimo, stockactual)
+FROM PRODUCTOS;
