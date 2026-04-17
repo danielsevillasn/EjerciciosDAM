@@ -1,3 +1,4 @@
+package Teoria;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,7 +23,6 @@ public class EjemploInputStreamReader{
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Escriba una palabra: ");
         String s1 = bf.readLine();
-   
         System.out.println("La palabra que ha escrito es: "+s1);
         
         System.out.print("Escriba un n�mero: ");
@@ -30,11 +30,11 @@ public class EjemploInputStreamReader{
         
         System.out.println("El numero que ha escrito es: "+s2);
         
-        double numero1 = Integer.parseInt(s1);
+        double numero1 = Integer.parseInt(s1, 16);
         double numero2 = s2;
         
         numero2+=numero1;
-   
+
         System.out.println("La suma de los numeros escritos es: "+numero2);
     }
     
