@@ -1,5 +1,5 @@
 -- =============================================================================
---       CHULETILLA COMPLETA DE PL/SQL: FUNDAMENTOS Y CONCEPTOS BÁSICOS
+--       CHULETILLA COMPLETA DE PL/SQL: FUNDAMENTOS Y CONCEPTOS AVANZADOS
 -- =============================================================================
 
 -- Antes de empezar: Habilitar la salida por consola para ver resultados
@@ -23,12 +23,12 @@ EXCEPTION
 END;
 /
 
+
 -- =============================================================================
 -- 2. VARIABLES Y ATRIBUTOS DE TIPO
 -- =============================================================================
 
 -- %TYPE: Declara una variable del mismo tipo que una columna de una tabla.
--- Ejemplo: v_nom toma el tipo de la columna nombre de la tabla empleados.
 DECLARE
     v_nombre empleados.nombre%TYPE;
 BEGIN
@@ -36,13 +36,12 @@ BEGIN
 END;
 /
 
--- %ROWTYPE: Declara un registro que representa una fila completa de una tabla.
--- Ejemplo: v_empleado contendrá todos los campos de un registro de empleados.
+-- %ROWTYPE: Declara un registro que representa una fila completa de una tabla o cursor.
 DECLARE
     v_reg_empleado empleados%ROWTYPE;
 BEGIN
     SELECT * INTO v_reg_empleado FROM empleados WHERE id = 100;
-    DBMS_OUTPUT.PUT_LINE(v_reg_empleado.nombre || ' ' || v_reg_empleado.salario);
+    DBMS_OUTPUT.PUT_LINE(v_reg_empleado.nombre);
 END;
 /
 
@@ -52,7 +51,14 @@ DECLARE
 BEGIN
     NULL; -- Instrucción que no hace nada, útil para rellenar bloques vacíos.
 END;
-/
+
+-- VARIABLES DE SUSTITUCIÓN (Solo bloques anónimos)
+-- Permiten pedir datos al usuario al ejecutar el bloque.
+DECLARE
+    v_id NUMBER := &introduzca_id;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Consultando datos para el ID: ' || v_id);
+END;
 
 -- =============================================================================
 -- 3. ESTRUCTURAS DE CONTROL (FLUJO)
@@ -113,75 +119,135 @@ BEGIN
         v_n := v_n + 1;
     END LOOP;
 END;
-/
 
 -- =============================================================================
--- 4. INTERACCIÓN CON LA BASE DE DATOS
+-- 4. CURSORES EXPLÍCITOS 
 -- =============================================================================
 
--- SELECT ... INTO: Recupera datos de la BD y los guarda en variables.
--- REGLA DE ORO: Debe devolver exactamente UNA fila.
+-- CURSOR EXPLÍCITO: Se usa para procesar consultas que devuelven MÚLTIPLES filas.
+-- Pasos: DECLARE -> OPEN -> FETCH -> CLOSE.
 DECLARE
-    v_salario NUMBER;
+    CURSOR c_empleados IS 
+        SELECT nombre, salario FROM empleados WHERE dept_no = 20;
+    v_nom empleados.nombre%TYPE;
+    v_sal empleados.salario%TYPE;
 BEGIN
-    SELECT salario INTO v_salario FROM empleados WHERE id = 10;
+    OPEN c_empleados;
+    LOOP
+        FETCH c_empleados INTO v_nom, v_sal;
+        EXIT WHEN c_empleados%NOTFOUND; -- Atributo de cursor
+        DBMS_OUTPUT.PUT_LINE(v_nom || ' gana ' || v_sal);
+    END LOOP;
+    CLOSE c_empleados;
 END;
 /
 
--- DML DIRECTO: INSERT, UPDATE, DELETE funcionan igual que en SQL.
+-- BUCLE FOR DE CURSOR: Abre, extrae y cierra el cursor automáticamente.
+DECLARE
+    CURSOR c_emple IS SELECT * FROM empleados;
 BEGIN
-    UPDATE empleados SET salario = salario * 1.1 WHERE depto = 'Ventas';
-    COMMIT; -- Confirmar cambios
+    FOR reg IN c_emple LOOP
+        DBMS_OUTPUT.PUT_LINE('Empleado: ' || reg.nombre);
+    END LOOP;
 END;
 /
 
--- =============================================================================
--- 5. SUBPROGRAMAS ALMACENADOS (PROCEDIMIENTOS Y FUNCIONES)
--- =============================================================================
+-- ATRIBUTOS DE CURSOR EXPLÍCITO (Referenciados por nombre):
+-- c_nom%FOUND: TRUE si el último FETCH recuperó una fila.
+-- c_nom%NOTFOUND: TRUE si el último FETCH NO recuperó nada.
+-- c_nom%ROWCOUNT: Número total de filas recuperadas hasta el momento.
+-- c_nom%ISOPEN: TRUE si el cursor está abierto (útil antes de un OPEN o CLOSE).
 
--- PROCEDIMIENTO: Ejecuta una acción, se guarda en la base de datos.
-CREATE OR REPLACE PROCEDURE saludar_empleado(p_id NUMBER) AS
+DECLARE
+    CURSOR c_emple IS SELECT nombre FROM empleados;
     v_nom empleados.nombre%TYPE;
 BEGIN
-    SELECT nombre INTO v_nom FROM empleados WHERE id = p_id;
-    DBMS_OUTPUT.PUT_LINE('Hola ' || v_nom);
+    IF NOT c_emple%ISOPEN THEN
+        OPEN c_emple;
+    END IF;
+    
+    LOOP
+        FETCH c_emple INTO v_nom;
+        EXIT WHEN c_emple%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Fila nº: ' || c_emple%ROWCOUNT || ' - ' || v_nom);
+    END LOOP;
+    
+    CLOSE c_emple;
+END;
+
+-- =============================================================================
+-- 5. CONTROL DE TRANSACCIONES 
+-- =============================================================================
+
+-- COMMIT: Confirma los cambios realizados en la base de datos.
+-- ROLLBACK: Deshace los cambios realizados desde el último COMMIT.
+-- SAVEPOINT: Crea un punto de retorno dentro de una transacción.
+BEGIN
+    INSERT INTO empleados (id, nombre) VALUES (500, 'NUEVO');
+    SAVEPOINT punto1;
+    UPDATE empleados SET salario = 3000 WHERE id = 500;
+    -- Si algo sale mal, podemos volver al punto1 sin deshacer el INSERT
+    ROLLBACK TO punto1;
+    COMMIT;
 END;
 /
+-- TRANSACCIÓN DE SOLO LECTURA: Garantiza consistencia ("foto" de la BD).
+BEGIN
+    COMMIT; -- Finaliza cualquier transacción previa.
+    SET TRANSACTION READ ONLY;
+    -- Aquí todas las SELECT verán los mismos datos aunque otros usuarios los cambien.
+    -- No se permiten INSERT, UPDATE o DELETE aquí.
+    COMMIT; -- Finaliza el modo lectura.
+END;
 
--- FUNCIÓN: Siempre devuelve un valor mediante RETURN.
-CREATE OR REPLACE FUNCTION calcular_triplo(p_num NUMBER) 
+-- =============================================================================
+-- 6. GESTIÓN DE ERRORES Y EXCEPCIONES
+-- =============================================================================
+
+-- RAISE_APPLICATION_ERROR: Permite crear mensajes de error personalizados (códigos -20000 a -20999).
+DECLARE
+    v_stock NUMBER := 0;
+BEGIN
+    IF v_stock = 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'No hay existencias disponibles.');
+    END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE(SQLERRM); -- Muestra el mensaje del error
+
+-- SQLCODE y SQLERRM sirven para imprimir por pantalla mensajes específicos de la excepcion
+
+        DBMS_OUTPUT.PUT_LINE('Error Código: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('Mensaje: ' || SQLERRM);
+END;
+
+-- =============================================================================
+-- 7. SUBPROGRAMAS ALMACENADOS (CASOS PRÁCTICOS)
+-- =============================================================================
+
+-- FUNCIONES CON PARÁMETROS OPCIONALES (DEFAULT):
+CREATE OR REPLACE FUNCTION calcular_iva (cantidad NUMBER, tipo NUMBER DEFAULT 21)
 RETURN NUMBER AS
 BEGIN
-    RETURN p_num * 3;
+    RETURN cantidad * (1 + (tipo/100));
 END;
 /
 
--- =============================================================================
--- 6. GESTIÓN DE EXCEPCIONES (ERRORES)
--- =============================================================================
-
--- NO_DATA_FOUND: Se lanza cuando un SELECT INTO no encuentra resultados.
--- TOO_MANY_ROWS: Se lanza cuando un SELECT INTO devuelve más de una fila.
-DECLARE
-    v_dato VARCHAR2(100);
-BEGIN
-    SELECT nombre INTO v_dato FROM empleados WHERE id = 9999;
-EXCEPTION
-    WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('Error: El empleado no existe.');
-    WHEN TOO_MANY_ROWS THEN
-        DBMS_OUTPUT.PUT_LINE('Error: La consulta devolvió demasiados registros.');
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error desconocido.');
-END;
-/
+-- Ejemplo de uso de la función:
+-- SELECT calcular_iva(100) FROM DUAL; -- Usa el 21 por defecto
+-- SELECT calcular_iva(100, 10) FROM DUAL; -- Usa el 10
 
 -- =============================================================================
--- 7. CONFIGURACIÓN Y FUNCIONES DE FECHAS (Oracle SQL Developer)
+-- 8. CONFIGURACIÓN, FECHAS Y UTILIDADES SQL
 -- =============================================================================
 
--- ALTER SESSION: Cambia el formato de fecha para la sesión actual.
+-- CONFIGURACIÓN NLS
 ALTER SESSION SET NLS_DATE_FORMAT = 'DD/MM/YYYY HH24:MI:SS';
+
+-- FUNCIONES DE UTILIDAD (Indispensables en exámenes)
+-- NVL: SELECT nombre, NVL(comision, 0) FROM empleados;
+-- DECODE: SELECT DECODE(dept_no, 10, 'CONT', 20, 'VENT', 'OTRO') FROM empleados;
+-- TO_CHAR: SELECT TO_CHAR(SYSDATE, 'Day, DD "de" Month') FROM DUAL;
 
 -- EXTRACT: Extrae una parte (año, mes, día) de una fecha.
 -- SELECT EXTRACT(YEAR FROM SYSDATE) FROM DUAL;
