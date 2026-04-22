@@ -10,7 +10,7 @@ public class EjemploFichero03 {
     public static void main(String[] args) {
         try{
             BufferedReader br1 = new BufferedReader(new FileReader("fichero1.txt"));
-            BufferedReader br2 = new BufferedReader(new FileReader("fichero.txt"));
+            BufferedReader br2 = new BufferedReader(new FileReader("fichero2.txt"));
             BufferedWriter bw = new BufferedWriter(new FileWriter("mezcla.txt"));
 
             String linea1 = "";
