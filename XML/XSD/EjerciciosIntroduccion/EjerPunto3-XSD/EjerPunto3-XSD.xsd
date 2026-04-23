@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="clase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="curso"/>
+      </xs:sequence>
+      <xs:attribute name="modulo" type="xs:string" use="required"/>
+      <xs:attribute name="nommodul" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="curso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="profesor"/>
+        <xs:element ref="alumnos"/>
+      </xs:sequence>
+      <xs:attribute name="especialidad" type="xs:string" use="required"/>
+      <xs:attribute name="numero" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="profesor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="apellido" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="alumnos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="alumno" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="alumno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="apellido" type="xs:string"/>
+        <xs:element name="nota" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="delegado" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

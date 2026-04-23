@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<liga >
+  <jornada num="1">
+    <partido num="1">
+      <dia>23-12-2010</dia>
+      <equipo juega="local">
+        <nombre>F.C. Masarach</nombre>
+        <resultado>2</resultado>
+        <goles>
+          <jugador>Palol</jugador>
+          <jugador>Palol</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>U.E.Cabanes</nombre>
+        <resultado>0</resultado>
+        <goles/>
+      </equipo>
+    </partido>
+    <partido num="2">
+      <dia>23-12-2010</dia>
+      <equipo juega="local">
+        <nombre>C.E.Vilatenim</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Pinxito</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>Real Vilabertran</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Moreno</jugador>
+        </goles>
+      </equipo>
+    </partido>
+  </jornada>
+  <jornada num="2">
+    <partido num="1">
+      <dia>30-12-2010</dia>
+      <equipo juega="local">
+        <nombre>C.E.Vilatenim</nombre>
+        <resultado>2</resultado>
+        <goles>
+          <jugador>Pinxito</jugador>
+          <jugador>Bramón</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>F.C. Masarach</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>García</jugador>
+        </goles>
+      </equipo>
+    </partido>
+    <partido num="2">
+      <dia>31-12-2010</dia>
+      <equipo juega="local">
+        <nombre>Real Vilabertran</nombre>
+        <resultado>0</resultado>
+        <goles/>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>U.E.Cabanes</nombre>
+        <resultado>4</resultado>
+        <goles>
+          <jugador>Filomeno</jugador>
+          <jugador>Filomeno</jugador>
+          <jugador>Federico</jugador>
+          <jugador>Filomeno</jugador>
+        </goles>
+      </equipo>
+    </partido>
+  </jornada>
+  <jornada num="3">
+    <partido num="1">
+      <dia>07-01-2011</dia>
+      <equipo juega="local">
+        <nombre>F.C. Masarach</nombre>
+        <resultado>0</resultado>
+        <goles/>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>Real Vilabertran</nombre>
+        <resultado>0</resultado>
+        <goles/>
+      </equipo>
+    </partido>
+    <partido num="2">
+      <dia>07-01-2011</dia>
+      <equipo juega="local">
+        <nombre>C.E.Vilatenim</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Pinxito</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>U.E.Cabanes</nombre>
+        <resultado>2</resultado>
+        <goles>
+          <jugador>Filomeno</jugador>
+          <jugador>Filomeno</jugador>
+        </goles>
+      </equipo>
+    </partido>
+  </jornada>
+  <jornada num="4">
+    <partido num="1">
+      <dia>14-01-2011</dia>
+      <equipo juega="local">
+        <nombre>Real Vilabertran</nombre>
+        <resultado>0</resultado>
+        <goles/>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>F.C. Masarach</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Pere</jugador>
+        </goles>
+      </equipo>
+    </partido>
+    <partido num="2">
+      <dia>15-01-2011</dia>
+      <equipo juega="local">
+        <nombre>U.E.Cabanes</nombre>
+        <resultado>5</resultado>
+        <goles>
+          <jugador>Filomeno</jugador>
+          <jugador>Federico</jugador>
+          <jugador>Manolito</jugador>
+          <jugador>Filomeno</jugador>
+          <jugador>Eustaquio</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>C.E.Vilatenim</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Pinxito</jugador>
+        </goles>
+      </equipo>
+    </partido>
+  </jornada>
+  <jornada num="5">
+    <partido num="1">
+      <dia>21-01-2011</dia>
+      <equipo juega="local">
+        <nombre>F.C. Masarach</nombre>
+        <resultado>2</resultado>
+        <goles>
+          <jugador>Mario</jugador>
+          <jugador>Palol</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>C.E.Vilatenim</nombre>
+        <resultado>2</resultado>
+        <goles>
+          <jugador>Pinxito</jugador>
+          <jugador>Toni Moco</jugador>
+        </goles>
+      </equipo>
+    </partido>
+    <partido num="2">
+      <dia>21-01-2011</dia>
+      <equipo juega="local">
+        <nombre>U.E.Cabanes</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Filomeno</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>Real Vilabertran</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Bilis</jugador>
+        </goles>
+      </equipo>
+    </partido>
+  </jornada>
+  <jornada num="6">
+    <partido num="1">
+      <dia>27-01-2011</dia>
+      <equipo juega="local">
+        <nombre>U.E.Cabanes</nombre>
+        <resultado>3</resultado>
+        <goles>
+          <jugador>Filomeno</jugador>
+          <jugador>Manolito</jugador>
+          <jugador>Filomeno</jugador>
+        </goles>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>F.C. Masarach</nombre>
+        <resultado>1</resultado>
+        <goles>
+          <jugador>Monster</jugador>
+        </goles>
+      </equipo>
+    </partido>
+    <partido num="2">
+      <dia>27-01-2011</dia>
+      <equipo juega="local">
+        <nombre>Real Vilabertran</nombre>
+        <resultado>0</resultado>
+        <goles/>
+      </equipo>
+      <equipo juega="visitante">
+        <nombre>C.E.Vilatenim</nombre>
+        <resultado>2</resultado>
+        <goles>
+          <jugador>Pinxito</jugador>
+          <jugador>Bramón</jugador>
+        </goles>
+      </equipo>
+    </partido>
+  </jornada>
+</liga>

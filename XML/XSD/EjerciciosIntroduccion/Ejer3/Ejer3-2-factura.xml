@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<facturacion>
+  <empresa>
+    <razonsocial tipo="empresa">
+      <nombre>Cerditos, SL</nombre>
+      <direccion>c/Truges, 12</direccion>
+      <codigopostal>17760</codigopostal>
+      <poblacion>Vilabertran</poblacion>
+      <NIF>B17818181NK</NIF>
+    </razonsocial>
+  </empresa>
+  <factura numero="12">
+    <cliente>
+      <razonsocial tipo="persona">
+        <nombre>Filomeno</nombre>
+        <apellido>Garcia</apellido>
+        <apellido>Puig</apellido>
+        <direccion>c/Pollastres, 23</direccion>
+        <codigopostal>17600</codigopostal>
+        <poblacion>Figueres</poblacion>
+        <DNI>40444444-M</DNI>
+      </razonsocial>
+    </cliente>
+    <recibo numero="23">
+      <fecha>12-10-2010</fecha>
+      <totalrecibo>524</totalrecibo>
+      <lineas>
+        <producto codigo="11115">
+          <descripcion>Cerdito de chocolate negro</descripcion>
+          <cantidad>1</cantidad>
+          <preciounitario>100</preciounitario>
+        </producto>
+        <producto codigo="11112">
+          <descripcion>Cerdito de chocolate blanco</descripcion>
+          <cantidad>4</cantidad>
+          <preciounitario>106</preciounitario>
+        </producto>
+      </lineas>
+    </recibo>
+    <recibo numero="28">
+      <fecha>14-10-2010</fecha>
+      <totalrecibo>220</totalrecibo>
+      <lineas>
+        <producto codigo="11111">
+          <descripcion>Cerdito chocolate con leche</descripcion>
+          <cantidad>2</cantidad>
+          <preciounitario>110</preciounitario>
+        </producto>
+      </lineas>
+    </recibo>
+    <fecha>15-10-2010</fecha>
+    <subtotal>744</subtotal>
+    <iva>18</iva>
+    <total>877.92</total>
+  </factura>
+  <factura numero="13">
+    <cliente>
+      <razonsocial tipo="empresa">
+        <nombre>Telemonica, SA</nombre>
+        <direccion>c/De la Gran Gran Via, 28</direccion>
+        <codigopostal>28013</codigopostal>
+        <poblacion>Madrid</poblacion>
+        <NIF>A88888888</NIF>
+      </razonsocial>
+      <idioma>español</idioma>
+      <contacto>Manolo Antena</contacto>
+      <contacto>Marcial Porras</contacto>
+    </cliente>
+    <recibo numero="24">
+      <fecha>12-10-2010</fecha>
+      <totalrecibo>5000</totalrecibo>
+      <lineas>
+        <producto codigo="11115">
+          <descripcion>Cerdito de chocolate negro</descripcion>
+          <cantidad>50</cantidad>
+          <preciounitario>100</preciounitario>
+        </producto>
+      </lineas>
+    </recibo>
+    <fecha>15-10-2010</fecha>
+    <subtotal>5000</subtotal>
+    <iva>18</iva>
+    <total>5900</total>
+  </factura>
+  <factura numero="14">
+    <cliente>
+      <razonsocial tipo="empresa">
+        <nombre>MenjaXocolata, SL</nombre>
+        <direccion/>
+        <codigopostal>17600</codigopostal>
+        <poblacion>Figueres</poblacion>
+        <NIF>A177777777</NIF>
+      </razonsocial>
+      <contacto>Jimmy Gras</contacto>
+    </cliente>
+    <recibo numero="25">
+      <fecha>13-10-2010</fecha>
+      <totalrecibo>110</totalrecibo>
+      <lineas>
+        <producto codigo="11111">
+          <descripcion>Cerdito chocolate con leche</descripcion>
+          <cantidad>1</cantidad>
+          <preciounitario>110</preciounitario>
+        </producto>
+      </lineas>
+    </recibo>
+    <recibo numero="26">
+      <fecha>14-10-2010</fecha>
+      <totalrecibo>110</totalrecibo>
+      <lineas>
+        <producto codigo="11111">
+          <descripcion>Cerdito chocolate con leche</descripcion>
+          <cantidad>1</cantidad>
+          <preciounitario>110</preciounitario>
+        </producto>
+      </lineas>
+    </recibo>
+    <recibo numero="27">
+      <fecha>14-10-2010</fecha>
+      <totalrecibo>110</totalrecibo>
+      <lineas>
+        <producto codigo="11111">
+          <descripcion>Cerdito chocolate con leche</descripcion>
+          <cantidad>1</cantidad>
+          <preciounitario>110</preciounitario>
+        </producto>
+      </lineas>
+    </recibo>
+    <fecha>15-10-2010</fecha>
+    <subtotal>330</subtotal>
+    <iva>18</iva>
+    <total>389.4</total>
+  </factura>
+</facturacion>

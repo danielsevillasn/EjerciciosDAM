@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tiempo>
+  <poblacion>
+    <nombre>Figueres</nombre>
+    <comarca>Alt Empordà</comarca>
+    <fecha dia="19-05-2011">
+      <maxima>24</maxima>
+      <minima>15</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>nublado</estado>
+        <grados>16</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>nublado</estado>
+        <grados>24</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>claros</estado>
+        <grados>20</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="20-05-2011">
+      <maxima>23</maxima>
+      <minima>13</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>16</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>25</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>22</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="21-05-2011">
+      <maxima>26</maxima>
+      <minima>14</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>17</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>26</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="22-05-2011">
+      <maxima>28</maxima>
+      <minima>16</minima>
+      <viento>18 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>18</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>claros</estado>
+        <grados>26</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>alguna nube</estado>
+        <grados>23</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="23-05-2011">
+      <maxima>29</maxima>
+      <minima>19</minima>
+      <viento>25 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>21</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>29</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>26</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="24-05-2011">
+      <maxima>30</maxima>
+      <minima>19</minima>
+      <viento>32 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>30</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>26</grados>
+      </prevision>
+    </fecha>
+  </poblacion>
+  <poblacion>
+    <nombre>Roses</nombre>
+    <comarca>Alt Empordà</comarca>
+    <fecha dia="19-05-2011">
+      <maxima>23</maxima>
+      <minima>16</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>claros</estado>
+        <grados>17</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>claros</estado>
+        <grados>21</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>claros</estado>
+        <grados>20</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="20-05-2011">
+      <maxima>24</maxima>
+      <minima>14</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>17</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>24</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>22</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="21-05-2011">
+      <maxima>26</maxima>
+      <minima>14</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>18</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>26</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="22-05-2011">
+      <maxima>27</maxima>
+      <minima>17</minima>
+      <viento>18 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>18</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>claros</estado>
+        <grados>27</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>alguna nube</estado>
+        <grados>25</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="23-05-2011">
+      <maxima>29</maxima>
+      <minima>20</minima>
+      <viento>25 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>22</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>29</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>26</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="24-05-2011">
+      <maxima>30</maxima>
+      <minima>20</minima>
+      <viento>32 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>24</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>30</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>26</grados>
+      </prevision>
+    </fecha>
+  </poblacion>
+  <poblacion>
+    <nombre>Olot</nombre>
+    <comarca>Garrotxa</comarca>
+    <fecha dia="19-05-2011">
+      <maxima>22</maxima>
+      <minima>11</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>nublado</estado>
+        <grados>11</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>nublado</estado>
+        <grados>22</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>claros</estado>
+        <grados>17</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="20-05-2011">
+      <maxima>23</maxima>
+      <minima>9</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>11</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>19</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="21-05-2011">
+      <maxima>24</maxima>
+      <minima>9</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>13</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>24</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>20</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="22-05-2011">
+      <maxima>24</maxima>
+      <minima>9</minima>
+      <viento>7 km/h</viento>
+      <lluvia>2,6 mm</lluvia>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>12</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>lluvia leve</estado>
+        <grados>24</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>lluvia leve</estado>
+        <grados>20</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="23-05-2011">
+      <maxima>27</maxima>
+      <minima>10</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>11</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>27</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="24-05-2011">
+      <maxima>28</maxima>
+      <minima>12</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>13</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>alguna nube</estado>
+        <grados>28</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>23</grados>
+      </prevision>
+    </fecha>
+  </poblacion>
+  <poblacion>
+    <nombre>Girona</nombre>
+    <comarca>Gironès</comarca>
+    <fecha dia="19-05-2011">
+      <maxima>24</maxima>
+      <minima>14</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>alguna nube</estado>
+        <grados>14</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>20</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="20-05-2011">
+      <maxima>25</maxima>
+      <minima>11</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>15</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>alguna nube</estado>
+        <grados>25</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>21</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="21-05-2011">
+      <maxima>26</maxima>
+      <minima>11</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>15</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>26</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>21</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="22-05-2011">
+      <maxima>27</maxima>
+      <minima>13</minima>
+      <viento>7 km/h</viento>
+      <lluvia>1,9 mm</lluvia>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>15</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>claros</estado>
+        <grados>27</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>lluvia</estado>
+        <grados>22</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="23-05-2011">
+      <maxima>29</maxima>
+      <minima>14</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>16</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>29</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>25</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="24-05-2011">
+      <maxima>30</maxima>
+      <minima>16</minima>
+      <viento>22 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>18</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>alguna nube</estado>
+        <grados>30</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>25</grados>
+      </prevision>
+    </fecha>
+  </poblacion>
+  <poblacion>
+    <nombre>Salt</nombre>
+    <comarca>Gironès</comarca>
+    <fecha dia="19-05-2011">
+      <maxima>24</maxima>
+      <minima>14</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>alguna nube</estado>
+        <grados>14</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>20</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="20-05-2011">
+      <maxima>25</maxima>
+      <minima>11</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>14</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>alguna nube</estado>
+        <grados>25</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>21</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="21-05-2011">
+      <maxima>26</maxima>
+      <minima>11</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>15</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>26</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>21</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="22-05-2011">
+      <maxima>27</maxima>
+      <minima>13</minima>
+      <viento>7 km/h</viento>
+      <lluvia>1,5 mm</lluvia>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>15</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>claros</estado>
+        <grados>27</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>lluvia</estado>
+        <grados>22</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="23-05-2011">
+      <maxima>29</maxima>
+      <minima>14</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>16</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>29</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>25</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="24-05-2011">
+      <maxima>30</maxima>
+      <minima>16</minima>
+      <viento>22 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>18</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>alguna nube</estado>
+        <grados>30</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>25</grados>
+      </prevision>
+    </fecha>
+  </poblacion>
+  <poblacion>
+    <nombre>Camprodon</nombre>
+    <comarca>Garrotxa</comarca>
+    <fecha dia="19-05-2011">
+      <maxima>18</maxima>
+      <minima>8</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>nublado</estado>
+        <grados>8</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>nublado</estado>
+        <grados>18</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>14</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="20-05-2011">
+      <maxima>20</maxima>
+      <minima>7</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>8</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>alguna nube</estado>
+        <grados>20</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>15</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="21-05-2011">
+      <maxima>20</maxima>
+      <minima>8</minima>
+      <viento>14 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>9</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>claros</estado>
+        <grados>20</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>alguna nube</estado>
+        <grados>17</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="22-05-2011">
+      <maxima>20</maxima>
+      <minima>5</minima>
+      <viento>7 km/h</viento>
+      <lluvia>13 mm</lluvia>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>9</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>lluvia</estado>
+        <grados>19</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>lluvia</estado>
+        <grados>16</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="23-05-2011">
+      <maxima>23</maxima>
+      <minima>7</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>8</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>soleado</estado>
+        <grados>23</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>soleado</estado>
+        <grados>19</grados>
+      </prevision>
+    </fecha>
+    <fecha dia="24-05-2011">
+      <maxima>24</maxima>
+      <minima>9</minima>
+      <viento>11 km/h</viento>
+      <prevision hora="08:00">
+        <estado>soleado</estado>
+        <grados>10</grados>
+      </prevision>
+      <prevision hora="14:00">
+        <estado>alguna nube</estado>
+        <grados>24</grados>
+      </prevision>
+      <prevision hora="20:00">
+        <estado>nublado</estado>
+        <grados>19</grados>
+      </prevision>
+    </fecha>
+  </poblacion>
+</tiempo>

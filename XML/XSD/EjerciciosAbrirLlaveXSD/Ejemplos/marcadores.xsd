@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Elemento raiz -->
+    <xs:element name="marcadores">
+        <!-- Etiqueta que contiene tipos complejos como nuevos elementos o atributos -->
+        <xs:complexType>
+            <!-- Sirve para que el xml siga un orden estricto -->
+            <xs:sequence>
+                <!-- Elemento hijo que puede aparecer muchas veces -->
+                <xs:element name="pagina" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Elemento hijo que contiene una cadena de caracteres -->
+                            <xs:element name="nombre" type="xs:string" />
+                            <xs:element name="descripcion" type="xs:string" />
+                            <xs:element name="url" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

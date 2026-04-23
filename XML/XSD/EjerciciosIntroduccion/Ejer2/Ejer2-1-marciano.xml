@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elecciones > 
+    <descripcion>Marcianos2010</descripcion>
+    <datos>
+        <fecha>2010-11-29</fecha>
+        <censo>500</censo>
+        <abstenciones>450</abstenciones>
+        <blancos>12</blancos>
+    </datos>
+    <resultados>
+        <partido>
+            <nombre>Partido Rojo</nombre>
+            <votos>8</votos>
+        </partido>
+        <partido>
+            <nombre>Marcians Units</nombre>
+            <votos>14</votos>
+        </partido>
+        <partido>
+            <nombre>Coordinadora para un planeta verde</nombre>
+            <votos>5</votos>
+        </partido>
+        <partido>
+            <nombre>Partido de Phobos</nombre>
+            <votos>5</votos>
+        </partido>
+        <partido>
+            <nombre>Izquierda Marciana</nombre>
+            <votos>6</votos>
+        </partido>        
+    </resultados>    
+</elecciones>
