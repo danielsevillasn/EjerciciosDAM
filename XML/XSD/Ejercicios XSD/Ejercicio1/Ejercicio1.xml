@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CICLO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="Ejercicio1.xsd">
+    <MODULO>
+        <DENOMINACION>Sistemas Informáticos</DENOMINACION>
+        <SIGLAS>SI</SIGLAS>
+        <PROFESOR>María López</PROFESOR>
+        <DESCRIPCION>Hardware, sistemas operativos y redes
+            básicas</DESCRIPCION>
+    </MODULO>
+    <MODULO>
+        <DENOMINACION>Aplicaciones Informaticas</DENOMINACION>
+        <SIGLAS>AI</SIGLAS>
+        <PROFESOR>MARTA GÓMEZ</PROFESOR>
+        <PROFESOR>Enrique barrios</PROFESOR>
+        <DESCRIPCION>Asignatura cuatrimestral</DESCRIPCION>
+    </MODULO>
+</CICLO>

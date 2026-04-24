@@ -1,0 +1,25 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="CICLO">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MODULO" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DENOMINACION" type="xs:string" />
+                            <xs:element name="SIGLAS">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="2" />
+                                        <xs:maxLength value="5" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="PROFESOR" type="xs:string" maxOccurs="unbounded" />
+                            <xs:element name="DESCRIPCION" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
