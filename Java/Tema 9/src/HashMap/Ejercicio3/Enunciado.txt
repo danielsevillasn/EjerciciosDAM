@@ -1,0 +1,29 @@
+Enunciado 3: Base de Datos de Usuarios (Nivel Intermedio)
+Aquí vamos a practicar cómo asociar una Clave simple (DNI) con un Objeto complejo (Usuario).
+
+Crea la clase Usuario:
+
+Atributos: nombre (String), email (String) y edad (int).
+
+Crea su constructor, getters y un método toString() que devuelva los datos formateados.
+
+En el Main:
+
+Crea un HashMap<String, Usuario> llamado usuarios.
+
+Añade 2 o 3 usuarios de prueba manualmente (la clave será su DNI).
+
+Lógica de Registro/Consulta:
+
+Pide un DNI al usuario por teclado.
+
+Si el DNI ya existe: Muestra los datos del usuario asociado.
+
+Si el DNI NO existe: Dile que no está registrado y pide los datos (nombre, email, edad) 
+para crear un nuevo objeto Usuario e insertarlo en el mapa con ese DNI.
+
+Listado de comunicación:
+
+Al final, recorre el mapa y muestra solo los emails de todos los usuarios para poder "enviarles un boletín".
+
+Pista: Utiliza el método .values() del mapa para obtener directamente la colección de objetos Usuario.

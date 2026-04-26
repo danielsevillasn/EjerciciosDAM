@@ -1,0 +1,34 @@
+Enunciado 2: Contador de Inventario (Nivel Medio)
+En este ejercicio vamos a ir un paso más allá. Ya no solo vamos a leer y escribir, 
+sino que vamos a actualizar valores numéricos dentro de un mapa. Esto es muy común en aplicaciones de gestión.
+
+Contexto: Tienes una tienda de fruta. Quieres llevar el control de cuántos kilos quedan de cada cosa.
+
+Crea un HashMap<String, Integer> llamado existencias.
+
+Añade estos productos inicialmente:
+
+"Manzanas" -> 10
+
+"Peras" -> 5
+
+"Plátanos" -> 8
+
+El reto de la venta: Pide al usuario que escriba el nombre de la fruta que quiere comprar.
+
+Si la fruta existe:
+
+Obtén la cantidad actual de esa fruta.
+
+Si la cantidad es mayor que 0, réstale 1 (simulando que vendes 1 kilo).
+
+Actualiza el mapa con la nueva cantidad.
+
+Muestra un mensaje: "Venta realizada. Quedan [nueva_cantidad] kilos de [fruta]".
+
+Si la fruta no existe, indica que no trabajas con ese producto.
+
+Al final, muestra todo el inventario de la siguiente forma: "Producto: [Nombre] - Stock: [Cantidad]".
+
+Pista para el listado final: Usa un bucle que recorra el entrySet() del mapa. 
+Es más eficiente cuando necesitas tanto la clave como el valor a la vez.

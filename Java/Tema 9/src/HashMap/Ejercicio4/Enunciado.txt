@@ -1,0 +1,19 @@
+Enunciado 4: Frecuencia de Aparición (Nivel Avanzado)
+Este ejercicio te servirá para entender cómo usar un mapa para realizar estadísticas y conteos en tiempo real. 
+Es un algoritmo clásico.
+
+Crea un programa que pida al usuario que introduzca una frase larga por teclado.
+
+Divide esa frase en palabras individuales.
+
+Pista: Usa String[] palabras = frase.split(" "); para obtener un array con cada palabra.
+
+Crea un HashMap<String, Integer> llamado contador. La Clave será la palabra y el Valor será cuántas veces aparece.
+
+El reto de lógica: Recorre el array de palabras y, por cada una:
+
+Si la palabra ya está en el mapa: Obtén su valor actual, súmale 1 y vuelve a guardarla con el nuevo valor.
+
+Si la palabra no está en el mapa: Significa que es la primera vez que aparece, así que añádela con el valor 1.
+
+Al final, muestra el resultado de forma elegante: "La palabra '[palabra]' aparece [n] veces".

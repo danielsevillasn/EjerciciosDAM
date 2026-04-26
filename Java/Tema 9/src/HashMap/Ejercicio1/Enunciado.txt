@@ -1,0 +1,18 @@
+Enunciado 1: El Traductor Simple (Nivel Básico)
+Este ejercicio simula un pequeño diccionario técnico. Debes realizar lo siguiente:
+
+Crea un mapa llamado diccionario que almacene tanto la clave como el valor como cadenas de texto (String).
+
+Añade manualmente 5 palabras técnicas que hayas aprendido (por ejemplo: "ArrayList", "HashMap", "Iterable", "Generic", "Byte") 
+y asócialas con una breve definición en español.
+
+El programa debe pedir al usuario que escriba una palabra por teclado.
+
+Lógica de búsqueda:
+
+Si la palabra existe en el diccionario, muestra su definición.
+
+Si la palabra no existe, debe mostrar un mensaje: "Lo siento, esa palabra no está en mi base de datos".
+
+Al finalizar, imprime por pantalla solo el listado de todas las "palabras" (las claves) 
+que contiene el diccionario para que el usuario sepa cuáles puede consultar.
