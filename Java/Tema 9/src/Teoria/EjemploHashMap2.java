@@ -21,7 +21,6 @@ public class EjemploHashMap2 {
      */
     public static void main(String[] args) {
         HashMap<Integer, String> m = new HashMap<>();
-        int contador = 0;
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < 5; i++) {
             System.out.println("Escriba una palabra: ");
@@ -45,13 +44,13 @@ public class EjemploHashMap2 {
 
         // Devuelve la clave de 1 entrada.
         System.out.println("\n\nDevuelve 1 clave");
-        for (Map.Entry pareja : m.entrySet()) {
+        for (Map.Entry<Integer,String> pareja : m.entrySet()) {
             System.out.print(pareja.getKey() + " ");
         }
 
         // Devuelve el contenido de 1 entrada.
         System.out.println("\n\nDevuelve 1 valor");
-        for (Map.Entry pareja : m.entrySet()) {
+        for (Map.Entry<Integer,String> pareja : m.entrySet()) {
             System.out.print(pareja.getValue() + " ");
         }
 
@@ -67,9 +66,11 @@ public class EjemploHashMap2 {
          */
 
         // ¿Qué saldrá por pantalla para el siguiente método get?
-        System.out.println(m.get("Hola"));
+        System.out.println(m.get(5));
 
         System.out.println(m.get(3));
+
+        System.out.println(m.get(10));
 
         /*
          * put(clave, valor): Añade un par (clave, valor) al
@@ -83,5 +84,8 @@ public class EjemploHashMap2 {
         System.out.println("\n\nDevuelve el listado completo <clave,valor>");
         System.out.println(m.entrySet());
 
+        System.out.println(m.get(10));
+
+        s.close();
     }
 }
