@@ -1,0 +1,16 @@
+Enunciado 2: Gestión de una "Biblioteca" (Nivel Intermedio)
+En este ejercicio vamos a practicar la interacción entre dos clases y el uso de un bucle para buscar información específica.
+
+Crea una clase llamada Libro con los atributos: titulo (String) y paginas (int). 
+Añade su constructor y el método toString() para que se vea bien al imprimirlo.
+
+En tu clase principal (Main), crea un ArrayList de objetos tipo Libro.
+
+Añade 3 libros a la lista (inventa los títulos y el número de páginas).
+
+El reto: Utiliza un bucle (ya sea for normal o for-each) para recorrer la lista 
+y sumar el total de páginas de todos los libros de la biblioteca.
+
+Al final, muestra por pantalla: "El total de páginas en la biblioteca es: [suma]".
+
+Extra: Usa un método de ArrayList para comprobar si la lista está vacía antes de hacer la suma.

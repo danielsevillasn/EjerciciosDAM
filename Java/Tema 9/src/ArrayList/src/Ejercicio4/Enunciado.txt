@@ -1,0 +1,21 @@
+Enunciado 4: Clasificación de Alumnos (Nivel Avanzado)
+En este ejercicio vamos a trabajar con la ordenación y la transferencia de datos entre listas.
+
+Crea una clase Alumno con: nombre (String) y notaMedia (double).
+
+En el Main, crea un ArrayList<Alumno> llamado clase.
+
+Añade al menos 5 alumnos con notas variadas (algunos aprobados y otros suspensos).
+
+El reto de la excelencia: Crea una segunda lista llamada cuadroDeHonor.
+
+Recorre la lista clase y añade a cuadroDeHonor solo a los alumnos con una nota mayor o igual a 9.
+
+El reto de la ordenación: Queremos ver la lista clase ordenada por nota de menor a mayor.
+
+Pista: Investiga cómo usar Collections.sort(lista, Comparator). Como es un objeto propio, 
+Java no sabe si ordenar por nombre o por nota a menos que se lo digas.
+
+Una forma moderna de hacerlo es: clase.sort(Comparator.comparingDouble(Alumno::getNotaMedia));
+
+Resultado final: Muestra por pantalla el "Cuadro de Honor" y luego la lista de toda la clase ordenada por notas.

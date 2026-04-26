@@ -1,0 +1,14 @@
+Enunciado 1: "La Agenda de Invitados"
+Imagina que estás organizando una fiesta.
+
+Crea un ArrayList de tipo String llamado invitados.
+
+Añade a la lista los nombres: "Pepe", "Marta", "Luis" y "Ana".
+
+Imprime por pantalla el tamaño de la lista.
+
+"Marta" te avisa de que no puede venir. Elimínala de la lista usando su nombre (no su índice).
+
+Ahora llega un invitado VIP llamado "Rey" y quieres que esté el primero de la lista. Insértalo en la posición 0.
+
+Muestra la lista final usando un simple System.out.println(invitados).

@@ -1,0 +1,19 @@
+Enunciado 3: Control de Inventario (Nivel Intermedio-Avanzado)
+Vamos a simular un inventario de una tienda de electrónica.
+
+Crea una clase llamada Producto con los atributos: nombre (String) y precio (double). 
+Añade su constructor, getters, setters y el método toString().
+
+En el Main, crea un ArrayList de Producto.
+
+Añade 4 productos (por ejemplo: "Monitor" 200.0, "Teclado" 50.0, "Ratón" 25.0, "Auriculares" 80.0).
+
+El reto de actualización: Resulta que hay inflación y todos los productos van a subir un 10% de su precio. 
+Recorre la lista y actualiza el precio de cada objeto (usa el setPrecio).
+
+El reto de eliminación: La tienda decide dejar de vender productos que, tras la subida, cuesten menos de 30 euros.
+
+Nota importante: Para este paso, intenta investigar o utilizar el método removeIf que comentamos antes, 
+ya que es la forma más limpia y moderna de hacerlo en Java.
+
+Muestra la lista final por pantalla para comprobar qué productos han sobrevivido y con qué precio.

@@ -1,0 +1,19 @@
+Crea una clase Tarea con: descripcion (String) y prioridad (int, del 1 al 5).
+
+En el Main, crea un menú (do-while y switch) con las siguientes opciones:
+
+1. Añadir tarea: Pide por teclado la descripción y la prioridad y añádela al ArrayList.
+
+2. Mostrar todas: Imprime la lista completa.
+
+3. Eliminar por descripción: El usuario escribe una descripción y el programa debe borrar esa tarea de la lista. 
+(Ojo: Para que esto funcione fácil con .remove(), tendrías que sobreescribir el método equals en la clase Tarea, 
+o hacerlo con un bucle/removeIf).
+
+4. Salir.
+
+El reto de lógica: Antes de añadir una tarea, el programa debe comprobar si ya existe una tarea con esa misma descripción. 
+Si ya existe, no debe añadirla y mostrará un mensaje: "Error: Tarea duplicada".
+
+Pista: Para que el método .contains() de la lista funcione con tus objetos, debes generar el método equals() 
+en la clase Tarea (comparando solo la descripción).
