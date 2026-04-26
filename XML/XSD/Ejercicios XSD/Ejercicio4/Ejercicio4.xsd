@@ -1,0 +1,31 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="catalogo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="movil" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="marca" type="xs:string"/>
+                            <xs:element name="modelo" type="xs:string"/>
+                            <xs:element name="pantalla">
+                                <xs:complexType>
+                                    <xs:attribute name="pulgadas" type="xs:float"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="almacenamiento" type="xs:string"/>
+                            <xs:element name="precio">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:decimal">
+                                            <xs:attribute name="moneda" type="xs:string"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

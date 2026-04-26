@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<videoclub xmlns:xsi="http://w3.org"
+    xsi:noNamespaceSchemaLocation="Ejercicio3.xsd">
+    <pelicula id="P101">
+        <titulo>Inception</titulo>
+        <director>Christopher Nolan</director>
+        <año>2010</año>
+        <genero>Ciencia Ficción</genero>
+        <genero>Thriller</genero>
+        <alquilada fecha_devolucion="2024-05-15" />
+    </pelicula>
+    <pelicula id="P102">
+        <titulo>Toy Story</titulo>
+        <director>John Lasseter</director>
+        <año>1995</año>
+        <genero>Animación</genero>
+        <!-- Esta no tiene el elemento alquilada (es opcional) -->
+    </pelicula>
+</videoclub>

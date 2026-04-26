@@ -1,0 +1,41 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="videoclub">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pelicula" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="titulo" type="xs:string" />
+                            <xs:element name="director" type="xs:string" />
+                            <!--El
+                            tipo gYear obliga a introducir un año en especifico YYYY-->
+                            <xs:element name="año" type="xs:gYear" />
+                            <xs:element name="genero" type="xs:string" maxOccurs="unbounded" />
+                            <xs:element name="alquilada" minOccurs="0">
+                                <xs:complexType>
+                                    <!--El
+                                    tipo date obliga a poner año-mes-dia-->
+                                    <xs:attribute name="fecha_devolucion" type="xs:date" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!--Que
+                        sea de uso required significa que es obligatorio-->
+                        <xs:attribute name="id" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <!--Este
+                                    pattern nos ayuda a que a la hora de poner el id de una pelicula
+                                    este restringido a ser de una manera específica-->
+                                    <!--Ha
+                                    de empezar por una letra P y seguir con 3 numeros del 0-9-->
+                                    <xs:pattern value="P[0-9]{3}" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

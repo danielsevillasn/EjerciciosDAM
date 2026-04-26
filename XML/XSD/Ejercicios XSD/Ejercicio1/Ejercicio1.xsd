@@ -8,12 +8,17 @@
                             <xs:element name="DENOMINACION" type="xs:string" />
                             <xs:element name="SIGLAS">
                                 <xs:simpleType>
+                                    <!--Restriccion
+                                    que obliga a minimo poner un string de 2 caracteres y como
+                                    máximo 5-->
                                     <xs:restriction base="xs:string">
                                         <xs:minLength value="2" />
                                         <xs:maxLength value="5" />
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
+                            <!--Elemento
+                            tipo string que puede aparecer más de una vez-->
                             <xs:element name="PROFESOR" type="xs:string" maxOccurs="unbounded" />
                             <xs:element name="DESCRIPCION" type="xs:string" />
                         </xs:sequence>

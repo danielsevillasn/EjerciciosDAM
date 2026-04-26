@@ -1,23 +1,43 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="supermercado">
-        <xs:complexType >
+        <xs:complexType>
             <xs:sequence>
                 <xs:element name="articulo" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="descripcion" type="xs:string"/>
-                            <xs:element name="marca" type="xs:string"/>
+                            <xs:element name="descripcion" type="xs:string" />
+                            <!--Elemento
+                            tipo string que puede no aparecer ninguna vez-->
+                            <xs:element name="marca" type="xs:string" minOccurs="0" />
                             <xs:element name="medida">
                                 <xs:complexType>
-                                    <xs:attribute></xs:attribute>
+                                    <!--Elemento
+                                    tipo float que incluye todo tipo de numeros, entre ellos
+                                    decimales-->
+                                    <xs:attribute name="valor" type="xs:float" />
+                                    <xs:attribute name="unidad" type="xs:string" />
+                                    <xs:attribute name="sistema" type="xs:string" />
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="seccion" type="xs:string"/>
+                            <xs:element name="seccion" type="xs:string" />
+                            <xs:element name="oferta" type="xs:string" minOccurs="0"
+                                maxOccurs="unbounded" />
+                            <xs:element name="perecedero" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="fabricacion" type="xs:string"
+                                            minOccurs="0" />
+                                        <xs:element name="caducidad" type="xs:string" minOccurs="0" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
+                        <!--Atributo
+                        tipo string de uso obligatorio en articulo-->
+                        <xs:attribute name="id" type="xs:string" use="required" />
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="id" type="xs:string" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

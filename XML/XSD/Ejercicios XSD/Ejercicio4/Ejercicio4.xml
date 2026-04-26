@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo xmlns:xsi="http://w3.org"
+    xsi:noNamespaceSchemaLocation="Ejercicio4.xsd">
+    <movil>
+        <marca>Samsung</marca>
+        <modelo>Galaxy S23</modelo>
+        <pantalla pulgadas="6.1" />
+        <almacenamiento>128GB</almacenamiento>
+        <precio moneda="EUR">850.00</precio>
+    </movil>
+    <movil>
+        <marca>Apple</marca>
+        <modelo>iPhone 15 Pro</modelo>
+        <pantalla pulgadas="6.7" />
+        <almacenamiento>512GB</almacenamiento>
+        <precio moneda="EUR">1200.50</precio>
+    </movil>
+</catalogo>
