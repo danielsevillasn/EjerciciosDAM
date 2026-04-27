@@ -1,0 +1,11 @@
+Enunciado 2: El Contenedor de Parejas (Nivel Medio)
+A veces necesitamos que la clase maneje dos tipos distintos, como hace el HashMap.
+
+Crea una clase genérica llamada Pareja<K, V>.
+
+Define dos atributos: clave (de tipo K) y valor (de tipo V).
+
+Crea un método mostrarPareja() que imprima: [Clave]: Valor.
+
+En el Main, crea una pareja donde la clave sea un Integer (un código) 
+y el valor sea un objeto de la clase Producto (puedes reutilizar la clase Producto que hicimos antes).
