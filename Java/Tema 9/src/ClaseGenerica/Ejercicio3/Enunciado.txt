@@ -1,0 +1,16 @@
+Enunciado 3: El Método Genérico (Nivel Avanzado)
+
+No siempre necesitas que toda la clase sea genérica;
+a veces solo quieres que un método lo sea.
+
+    Crea una clase llamada Utilidades. No tiene que ser genérica.
+
+    Dentro, crea un método estático genérico llamado imprimirArray.
+
+        Sintaxis: public static <E> void imprimirArray(E[] elementos).
+
+    El método debe recibir un array de cualquier tipo de objeto y
+    recorrerlo con un for-each para imprimir cada elemento.
+
+    En el Main, crea un array de String y otro de Integer,
+    y pásaselos al mismo método.

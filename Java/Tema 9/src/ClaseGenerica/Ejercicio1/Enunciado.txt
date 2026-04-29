@@ -7,8 +7,9 @@ Dentro, define un atributo privado de tipo T llamado objeto.
 
 Crea el constructor que reciba ese objeto.
 
-Crea un método llamado mostrarTipo() que imprima por pantalla: "El objeto guardado es de tipo: " 
-seguido del nombre de la clase del objeto (Pista: usa objeto.getClass().getName()).
+Crea un método llamado mostrarTipo() que imprima por pantalla: "El objeto
+guardado es de tipo: " seguido del nombre de la clase del objeto
+(Pista: usa objeto.getClass().getName()).
 
 En el Main:
 
@@ -16,4 +17,5 @@ Crea un Almacen de tipo String y guarda un mensaje.
 
 Crea un Almacen de tipo Integer y guarda un número.
 
-Llama a mostrarTipo() en ambos y observa cómo la misma clase se comporta de forma distinta.
+Llama a mostrarTipo() en ambos y observa cómo la misma clase 
+se comporta de forma distinta.

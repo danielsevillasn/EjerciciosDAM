@@ -1,11 +1,25 @@
-Enunciado 2: El Contenedor de Parejas (Nivel Medio)
-A veces necesitamos que la clase maneje dos tipos distintos, como hace el HashMap.
+Enunciado 2: El Contenedor de Parejas (Nivel Medio - Multi-Genérico)
 
-Crea una clase genérica llamada Pareja<K, V>.
+Este ejercicio te enseñará a manejar múltiples parámetros de tipo,
+algo vital para entender estructuras como los diccionarios.
 
-Define dos atributos: clave (de tipo K) y valor (de tipo V).
+    Crea la clase genérica Pareja<K, V>:
 
-Crea un método mostrarPareja() que imprima: [Clave]: Valor.
+        Debe tener dos atributos privados: clave (de tipo K) y valor (de tipo V).
 
-En el Main, crea una pareja donde la clave sea un Integer (un código) 
-y el valor sea un objeto de la clase Producto (puedes reutilizar la clase Producto que hicimos antes).
+        Crea un constructor que reciba ambos parámetros.
+
+        Crea un método llamado mostrarPareja() que imprima:
+        "Clave: [clave] | Valor: [valor]".
+
+    En el Main:
+
+        Crea una instancia donde la Clave sea un Integer (ID)
+        y el Valor sea un String (Nombre).
+
+        Crea otra instancia donde la Clave sea un String (DNI)
+        y el Valor sea un objeto de la clase Usuario
+        (puedes reutilizar la clase que creamos en el bloque de HashMap).
+
+    Llama a mostrarPareja() en ambas para verificar que
+    Java gestiona tipos totalmente distintos en la misma estructura.
