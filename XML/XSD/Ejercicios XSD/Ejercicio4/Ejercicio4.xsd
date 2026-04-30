@@ -7,12 +7,14 @@
                         <xs:sequence>
                             <xs:element name="marca" type="xs:string"/>
                             <xs:element name="modelo" type="xs:string"/>
+                            <!--Elemento hijo complejo vacio que tiene un único atributo tipo float-->
                             <xs:element name="pantalla">
                                 <xs:complexType>
                                     <xs:attribute name="pulgadas" type="xs:float"/>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="almacenamiento" type="xs:string"/>
+                            <!--Elemento hijo que tiene contenido tipo float y un atributo tipo string-->
                             <xs:element name="precio">
                                 <xs:complexType>
                                     <xs:simpleContent>
