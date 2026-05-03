@@ -71,6 +71,9 @@ nbdist/
 *.tar.gz
 *.rar
 
+# EXCEPCIÓN: Permitir librerías de JUnit en UT5 de Entornos
+!"Entornos de Desarrollo/UT5 - Diseño y realización de pruebas/lib/"*.jar
+
 # Maven
 target/
 pom.xml.tag
