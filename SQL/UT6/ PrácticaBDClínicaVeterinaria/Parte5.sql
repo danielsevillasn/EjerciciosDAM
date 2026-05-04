@@ -1,3 +1,4 @@
+--Procedimiento 1--
 CREATE OR REPLACE PROCEDURE cerrar_atencion(
     p_id_cliente NUMBER,
     p_id_mascota NUMBER,
@@ -9,9 +10,9 @@ AS
     diagnostico VARCHAR2(300);
     existeRecomendacion NUMBER;
 BEGIN
-    SELECT COUNT(*) 
+    SELECT COUNT(*)
     INTO existeCita
-    FROM CITAS 
+    FROM CITAS
     WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
 
     IF existeCita = 0 THEN
@@ -45,6 +46,66 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Error crítico: No se puede cerrar la atención porque no existe un diagnóstico previo.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error inesperado: ' || SQLERRM);
+END;
+
+--Procedimiento 2--
+CREATE OR REPLACE PROCEDURE cerrar_atencion(
+    p_id_cliente NUMBER,
+    p_id_mascota NUMBER,
+    p_fecha_cita DATE,
+    p_importe    NUMBER
+)
+AS
+    diagnostico VARCHAR2(300);
+    
+    v_existe_cita NUMBER;
+    v_existe_recomendacion NUMBER;
+    v_existe_diagnostico NUMBER;
+
+    ex_cita EXCEPTION;
+    ex_diagnostico EXCEPTION;
+
+BEGIN
+    SELECT COUNT(*) INTO v_existe_cita
+    FROM CITAS
+    WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+
+    IF v_existe_cita = 0 THEN
+        RAISE ex_cita;
+    END IF;
+
+    SELECT COUNT(*) INTO v_existe_diagnostico
+    FROM DIAGNOSTICOS
+    WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+
+    IF v_existe_diagnostico = 0 THEN
+        RAISE ex_diagnostico;
+    END IF;
+
+    SELECT COUNT(*) INTO v_existe_recomendacion
+    FROM RECOMENDACIONES
+    WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+
+    IF v_existe_recomendacion = 0 THEN
+        INSERT INTO RECOMENDACIONES (ID_CLIENTE, ID_MASCOTA, FECHA_CITA, TEXTO)
+        VALUES (p_id_cliente, p_id_mascota, p_fecha_cita, 'Seguimiento rutinario según evolución.');
+        DBMS_OUTPUT.PUT_LINE('Recomendación por defecto insertada');
+    END IF;
+
+    -- 4. Registro del Pago
+    INSERT INTO PAGOS (ID_CLIENTE, ID_MASCOTA, FECHA_CITA, IMPORTE, FECHA_PAGO)
+    VALUES (p_id_cliente, p_id_mascota, p_fecha_cita, p_importe, NULL);
+    
+    DBMS_OUTPUT.PUT_LINE('Atención cerrada correctamente. Pago registrado como pendiente.');
+    
+    COMMIT;
+EXCEPTION
+    WHEN ex_cita THEN
+        DBMS_OUTPUT.PUT_LINE('Error: la cita no existe.');
+    WHEN ex_diagnostico THEN
+        DBMS_OUTPUT.PUT_LINE('Error: el diagnostico no existe.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error ' || SQLCODE || ' inesperado: ' || SQLERRM);
 END;
 
 --Prueba--
