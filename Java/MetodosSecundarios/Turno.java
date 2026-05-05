@@ -1,4 +1,4 @@
-package Objetos;
+package MetodosSecundarios;
 
 /**
  * Clase que establece el turno del juego

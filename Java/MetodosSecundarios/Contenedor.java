@@ -5,7 +5,6 @@ import java.util.Collections;
 
 import Excepciones.ContenedorLleno;
 import Excepciones.ContenedorVacio;
-import Interfaces.Barajable;
 
 /**
  * Clase genérica que sirve como base para cualquier colección de cartas.
@@ -14,7 +13,7 @@ import Interfaces.Barajable;
  * 
  * @param <T> El tipo de carta que almacenará (debe extender de Carta)
  */
-public class Contenedor<T extends Carta> implements Barajable {
+public class Contenedor<T> {
     // Atributos/////////////////////
     protected ArrayList<T> lista;
 
