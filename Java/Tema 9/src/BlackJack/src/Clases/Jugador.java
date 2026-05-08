@@ -1,4 +1,4 @@
-package Clases;
+package BlackJack.src.Clases;
 import java.util.ArrayList;
 
 public abstract class Jugador {

@@ -1,4 +1,4 @@
-package Clases;
+package BlackJack.src.Clases;
 public class Pobre extends Jugador{
     
     //Atributo

@@ -1,4 +1,4 @@
-package Herramientas;
+package BlackJack.src.Herramientas;
 import java.util.Scanner;
 
 public class PideDatos {

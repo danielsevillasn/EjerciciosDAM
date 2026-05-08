@@ -1,4 +1,4 @@
-package Clases;
+package BlackJack.src.Clases;
 public class Rico extends Jugador{
 
     //Atributo

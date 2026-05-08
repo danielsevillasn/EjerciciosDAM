@@ -1,9 +1,7 @@
-package Clases;
+package BlackJack.src.Clases;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-
-import Enumerador.Palo;
 
 public class Baraja {
 
