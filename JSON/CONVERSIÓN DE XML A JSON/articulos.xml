@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<producto>
+    <id>101</id>
+    <nombre>Portátil Lenovo</nombre>
+    <precio>799.99</precio>
+    <disponible>true</disponible>
+    <stock>25</stock>
+    <categoria>Informática</categoria>
+    <descripcion></descripcion>
+
+    <fabricante>
+        <nombre>Lenovo</nombre>
+        <pais>China</pais>
+    </fabricante>
+
+    <dimensiones>
+        <alto unidad="cm">24</alto>
+        <ancho unidad="cm">35</ancho>
+        <peso unidad="kg">1.8</peso>
+    </dimensiones>
+
+    <colores>
+        <color>negro</color>
+        <color>gris</color>
+        <color>azul</color>
+    </colores>
+
+    <caracteristicas>
+        <caracteristica>
+            <nombre>RAM</nombre>
+            <valor>16GB</valor>
+        </caracteristica>
+        <caracteristica>
+            <nombre>Disco</nombre>
+            <valor>512GB SSD</valor>
+        </caracteristica>
+        <caracteristica>
+            <nombre>Procesador</nombre>
+            <valor>Intel i5</valor>
+        </caracteristica>
+    </caracteristicas>
+
+    <garantia>
+        <duracion>2</duracion>
+        <unidad>años</unidad>
+        <incluida>true</incluida>
+    </garantia>
+
+    <opiniones>
+        <opinion>
+            <usuario>Ana</usuario>
+            <puntuacion>5</puntuacion>
+            <comentario>Muy buen producto</comentario>
+        </opinion>
+        <opinion>
+            <usuario>Luis</usuario>
+            <puntuacion>4</puntuacion>
+            <comentario>Buena relación calidad-precio</comentario>
+        </opinion>
+    </opiniones>
+</producto>

@@ -1,0 +1,66 @@
+{
+    "jugadores": [
+        {
+            "apellidos": "Nadal Parera",
+            "categoria": "ATP",
+            "grandSlam": 17,
+            "imagenes": [
+                "rafa1.jpg",
+                "rafa2.jpg",
+                "rafa3.jpg"
+            ],
+            "index": 0,
+            "latitude": 4.0000000,
+            "longitude": -40.0000000,
+            "mejorRanking": 1,
+            "nombre": "Rafael",
+            "opiniones": [
+                "Máquina",
+                "El mejor deportista español de todos los tiempos",
+                "Máquina"
+            ],
+            "pais": "España",
+            "puntuacion": 4.5,
+            "rankingActual": 2,
+            "titulosATP": 80,
+            "torneos": [
+                "Roland Garros",
+                "Wimbledon",
+                "Open USA",
+                "Open de Australia"
+            ],
+            "url": "https://rafaelnadal.com"
+        },
+        {
+            "apellidos": "Federer",
+            "categoria": "ATP",
+            "grandSlam": 20,
+            "imagenes": [
+                "rogerReves.png",
+                "roger2.jpg",
+                "roger3.jpg"
+            ],
+            "index": 1,
+            "latitude": 8.0000000,
+            "longitude": 47.0000000,
+            "mejorRanking": 1,
+            "nombre": "Roger",
+            "opiniones": [
+                "La perfección suiza",
+                "El tenis en persona",
+                "El mejor jugador de todos los tiempos"
+            ],
+            "pais": "Suiza",
+            "puntuacion": 4.8,
+            "rankingActual": 3,
+            "titulosATP": 99,
+            "torneos": [
+                "Roland Garros",
+                "Wimbledon",
+                "Open USA",
+                "Open de Australia"
+            ],
+            "url": "https://www.rogerfederer.com"
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "producto": {
+        "caracteristicas": {
+            "caracteristica": [
+                {
+                    "nombre": "RAM",
+                    "valor": "16GB"
+                },
+                {
+                    "nombre": "Disco",
+                    "valor": "512GB SSD"
+                },
+                {
+                    "nombre": "Procesador",
+                    "valor": "Intel i5"
+                }
+            ]
+        },
+        "categoria": "Informática",
+        "colores": {
+            "color": [
+                "negro",
+                "gris",
+                "azul"
+            ]
+        },
+        "descripcion": null,
+        "dimensiones": {
+            "alto": {
+                "unidad": "cm",
+                "valor": 24
+            },
+            "ancho": {
+                "unidad": "cm",
+                "valor": 35
+            },
+            "peso": {
+                "unidad": "kg",
+                "valor": 1.8
+            }
+        },
+        "disponible": true,
+        "fabricante": {
+            "nombre": "Lenovo",
+            "pais": "China"
+        },
+        "garantia": {
+            "duracion": 2,
+            "incluida": true,
+            "unidad": "años"
+        },
+        "id": 101,
+        "nombre": "Portátil Lenovo",
+        "opiniones": {
+            "opinion": [
+                {
+                    "comentario": "Muy buen producto",
+                    "puntuacion": 5,
+                    "usuario": "Ana"
+                },
+                {
+                    "comentario": "Buena relación calidad-precio",
+                    "puntuacion": 4,
+                    "usuario": "Luis"
+                }
+            ]
+        },
+        "precio": 799.99,
+        "stock": 25
+    }
+}

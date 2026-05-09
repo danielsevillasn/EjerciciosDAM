@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jugadores>
+	<jugador>
+		<apellidos>Nadal Parera</apellidos>
+		<categoria>ATP</categoria>
+		<grandSlam>17</grandSlam>
+		<imagenes>
+			<imagen>rafa1.jpg</imagen>
+			<imagen>rafa2.jpg</imagen>
+			<imagen>rafa3.jpg</imagen>
+		</imagenes>
+		<index>0</index>
+		<latitude>4.0000000</latitude>
+		<longitude>-40.0000000</longitude>
+		<mejorRanking>1</mejorRanking>
+		<nombre>Rafael</nombre>
+		<opiniones>
+			<opinion>Máquina</opinion>
+			<opinion>El mejor deportista español de todos los tiempos</opinion>
+			<opinion>Máquina</opinion>
+		</opiniones>
+		<pais>España</pais>
+		<puntuacion>4.5</puntuacion>
+		<rankingActual>2</rankingActual>
+		<titulosATP>80</titulosATP>
+		<torneos>
+			<torneo>Roland Garros</torneo>
+			<torneo>Wimbledon</torneo>
+			<torneo>Open USA</torneo>
+			<torneo>Open de Australia</torneo>
+		</torneos>
+		<url>https://rafaelnadal.com</url>
+	</jugador>
+	<jugador>
+		<apellidos>Federer</apellidos>
+		<categoria>ATP</categoria>
+		<grandSlam>20</grandSlam>
+		<imagenes>
+			<imagen>rogerReves.png</imagen>
+			<imagen>roger2.jpg</imagen>
+			<imagen>roger3.jpg</imagen>
+		</imagenes>
+		<index>1</index>
+		<latitude>8.0000000</latitude>
+		<longitude>47.0000000</longitude>
+		<mejorRanking>1</mejorRanking>
+		<nombre>Roger</nombre>
+		<opiniones>
+			<opinion>La perfección suiza</opinion>
+			<opinion>El tenis en persona</opinion>
+			<opinion>El mejor jugador de todos los tiempos</opinion>
+		</opiniones>
+		<pais>Suiza</pais>
+		<puntuacion>4.8</puntuacion>
+		<rankingActual>3</rankingActual>
+		<titulosATP>99</titulosATP>
+		<torneos>
+			<torneo>Roland Garros</torneo>
+			<torneo>Wimbledon</torneo>
+			<torneo>Open USA</torneo>
+			<torneo>Open de Australia</torneo>
+		</torneos>
+		<url>https://www.rogerfederer.com</url>
+	</jugador>
+</jugadores>
