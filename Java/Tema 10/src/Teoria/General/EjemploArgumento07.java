@@ -1,4 +1,4 @@
-package Teoria;
+package Teoria.General;
 
 public class EjemploArgumento07 {
     public static void main(String[] args) {

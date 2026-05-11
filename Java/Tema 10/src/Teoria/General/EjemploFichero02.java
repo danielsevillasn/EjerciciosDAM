@@ -1,4 +1,4 @@
-package Teoria;
+package Teoria.General;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
