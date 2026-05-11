@@ -1,0 +1,3 @@
+Nombre =  | Direccion =  | Telefono = 
+Nombre = pepe | Direccion = hacsgd | Telefono = 1324124
+Nombre = juan | Direccion = sjvkbs | Telefono = 65474567
