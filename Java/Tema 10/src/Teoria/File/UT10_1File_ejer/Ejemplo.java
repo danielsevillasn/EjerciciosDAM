@@ -3,7 +3,7 @@
 import java.io.File;
 import java.io.IOException;
 
-public class UT10E_Ejemplos_1File {
+public class Ejemplo {
 
 // Sobre la clase File
     // esta clase da información, no los crea o modifica

@@ -11,8 +11,8 @@ public class EjemploFichero01 {
             BufferedReader br = new BufferedReader(new FileReader("malaga.txt"));
             String linea = "";
             while (linea != null) {
-                System.out.println(linea);
                 linea = br.readLine();
+                System.out.println(linea);
             }
             br.close();
         } catch (FileNotFoundException fnfe) { // Si no en cuentra el fichero

@@ -1,0 +1,550 @@
+Número: 623
+* Género: Macho *
+Estadísticas:
+HP           (060) [----]
+Ataque       (067) [----]
+Defensa      (038) [--]
+At. Esp      (190) [--------------]
+Def. Esp     (133) [---------]
+Velocidad    (056) [---]
+**************
+
+Número: 400
+* Género: Macho *
+Estadísticas:
+HP           (117) [--------]
+Ataque       (105) [-------]
+Defensa      (241) [------------------]
+At. Esp      (198) [---------------]
+Def. Esp     (248) [-------------------]
+Velocidad    (217) [----------------]
+**************
+
+Número: 934
+* Género: Macho *
+Estadísticas:
+HP           (192) [--------------]
+Ataque       (084) [------]
+Defensa      (089) [------]
+At. Esp      (245) [------------------]
+Def. Esp     (213) [----------------]
+Velocidad    (198) [---------------]
+**************
+
+Número: 982
+* Género: Macho *
+Estadísticas:
+HP           (043) [--]
+Ataque       (192) [--------------]
+Defensa      (230) [-----------------]
+At. Esp      (114) [--------]
+Def. Esp     (055) [---]
+Velocidad    (153) [-----------]
+**************
+
+Número: 652
+* Género: Hembra *
+Estadísticas:
+HP           (232) [-----------------]
+Ataque       (039) [--]
+Defensa      (032) [-]
+At. Esp      (027) [-]
+Def. Esp     (127) [---------]
+Velocidad    (085) [------]
+**************
+
+Número: 174
+* Género: Macho *
+Estadísticas:
+HP           (239) [------------------]
+Ataque       (232) [-----------------]
+Defensa      (209) [---------------]
+At. Esp      (178) [-------------]
+Def. Esp     (026) [-]
+Velocidad    (259) [-------------------]
+**************
+
+Número: 688
+* Género: Hembra *
+Estadísticas:
+HP           (245) [------------------]
+Ataque       (185) [--------------]
+Defensa      (208) [---------------]
+At. Esp      (057) [---]
+Def. Esp     (031) [-]
+Velocidad    (077) [-----]
+**************
+
+Número: 601
+* Género: Hembra *
+Estadísticas:
+HP           (187) [--------------]
+Ataque       (242) [------------------]
+Defensa      (035) [--]
+At. Esp      (229) [-----------------]
+Def. Esp     (094) [------]
+Velocidad    (259) [-------------------]
+**************
+
+Número: 407
+* Género: Macho *
+Estadísticas:
+HP           (245) [------------------]
+Ataque       (168) [------------]
+Defensa      (079) [-----]
+At. Esp      (147) [-----------]
+Def. Esp     (116) [--------]
+Velocidad    (102) [-------]
+**************
+
+Número: 835
+* Género: Macho *
+Estadísticas:
+HP           (244) [------------------]
+Ataque       (170) [------------]
+Defensa      (169) [------------]
+At. Esp      (133) [---------]
+Def. Esp     (164) [------------]
+Velocidad    (163) [------------]
+**************
+
+Número: 681
+* Género: Hembra *
+Estadísticas:
+HP           (129) [---------]
+Ataque       (059) [----]
+Defensa      (214) [----------------]
+At. Esp      (118) [--------]
+Def. Esp     (143) [----------]
+Velocidad    (124) [---------]
+**************
+
+Número: 475
+* Género: Macho *
+Estadísticas:
+HP           (053) [---]
+Ataque       (110) [--------]
+Defensa      (033) [--]
+At. Esp      (242) [------------------]
+Def. Esp     (021) [-]
+Velocidad    (142) [----------]
+**************
+
+Número: 779
+* Género: Macho *
+Estadísticas:
+HP           (222) [----------------]
+Ataque       (090) [------]
+Defensa      (225) [-----------------]
+At. Esp      (176) [-------------]
+Def. Esp     (118) [--------]
+Velocidad    (140) [----------]
+**************
+
+Número: 224
+* Género: Hembra *
+Estadísticas:
+HP           (035) [--]
+Ataque       (156) [-----------]
+Defensa      (152) [-----------]
+At. Esp      (185) [--------------]
+Def. Esp     (200) [---------------]
+Velocidad    (206) [---------------]
+**************
+
+Número: 730
+* Género: Macho *
+Estadísticas:
+HP           (248) [-------------------]
+Ataque       (159) [------------]
+Defensa      (204) [---------------]
+At. Esp      (156) [-----------]
+Def. Esp     (114) [--------]
+Velocidad    (201) [---------------]
+**************
+
+Número: 592
+* Género: Macho *
+Estadísticas:
+HP           (251) [-------------------]
+Ataque       (108) [-------]
+Defensa      (117) [--------]
+At. Esp      (042) [--]
+Def. Esp     (132) [---------]
+Velocidad    (034) [--]
+**************
+
+Número: 756
+* Género: Macho *
+Estadísticas:
+HP           (071) [-----]
+Ataque       (232) [-----------------]
+Defensa      (141) [----------]
+At. Esp      (221) [----------------]
+Def. Esp     (025) [-]
+Velocidad    (253) [-------------------]
+**************
+
+Número: 337
+* Género: Hembra *
+Estadísticas:
+HP           (082) [-----]
+Ataque       (126) [---------]
+Defensa      (091) [------]
+At. Esp      (056) [---]
+Def. Esp     (080) [-----]
+Velocidad    (102) [-------]
+**************
+
+Número: 149
+* Género: Macho *
+Estadísticas:
+HP           (033) [--]
+Ataque       (234) [-----------------]
+Defensa      (072) [-----]
+At. Esp      (023) [-]
+Def. Esp     (046) [---]
+Velocidad    (100) [-------]
+**************
+
+Número: 350
+* Género: Macho *
+Estadísticas:
+HP           (233) [-----------------]
+Ataque       (236) [------------------]
+Defensa      (174) [-------------]
+At. Esp      (043) [--]
+Def. Esp     (260) [--------------------]
+Velocidad    (236) [------------------]
+**************
+
+Número: 546
+* Género: Hembra *
+Estadísticas:
+HP           (239) [------------------]
+Ataque       (260) [--------------------]
+Defensa      (100) [-------]
+At. Esp      (178) [-------------]
+Def. Esp     (215) [----------------]
+Velocidad    (228) [-----------------]
+**************
+
+Número: 772
+* Género: Macho *
+Estadísticas:
+HP           (072) [-----]
+Ataque       (101) [-------]
+Defensa      (157) [-----------]
+At. Esp      (164) [------------]
+Def. Esp     (229) [-----------------]
+Velocidad    (040) [--]
+**************
+
+Número: 599
+* Género: Macho *
+Estadísticas:
+HP           (221) [----------------]
+Ataque       (059) [----]
+Defensa      (050) [---]
+At. Esp      (203) [---------------]
+Def. Esp     (073) [-----]
+Velocidad    (162) [------------]
+**************
+
+Número: 93
+* Género: Hembra *
+Estadísticas:
+HP           (027) [-]
+Ataque       (233) [-----------------]
+Defensa      (097) [-------]
+At. Esp      (194) [--------------]
+Def. Esp     (203) [---------------]
+Velocidad    (079) [-----]
+**************
+
+Número: 313
+* Género: Macho *
+Estadísticas:
+HP           (082) [-----]
+Ataque       (219) [----------------]
+Defensa      (237) [------------------]
+At. Esp      (084) [------]
+Def. Esp     (244) [------------------]
+Velocidad    (134) [----------]
+**************
+
+Número: 430
+* Género: Hembra *
+Estadísticas:
+HP           (245) [------------------]
+Ataque       (105) [-------]
+Defensa      (119) [--------]
+At. Esp      (137) [----------]
+Def. Esp     (202) [---------------]
+Velocidad    (236) [------------------]
+**************
+
+Número: 1010
+* Género: Macho *
+Estadísticas:
+HP           (115) [--------]
+Ataque       (200) [---------------]
+Defensa      (211) [----------------]
+At. Esp      (145) [----------]
+Def. Esp     (090) [------]
+Velocidad    (212) [----------------]
+**************
+
+Número: 104
+* Género: Hembra *
+Estadísticas:
+HP           (140) [----------]
+Ataque       (085) [------]
+Defensa      (064) [----]
+At. Esp      (200) [---------------]
+Def. Esp     (217) [----------------]
+Velocidad    (136) [----------]
+**************
+
+Número: 758
+* Género: Macho *
+Estadísticas:
+HP           (205) [---------------]
+Ataque       (243) [------------------]
+Defensa      (190) [--------------]
+At. Esp      (255) [-------------------]
+Def. Esp     (215) [----------------]
+Velocidad    (108) [-------]
+**************
+
+Número: 201
+* Género: Hembra *
+Estadísticas:
+HP           (058) [----]
+Ataque       (193) [--------------]
+Defensa      (258) [-------------------]
+At. Esp      (033) [--]
+Def. Esp     (208) [---------------]
+Velocidad    (078) [-----]
+**************
+
+Número: 962
+* Género: Hembra *
+Estadísticas:
+HP           (036) [--]
+Ataque       (110) [--------]
+Defensa      (046) [---]
+At. Esp      (137) [----------]
+Def. Esp     (126) [---------]
+Velocidad    (246) [------------------]
+**************
+
+Número: 114
+* Género: Hembra *
+Estadísticas:
+HP           (221) [----------------]
+Ataque       (150) [-----------]
+Defensa      (145) [----------]
+At. Esp      (161) [------------]
+Def. Esp     (033) [--]
+Velocidad    (052) [---]
+**************
+
+Número: 341
+* Género: Hembra *
+Estadísticas:
+HP           (090) [------]
+Ataque       (145) [----------]
+Defensa      (179) [-------------]
+At. Esp      (023) [-]
+Def. Esp     (221) [----------------]
+Velocidad    (140) [----------]
+**************
+
+Número: 565
+* Género: Hembra *
+Estadísticas:
+HP           (091) [------]
+Ataque       (206) [---------------]
+Defensa      (051) [---]
+At. Esp      (021) [-]
+Def. Esp     (027) [-]
+Velocidad    (046) [---]
+**************
+
+Número: 231
+* Género: Macho *
+Estadísticas:
+HP           (135) [----------]
+Ataque       (194) [--------------]
+Defensa      (185) [--------------]
+At. Esp      (134) [----------]
+Def. Esp     (160) [------------]
+Velocidad    (093) [------]
+**************
+
+Número: 356
+* Género: Hembra *
+Estadísticas:
+HP           (178) [-------------]
+Ataque       (058) [----]
+Defensa      (101) [-------]
+At. Esp      (218) [----------------]
+Def. Esp     (187) [--------------]
+Velocidad    (167) [------------]
+**************
+
+Número: 480
+* Género: Macho *
+Estadísticas:
+HP           (232) [-----------------]
+Ataque       (245) [------------------]
+Defensa      (086) [------]
+At. Esp      (257) [-------------------]
+Def. Esp     (039) [--]
+Velocidad    (066) [----]
+**************
+
+Número: 223
+* Género: Hembra *
+Estadísticas:
+HP           (110) [--------]
+Ataque       (075) [-----]
+Defensa      (243) [------------------]
+At. Esp      (058) [----]
+Def. Esp     (190) [--------------]
+Velocidad    (116) [--------]
+**************
+
+Número: 657
+* Género: Hembra *
+Estadísticas:
+HP           (200) [---------------]
+Ataque       (239) [------------------]
+Defensa      (082) [-----]
+At. Esp      (131) [---------]
+Def. Esp     (246) [------------------]
+Velocidad    (091) [------]
+**************
+
+Número: 67
+* Género: Hembra *
+Estadísticas:
+HP           (233) [-----------------]
+Ataque       (051) [---]
+Defensa      (153) [-----------]
+At. Esp      (062) [----]
+Def. Esp     (162) [------------]
+Velocidad    (101) [-------]
+**************
+
+Número: 228
+* Género: Macho *
+Estadísticas:
+HP           (256) [-------------------]
+Ataque       (191) [--------------]
+Defensa      (229) [-----------------]
+At. Esp      (229) [-----------------]
+Def. Esp     (185) [--------------]
+Velocidad    (119) [--------]
+**************
+
+Número: 865
+* Género: Hembra *
+Estadísticas:
+HP           (206) [---------------]
+Ataque       (127) [---------]
+Defensa      (201) [---------------]
+At. Esp      (161) [------------]
+Def. Esp     (179) [-------------]
+Velocidad    (136) [----------]
+**************
+
+Número: 59
+* Género: Hembra *
+Estadísticas:
+HP           (040) [--]
+Ataque       (232) [-----------------]
+Defensa      (086) [------]
+At. Esp      (056) [---]
+Def. Esp     (022) [-]
+Velocidad    (176) [-------------]
+**************
+
+Número: 603
+* Género: Hembra *
+Estadísticas:
+HP           (126) [---------]
+Ataque       (046) [---]
+Defensa      (037) [--]
+At. Esp      (230) [-----------------]
+Def. Esp     (185) [--------------]
+Velocidad    (097) [-------]
+**************
+
+Número: 983
+* Género: Macho *
+Estadísticas:
+HP           (168) [------------]
+Ataque       (032) [-]
+Defensa      (137) [----------]
+At. Esp      (159) [------------]
+Def. Esp     (140) [----------]
+Velocidad    (187) [--------------]
+**************
+
+Número: 693
+* Género: Hembra *
+Estadísticas:
+HP           (174) [-------------]
+Ataque       (062) [----]
+Defensa      (259) [-------------------]
+At. Esp      (223) [-----------------]
+Def. Esp     (103) [-------]
+Velocidad    (209) [---------------]
+**************
+
+Número: 784
+* Género: Hembra *
+Estadísticas:
+HP           (081) [-----]
+Ataque       (037) [--]
+Defensa      (031) [-]
+At. Esp      (068) [----]
+Def. Esp     (152) [-----------]
+Velocidad    (100) [-------]
+**************
+
+Número: 889
+* Género: Macho *
+Estadísticas:
+HP           (221) [----------------]
+Ataque       (110) [--------]
+Defensa      (227) [-----------------]
+At. Esp      (168) [------------]
+Def. Esp     (236) [------------------]
+Velocidad    (144) [----------]
+**************
+
+Número: 667
+* Género: Hembra *
+Estadísticas:
+HP           (231) [-----------------]
+Ataque       (167) [------------]
+Defensa      (067) [----]
+At. Esp      (179) [-------------]
+Def. Esp     (087) [------]
+Velocidad    (221) [----------------]
+**************
+
+Número: 244
+* Género: Macho *
+Estadísticas:
+HP           (243) [------------------]
+Ataque       (110) [--------]
+Defensa      (147) [-----------]
+At. Esp      (113) [--------]
+Def. Esp     (143) [----------]
+Velocidad    (216) [----------------]
+**************
+
