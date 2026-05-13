@@ -1,0 +1,2 @@
+
+13-05-2026, 11:08:36 a. m.	 El vendedor debe tener menos de 60 años class SevillaNavarreteDaniel.Excepciones.EdadNoValida13-05-2026, 11:39:32 a. m.	 El vendedor debe ser mayor de edad: 18 años class SevillaNavarreteDaniel.Excepciones.EdadNoValida13-05-2026, 11:39:38 a. m.	 El vendedor debe tener menos de 60 años class SevillaNavarreteDaniel.Excepciones.EdadNoValida
