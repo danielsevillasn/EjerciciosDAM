@@ -73,6 +73,7 @@ nbdist/
 
 # EXCEPCIÓN: Permitir librerías de JUnit en UT5 de Entornos
 !"Entornos de Desarrollo/UT5 - Diseño y realización de pruebas/lib/"*.jar
+!"Java/Tema11 - /lib/"*.jar
 
 # Maven
 target/
