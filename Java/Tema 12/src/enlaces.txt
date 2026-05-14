@@ -1,0 +1,5 @@
+https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/3.53.1.0
+
+https://sqlitebrowser.org/dl/
+
+Instalar extension sqlite
