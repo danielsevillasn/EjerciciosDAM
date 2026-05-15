@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <xsl:template match="/">
+        <html>
+            <body>
+                <h1>Mis Canciones</h1>
+                <xsl:apply-templates />
+            </body>
+        </html>
+    </xsl:template>
+
+    <xsl:template match="archivo">
+        <p>
+            <xsl:apply-templates select="canción" />
+            <xsl:apply-templates select="artista" />
+            <xsl:apply-templates select="disco" />
+        </p>
+    </xsl:template>
+
+    <xsl:template match="canción"> Canción <span style="color:darkblue">
+            <xsl:value-of select="." />
+        </span>
+    <br />
+    </xsl:template>
+
+    <xsl:template match="artista"> Artista <span style="color:blue">
+            <xsl:value-of select="." />
+        </span>
+    <br />
+    </xsl:template>
+
+    <xsl:template match="disco"> Disco <span style="color:lightblue">
+            <xsl:value-of select="." />
+        </span>
+    <br />
+    </xsl:template>
+
+</xsl:stylesheet>
