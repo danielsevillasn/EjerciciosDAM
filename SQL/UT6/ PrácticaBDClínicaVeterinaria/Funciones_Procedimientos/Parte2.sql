@@ -57,9 +57,9 @@ EXCEPTION
     WHEN excepcion_cita THEN
         DBMS_OUTPUT.PUT_LINE('No existe esa cita');
     WHEN excepcion_diagnostico THEN
-        DBDMS_OUTPUT.PUT_LINE('Registro duplicado');
+        DBMS_OUTPUT.PUT_LINE('Registro duplicado');
     WHEN OTHERS THEN
-        DBDMS_OUTPUT.PUT_LINE('Ha ocurrido otro error: '||SQLCODE ||'y' || SQLERR );
+        DBMS_OUTPUT.PUT_LINE('Ha ocurrido otro error: '||SQLCODE ||'y' || SQLERR );
         RAISE;
 END;
 

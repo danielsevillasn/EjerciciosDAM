@@ -1,80 +1,79 @@
-
- create or replace function f_mes(afecha date)
-   return varchar2
- is
-  mes varchar2(20);
- begin
-   mes:='enero';
-   case extract(month from afecha)
-     when 1 then mes:='enero';
-     when 2 then mes:='febrero';
-     when 3 then mes:='marzo';
-     when 4 then mes:='abril';
-     when 5 then mes:='mayo';
-     when 6 then mes:='junio';
-     when 7 then mes:='julio';
-     when 8 then mes:='agosto';
-     when 9 then mes:='setiembre';
-     when 10 then mes:='octubre';
-     when 11 then mes:='noviembre';
-     else mes:='diciembre';
-   end case;
-   return mes;
- end;
- /
+CREATE OR REPLACE FUNCTION f_mes(afecha DATE)
+RETURN VARCHAR2
+IS
+  mes VARCHAR2(20);
+BEGIN
+    CASE EXTRACT(MONTH FROM afecha)
+      WHEN 1 THEN mes:='enero';
+      WHEN 2 THEN mes:='febrero';
+      WHEN 3 THEN mes:='marzo';
+      WHEN 4 THEN mes:='abril';
+      WHEN 5 THEN mes:='mayo';
+      WHEN 6 then mes:='junio';
+      WHEN 7 THEN mes:='julio';
+      WHEN 8 THEN mes:='agosto';
+      WHEN 9 THEN mes:='setiembre';
+      WHEN 10 THEN mes:='octubre';
+      WHEN 11 THEN mes:='noviembre';
+      ELSE mes:='diciembre';
+    END CASE;
+  RETURN mes;
+END;
 
 --Recuperamos el nombre del empleado y el mes de su cumpleaños realizando un "select":
 
-select nombre, f_mes(fechanacimiento) as cumpleaños from empleados;
+SELECT nombre, f_mes(fechanacimiento) AS cumpleaños 
+FROM empleados;
 
 --Podemos probar la función creada anteriormente enviándole la siguiente fecha: junio
 
-select f_mes('10/06/2018') from dual;
+SELECT f_mes(TO_DATE('10/06/2018', 'DD/MM/YYYY')) 
+FROM dual;
 
 --Realizamos una función que reciba una fecha y retorne si se encuentra en el 1er, 2º, 3er o 4º trimestre del año:
 
-create or replace function f_trimestre(afecha date)
-   return varchar2
- is
-  mes varchar2(20);
-  trimestre number;
- begin
-   mes:=extract(month from afecha);
-   trimestre:=4;
-   case mes
-     when 1 then trimestre:=1;
-     when 2 then trimestre:=1;
-     when 3 then trimestre:=1;
-     when 4 then trimestre:=2;
-     when 5 then trimestre:=2;
-     when 6 then trimestre:=2;
-     when 7 then trimestre:=3;
-     when 8 then trimestre:=3;
-     when 9 then trimestre:=3;
-     else trimestre:=4;
-   end case;
-   return trimestre;
- end;
- /
- 
- --Recuperamos el nombre del empleado y el trimestre de su cumpleaños empleando la función creada anteriormente:
+CREATE OR REPLACE FUNCTION f_trimestre(afecha DATE)
+RETURN VARCHAR2
+IS
+  v_mes NUMBER;
+  v_trimestre VARCHAR2(20);
+BEGIN
+    v_mes := EXTRACT(MONTH FROM afecha);
 
- select nombre, f_trimestre(fechanacimiento) trimestre from empleados;
+    CASE v_mes
+      WHEN 1 THEN v_trimestre := '1º Trimestre';
+      WHEN 2 THEN v_trimestre := '1º Trimestre';
+      WHEN 3 THEN v_trimestre := '1º Trimestre';
+      WHEN 4 THEN v_trimestre := '2º Trimestre';
+      WHEN 5 THEN v_trimestre := '2º Trimestre';
+      WHEN 6 THEN v_trimestre := '2º Trimestre';
+      WHEN 7 THEN v_trimestre := '3º Trimestre';
+      WHEN 8 THEN v_trimestre := '3º Trimestre';
+      WHEN 9 THEN v_trimestre := '3º Trimestre';
+      ELSE v_trimestre := '4º Trimestre';
+    END CASE;
+    RETURN v_trimestre;
+END;
+
+--Recuperamos el nombre del empleado y el trimestre de su cumpleaños empleando la función creada anteriormente:
+
+SELECT nombre, f_trimestre(fechanacimiento) AS trimestre 
+FROM empleados;
 
 --Vamos a emplear "case" dentro de un "select". Veamos un ejemplo similar a la función anterior:
 
- select nombre,fechanacimiento,
-  case extract(month from fechanacimiento)
-   when 1 then 1
-   when 2 then 1
-   when 3 then 1
-   when 4 then 2
-   when 5 then 2
-   when 6 then 2
-   when 7 then 3
-   when 8 then 3
-   when 9 then 3
-  else  4
-  end as trimestre
-  from empleados
-  order by trimestre;
+SELECT nombre, fechanacimiento,
+  CASE EXTRACT(MONTH FROM fechanacimiento)
+    WHEN 1 THEN '1º Trimestre'
+    WHEN 2 THEN '1º Trimestre'
+    WHEN 3 THEN '1º Trimestre'
+    WHEN 4 THEN '2º Trimestre'
+    WHEN 5 THEN '2º Trimestre'
+    WHEN 6 THEN '2º Trimestre'
+    WHEN 7 THEN '3º Trimestre'
+    WHEN 8 THEN '3º Trimestre'
+    WHEN 9 THEN '3º Trimestre'
+  ELSE '4º Trimestre'
+  END AS trimestre
+FROM empleados
+ORDER BY trimestre;

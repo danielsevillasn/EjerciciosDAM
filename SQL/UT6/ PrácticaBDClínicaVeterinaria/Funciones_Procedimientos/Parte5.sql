@@ -6,48 +6,51 @@ CREATE OR REPLACE PROCEDURE cerrar_atencion(
     p_importe    NUMBER
 )
 AS
-    existeCita NUMBER;
-    diagnostico VARCHAR2(300);
-    existeRecomendacion NUMBER;
+    v_comprobador          VARCHAR2(300);
+    v_existe_recomendacion NUMBER;
+    v_fase                 NUMBER := 1; -- 1 = Cita, 2 = Diagnóstico
 BEGIN
-    SELECT COUNT(*)
-    INTO existeCita
+    -- 1. Verificar que existe la cita (Lanza NO_DATA_FOUND si no existe)
+    v_fase := 1;
+    SELECT MOTIVO INTO v_comprobador
     FROM CITAS
     WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
 
-    IF existeCita = 0 THEN
-        DBMS_OUTPUT.PUT_LINE('La cita no existe');
-    ELSE
-        SELECT DESCRIPCION 
-        INTO diagnostico
-        FROM DIAGNOSTICOS
-        WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+    -- 2. Verificar que hay diagnóstico (Lanza NO_DATA_FOUND si no existe)
+    v_fase := 2;
+    SELECT DESCRIPCION INTO v_comprobador
+    FROM DIAGNOSTICOS
+    WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
 
-        SELECT COUNT(*) 
-        INTO existeRecomendacion
-        FROM RECOMENDACIONES
-        WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+    -- 3. Insertar recomendación si no existe (Estructura IF/ELSE)
+    SELECT COUNT(*) INTO v_existe_recomendacion
+    FROM RECOMENDACIONES
+    WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
 
-        IF existeRecomendacion = 0 THEN
-            INSERT INTO RECOMENDACIONES (ID_CLIENTE, ID_MASCOTA, FECHA_CITA, TEXTO)
-            VALUES (p_id_cliente, p_id_mascota, p_fecha_cita, 'Seguimiento rutinario según evolución.');
-            DBMS_OUTPUT.PUT_LINE('Recomendación por defecto insertada');
-        END IF;
-
-        INSERT INTO PAGOS (ID_CLIENTE, ID_MASCOTA, FECHA_CITA, IMPORTE, FECHA_PAGO)
-        VALUES (p_id_cliente, p_id_mascota, p_fecha_cita, p_importe, NULL);
-        
-        DBMS_OUTPUT.PUT_LINE('Atención cerrada correctamente. Pago registrado como pendiente.');
-        
-        COMMIT;
+    IF v_existe_recomendacion = 0 THEN
+        INSERT INTO RECOMENDACIONES (ID_CLIENTE, ID_MASCOTA, FECHA_CITA, TEXTO)
+        VALUES (p_id_cliente, p_id_mascota, p_fecha_cita, 'Seguimiento rutinario según evolución.');
+        DBMS_OUTPUT.PUT_LINE('Recomendación por defecto insertada.');
     END IF;
+
+    -- 4. Registro del Pago (sin fecha de pago -> pendiente)
+    INSERT INTO PAGOS (ID_CLIENTE, ID_MASCOTA, FECHA_CITA, IMPORTE, FECHA_PAGO)
+    VALUES (p_id_cliente, p_id_mascota, p_fecha_cita, p_importe, NULL);
+    
+    DBMS_OUTPUT.PUT_LINE('Atención cerrada correctamente. Pago registrado como pendiente.');
+    
+    COMMIT;
+
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('Error crítico: No se puede cerrar la atención porque no existe un diagnóstico previo.');
+        IF v_fase = 1 THEN
+            DBMS_OUTPUT.PUT_LINE('Error: La cita especificada no existe.');
+        ELIF v_fase = 2 THEN
+            DBMS_OUTPUT.PUT_LINE('Error crítico: No se puede cerrar la atención porque no existe un diagnóstico previo.');
+        END IF;
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error inesperado: ' || SQLERRM);
 END;
-
 --Procedimiento 2--
 CREATE OR REPLACE PROCEDURE cerrar_atencion(
     p_id_cliente NUMBER,
@@ -56,32 +59,32 @@ CREATE OR REPLACE PROCEDURE cerrar_atencion(
     p_importe    NUMBER
 )
 AS
-    diagnostico VARCHAR2(300);
-    
-    v_existe_cita NUMBER;
+    v_comprobador          VARCHAR2(300);
     v_existe_recomendacion NUMBER;
-    v_existe_diagnostico NUMBER;
-
-    ex_cita EXCEPTION;
-    ex_diagnostico EXCEPTION;
-
 BEGIN
-    SELECT COUNT(*) INTO v_existe_cita
-    FROM CITAS
-    WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+    -- 1. Verificar que existe la cita
+    BEGIN
+        SELECT MOTIVO INTO v_comprobador
+        FROM CITAS
+        WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('Error: La cita especificada no existe.');
+            RETURN; -- Sale del procedimiento de forma segura
+    END;
 
-    IF v_existe_cita = 0 THEN
-        RAISE ex_cita;
-    END IF;
+    -- 2. Verificar que hay diagnóstico
+    BEGIN
+        SELECT DESCRIPCION INTO v_comprobador
+        FROM DIAGNOSTICOS
+        WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('Error crítico: No se puede cerrar la atención porque no existe un diagnóstico previo.');
+            RETURN;
+    END;
 
-    SELECT COUNT(*) INTO v_existe_diagnostico
-    FROM DIAGNOSTICOS
-    WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
-
-    IF v_existe_diagnostico = 0 THEN
-        RAISE ex_diagnostico;
-    END IF;
-
+    -- 3. Insertar recomendación si no existe
     SELECT COUNT(*) INTO v_existe_recomendacion
     FROM RECOMENDACIONES
     WHERE ID_CLIENTE = p_id_cliente AND ID_MASCOTA = p_id_mascota AND FECHA_CITA = p_fecha_cita;
@@ -89,7 +92,7 @@ BEGIN
     IF v_existe_recomendacion = 0 THEN
         INSERT INTO RECOMENDACIONES (ID_CLIENTE, ID_MASCOTA, FECHA_CITA, TEXTO)
         VALUES (p_id_cliente, p_id_mascota, p_fecha_cita, 'Seguimiento rutinario según evolución.');
-        DBMS_OUTPUT.PUT_LINE('Recomendación por defecto insertada');
+        DBMS_OUTPUT.PUT_LINE('Recomendación por defecto insertada.');
     END IF;
 
     -- 4. Registro del Pago
@@ -100,12 +103,8 @@ BEGIN
     
     COMMIT;
 EXCEPTION
-    WHEN ex_cita THEN
-        DBMS_OUTPUT.PUT_LINE('Error: la cita no existe.');
-    WHEN ex_diagnostico THEN
-        DBMS_OUTPUT.PUT_LINE('Error: el diagnostico no existe.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error ' || SQLCODE || ' inesperado: ' || SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Error inesperado de base de datos: ' || SQLERRM);
 END;
 
 --Prueba--

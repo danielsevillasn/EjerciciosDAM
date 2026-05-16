@@ -1,20 +1,21 @@
 SET SERVEROUTPUT ON;
 
 --1--
-drop table empleados; 
-create table empleados( 
-    nombre varchar2(40), 
-    sueldo number(6,2) 
-); 
+DROP TABLE empleados; 
+CREATE TABLE empleados( 
+    nombre VARCHAR2(40), 
+    sueldo NUMBER(6,2) 
+);
 
 --2--
-insert into empleados values('Acosta Ana',550);  
-insert into empleados values('Bustos Bernardo',850);  
-insert into empleados values('Caseros Carolina',900);  
-insert into empleados values('Dominguez Daniel',490);  
-insert into empleados values('Fuentes Fabiola',820);  
-insert into empleados values('Gomez Gaston',740);  
-insert into empleados values('Huerta Hernan',1050);
+INSERT INTO empleados VALUES('Acosta Ana',550);  
+INSERT INTO empleados VALUES('Bustos Bernardo',850);  
+INSERT INTO empleados VALUES('Caseros Carolina',900);  
+INSERT INTO empleados VALUES('Dominguez Daniel',490);  
+INSERT INTO empleados VALUES('Fuentes Fabiola',820);  
+INSERT INTO empleados VALUES('Gomez Gaston',740);  
+INSERT INTO empleados VALUES('Huerta Hernan',1050);
+COMMIT;
 
 --3--
 SELECT SUM(SUELDO) AS SUMA_TOTAL
@@ -38,6 +39,23 @@ BEGIN
     END LOOP;
     DBMS_OUTPUT.PUT_LINE('Salarios actualizados correctamente');
     DBMS_OUTPUT.PUT_LINE('Suma del salario total actual: ' || SALARIO_TOTAL);
+END;
+
+DECLARE
+    salario_total NUMBER;
+BEGIN
+    LOOP
+        SELECT SUM(sueldo) INTO salario_total FROM empleados;
+        
+        -- Si ya llegó o superó los 7000, salimos antes de volver a incrementar
+        EXIT WHEN salario_total >= 7000;
+        
+        UPDATE empleados
+        SET sueldo = sueldo * 1.10;
+    END LOOP;
+    
+    DBMS_OUTPUT.PUT_LINE('--- PUNTO 4 ---');
+    DBMS_OUTPUT.PUT_LINE('Suma del salario total actual: ' || salario_total);
 END;
 
 --5--
@@ -72,6 +90,26 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Veces repetidas del bucle: ' || CONTADOR);
 END;
 
+DECLARE
+    sueldo_maximo NUMBER;
+    contador NUMBER := 0;
+BEGIN
+    LOOP
+        SELECT MAX(sueldo) INTO sueldo_maximo FROM empleados;
+        
+        EXIT WHEN sueldo_maximo >= 1600;
+        
+        UPDATE empleados
+        SET sueldo = sueldo * 1.05;
+        
+        contador := contador + 1;
+    END LOOP;
+    
+    DBMS_OUTPUT.PUT_LINE('--- PUNTO 7 ---');
+    DBMS_OUTPUT.PUT_LINE('Sueldo maximo actual: ' || sueldo_maximo);
+    DBMS_OUTPUT.PUT_LINE('Veces repetidas del bucle: ' || contador);
+END;
+
 --8--
 SELECT * 
 FROM EMPLEADOS;
@@ -85,16 +123,16 @@ DECLARE
     SUELDO_MINIMO NUMBER;
 BEGIN
     LOOP
-        UPDATE EMPLEADOS 
-        SET SUELDO = SUELDO * 1.10;
-
         SELECT MIN(SUELDO) 
         INTO SUELDO_MINIMO 
         FROM EMPLEADOS;
 
-        IF SUELDO_MINIMO > 900 THEN
+        IF SUELDO_MINIMO >= 900 THEN
             EXIT;
         END IF;
+
+        UPDATE EMPLEADOS 
+        SET SUELDO = SUELDO * 1.10;
     END LOOP;
     DBMS_OUTPUT.PUT_LINE('Salarios actualizados correctamente');
     DBMS_OUTPUT.PUT_LINE('Sueldo minimo actual: ' || SUELDO_MINIMO);

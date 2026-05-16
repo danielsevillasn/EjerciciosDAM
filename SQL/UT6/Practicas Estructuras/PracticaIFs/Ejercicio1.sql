@@ -28,16 +28,17 @@ AS
 BEGIN
     OPERACION := V_STOCKM-V_STOCKA;
     IF V_STOCKA = 0 THEN
-    CADENA := 'Cantidad necesaria: ' || OPERACION;
+        CADENA := 'Cantidad necesaria: ' || OPERACION;
     ELSIF V_STOCKA < V_STOCKM THEN
-    CADENA := 'Cantidad necesaria: ' || OPERACION;
+        CADENA := 'Cantidad necesaria: ' || OPERACION;
     ELSE
-    CADENA := 'No hace falta reponer'; END IF;
+        CADENA := 'No hace falta reponer'; 
+    END IF;
 
     RETURN CADENA;
 
 END REPONESTOCK;
 
 --Consulta prueba funcion 2
-SELECT CODIGO, STOCKMINIMO, STOCKACTUAL, VALIDASTOCK(stockminimo, stockactual) AS ESTADO_PRODUCTO, REPONESTOCK(stockminimo, stockactual)
+SELECT CODIGO, STOCKMINIMO, STOCKACTUAL, VALIDASTOCK(stockminimo, stockactual) AS ESTADO_PRODUCTO, REPONESTOCK(stockminimo, stockactual) AS STOCK
 FROM PRODUCTOS;

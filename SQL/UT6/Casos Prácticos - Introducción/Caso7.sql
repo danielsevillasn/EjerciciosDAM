@@ -13,7 +13,9 @@ END;
  
 Procedimiento creado. 
  
-EXECUTE VER_PRECIO(‘FR-15’);
+EXECUTE VER_PRECIO('FR-15');
+--Precio = 25
+
 
 --2--
 CREATE OR REPLACE 
@@ -39,6 +41,9 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('No encontrado producto '|| numproducto); 
 END modificar_precio_producto;
 
+EXECUTE MODIFICAR_PRECIO_PRODUCTO('FR-15',300)
+--Error, modificación supera 20%
+
 --3--
 CREATE OR REPLACE FUNCTION con_iva (cantidad NUMBER, tipo NUMBER DEFAULT 16) 
 -- DEFAULT 16 significa que si no pasas el IVA, usará 16 por defecto 
@@ -51,8 +56,11 @@ BEGIN
 END con_iva;
 
 --Ejemplo1--
-BEGIN DBMS_OUTPUT.PUT_LINE(con_iva(200)); END;
+BEGIN 
+    DBMS_OUTPUT.PUT_LINE(con_iva(200)); 
+END;
+--232
 
 --Ejemplo2--
-SELECT codigoproducto, precioventa, con_iva(precioventa) FROM 
-productos;
+SELECT codigoproducto, precioventa, con_iva(precioventa) 
+FROM productos;

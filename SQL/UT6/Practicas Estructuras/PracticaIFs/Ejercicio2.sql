@@ -5,9 +5,10 @@ AS
     CADENA VARCHAR2(40);
 BEGIN
     IF EDAD >= 18 THEN
-    CADENA := 'Mayor';
+        CADENA := 'Mayor';
     ELSE
-    CADENA := 'Menor'; END IF;
+        CADENA := 'Menor'; 
+    END IF;
 
     RETURN CADENA;
 
@@ -19,10 +20,13 @@ RETURN VARCHAR2
 AS
     CADENA VARCHAR2(40);
 BEGIN
-    IF SEXO LIKE 'f' THEN
-    CADENA := 'Femenino';
-    ELSE
-    CADENA := 'Masculino'; END IF;
+    IF LOWER(SEXO) = 'f' THEN
+        CADENA := 'Femenino';
+    ELSIF LOWER(SEXO) = 'm' THEN
+        CADENA := 'Masculino'; 
+    ELSE 
+        CADENA := 'Otro';
+    END IF;
 
     RETURN CADENA;
 
@@ -30,5 +34,5 @@ END VALIDASEXO;
 
 
 -- Consulta
-SELECT NOMBRE, VALIDAEDAD(EDAD) AS EDAD, VALIDASEXO(SEXO) AS SEXO
+SELECT NOMBRE, VALIDAEDAD(EDAD) AS CATEGORIA, VALIDASEXO(SEXO) AS SEXO
 FROM PACIENTES;
