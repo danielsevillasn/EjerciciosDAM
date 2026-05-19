@@ -1,4 +1,4 @@
---Procedimiento 2--
+--Procedimiento--
 CREATE OR REPLACE FUNCTION numero_mascotas_cliente(p_id_cliente NUMBER) 
 RETURN NUMBER
 AS

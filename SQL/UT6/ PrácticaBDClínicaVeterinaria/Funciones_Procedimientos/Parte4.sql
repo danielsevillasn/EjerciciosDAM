@@ -68,6 +68,38 @@ WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLCODE || '-' || SQLERRM); --Lanza el codigo de la excepcion y su respectiva descripcion
         RAISE; --Se lanza otra vez la excepcion para que codigos de mayor nivel lo controlen (opcional)
 END;
+/
+
+--Procedimiento 3--
+CREATE OR REPLACE PROCEDURE calcular_total_pendiente_cliente(p_id_cliente NUMBER)
+AS
+    -- El cursor lee directamente p_id_cliente del procedimiento.
+    -- Además, filtramos ya los que tienen FECHA_PAGO IS NULL para trabajar menos en el LOOP.
+    CURSOR c_pagos_pendientes IS
+        SELECT IMPORTE
+        FROM PAGOS
+        WHERE ID_CLIENTE = p_id_cliente
+          AND FECHA_PAGO IS NULL; 
+    
+    v_total NUMBER := 0;
+    v_importe NUMBER; -- Ya no necesitamos el %ROWTYPE completo si solo queremos el importe
+BEGIN
+    OPEN c_pagos_pendientes;
+    LOOP
+        FETCH c_pagos_pendientes INTO v_importe;
+        EXIT WHEN c_pagos_pendientes%NOTFOUND;
+
+        v_total := v_total + v_importe;
+    END LOOP;
+    CLOSE c_pagos_pendientes;
+
+    DBMS_OUTPUT.PUT_LINE('El importe total pendiente es: ' || v_total || '€');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLCODE || '-' || SQLERRM);
+        RAISE;
+END;
+/
 
 
 --PRUEBA--

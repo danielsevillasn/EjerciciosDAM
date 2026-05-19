@@ -1,3 +1,4 @@
+--Opcion 1--
 CREATE OR REPLACE PROCEDURE GENERAR_INFORME_PRACTICAS_EMPRESA(EMPRESA NUMBER)
 AS
 
@@ -96,3 +97,134 @@ EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('HA OCURRIDO UN ERROR INESPERADO: ' || SQLERRM);
 END;
+/
+
+--Opcion 2--
+CREATE OR REPLACE PROCEDURE GENEREAR_INFORME_PRACTICAS_EMPRESA(EMPRES NUMBER DEFAULT NULL) 
+AS
+    -- 1er Cursor explícito: Trae TODAS las empresas (se usará solo en el ELSE)
+    CURSOR c_todas_empresas IS
+        SELECT empresa_id, nombre
+        FROM EMPRESAS;
+
+    -- 2do Cursor explícito: Trae las prácticas de una empresa (se usará en ambos bloques)
+    CURSOR c_practicas(p_empresa_id NUMBER) IS
+        SELECT estado, evaluacion
+        FROM PRACTICAS
+        WHERE empresa_id = p_empresa_id;
+
+    -- Variables para los cálculos de estadísticas
+    v_nombre_empresa        VARCHAR2(100);
+    v_total_practicas       NUMBER;
+    v_practicas_finalizadas NUMBER;
+    v_suma_evaluaciones     NUMBER;
+    v_cuenta_evaluaciones   NUMBER;
+    
+    -- Control de excepciones
+    v_existe_empresa        NUMBER := 0;
+    e_no_existe_empresa     EXCEPTION;
+
+BEGIN
+    ---------------------------------------------------------------------------
+    -- CASO 1: NOS PASAN UNA EMPRESA POR PARÁMETRO (Informe Único)
+    ---------------------------------------------------------------------------
+    IF EMPRES IS NOT NULL THEN
+        
+        -- 1. Validar si existe en la base de datos
+        SELECT COUNT(*) INTO v_existe_empresa 
+        FROM EMPRESAS 
+        WHERE empresa_id = EMPRES;
+        
+        IF v_existe_empresa = 0 THEN
+            RAISE e_no_existe_empresa;
+        END IF;
+
+        -- 2. Obtener el nombre de esa empresa específica
+        SELECT nombre INTO v_nombre_empresa FROM EMPRESAS WHERE empresa_id = EMPRES;
+
+        -- 3. Inicializar contadores
+        v_total_practicas       := 0;
+        v_practicas_finalizadas := 0;
+        v_suma_evaluaciones     := 0;
+        v_cuenta_evaluaciones   := 0;
+
+        -- 4. Procesar SOLO las prácticas de esta empresa
+        FOR reg_practica IN c_practicas(EMPRES) LOOP
+            v_total_practicas := v_total_practicas + 1;
+            
+            IF reg_practica.estado = 'Finalizada' THEN
+                v_practicas_finalizadas := v_practicas_finalizadas + 1;
+            END IF;
+
+            IF reg_practica.evaluacion IS NOT NULL THEN
+                v_suma_evaluaciones   := v_suma_evaluaciones + reg_practica.evaluacion;
+                v_cuenta_evaluaciones := v_cuenta_evaluaciones + 1;
+            END IF;
+        END LOOP;
+
+        -- 5. Mostrar el informe único por pantalla
+        DBMS_OUTPUT.PUT_LINE('==================================================');
+        DBMS_OUTPUT.PUT_LINE('EMPRESA SOLICITADA: ' || EMPRES || ' - ' || v_nombre_empresa);
+        DBMS_OUTPUT.PUT_LINE('Total de prácticas: ' || v_total_practicas);
+        DBMS_OUTPUT.PUT_LINE('Prácticas finalizadas: ' || v_practicas_finalizadas);
+        
+        IF v_cuenta_evaluaciones > 0 THEN
+            DBMS_OUTPUT.PUT_LINE('Promedio de evaluaciones: ' || ROUND(v_suma_evaluaciones / v_cuenta_evaluaciones, 2));
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('No tiene aún evaluaciones hechas');
+        END IF;
+        DBMS_OUTPUT.PUT_LINE('==================================================');
+
+    ---------------------------------------------------------------------------
+    -- CASO 2: EL PARÁMETRO ES NULL (Informe Global de todas las empresas)
+    ---------------------------------------------------------------------------
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('==================================================');
+        DBMS_OUTPUT.PUT_LINE('          INFORME GLOBAL DE TODAS LAS EMPRESAS    ');
+        DBMS_OUTPUT.PUT_LINE('==================================================');
+
+        -- Recorremos el cursor de todas las empresas
+        FOR reg_empresa IN c_todas_empresas LOOP
+            
+            -- Resetear contadores para cada empresa del bucle
+            v_total_practicas       := 0;
+            v_practicas_finalizadas := 0;
+            v_suma_evaluaciones     := 0;
+            v_cuenta_evaluaciones   := 0;
+
+            -- Recorremos las prácticas de la empresa actual del bucle
+            FOR reg_practica IN c_practicas(reg_empresa.empresa_id) LOOP
+                v_total_practicas := v_total_practicas + 1;
+                
+                IF reg_practica.estado = 'Finalizada' THEN
+                    v_practicas_finalizadas := v_practicas_finalizadas + 1;
+                END IF;
+
+                IF reg_practica.evaluacion IS NOT NULL THEN
+                    v_suma_evaluaciones   := v_suma_evaluaciones + reg_practica.evaluacion;
+                    v_cuenta_evaluaciones := v_cuenta_evaluaciones + 1;
+                END IF;
+            END LOOP;
+
+            -- Imprimir los datos de la empresa actual
+            DBMS_OUTPUT.PUT_LINE('EMPRESA: ' || reg_empresa.empresa_id || ' - ' || reg_empresa.nombre);
+            DBMS_OUTPUT.PUT_LINE('Total de prácticas: ' || v_total_practicas);
+            DBMS_OUTPUT.PUT_LINE('Prácticas finalizadas: ' || v_practicas_finalizadas);
+            
+            IF v_cuenta_evaluaciones > 0 THEN
+                DBMS_OUTPUT.PUT_LINE('Promedio de evaluaciones: ' || ROUND(v_suma_evaluaciones / v_cuenta_evaluaciones, 2));
+            ELSE
+                DBMS_OUTPUT.PUT_LINE('No tiene aún evaluaciones hechas');
+            END IF;
+            DBMS_OUTPUT.PUT_LINE('--------------------------------------------------');
+        END LOOP;
+        
+    END IF;
+
+EXCEPTION
+    WHEN e_no_existe_empresa THEN
+        DBMS_OUTPUT.PUT_LINE('Error: La empresa con ID ' || EMPRES || ' no existe en la base de datos.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error inesperado [' || SQLCODE || ']: ' || SQLERRM);
+END;
+/

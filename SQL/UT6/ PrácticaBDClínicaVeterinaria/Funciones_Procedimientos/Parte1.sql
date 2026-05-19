@@ -7,6 +7,14 @@ BEGIN
 
     RETURN edad;
 END;
+/
+CREATE OR REPLACE FUNCTION calcular_edad(p_fecha_nac DATE)
+RETURN NUMBER
+AS
+BEGIN
+    RETURN (SYSDATE - p_fecha_nac)/365;
+END;
+/
 
 --PRUEBAS--
 

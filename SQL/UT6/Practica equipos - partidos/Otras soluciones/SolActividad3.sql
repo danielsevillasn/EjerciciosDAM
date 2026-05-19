@@ -4,6 +4,7 @@ o El equipo X y el equipo Y empataron a Z goles”. Maneja las excepciones:
 - “Alguno de los equipos no existe.”
 - “Ese partido no se ha jugado.”*/
 
+--Funcion 1--
 CREATE OR REPLACE FUNCTION DEVOLVER_RESULTADO(E_LOCAL VARCHAR2, E_VISITANTE VARCHAR2)
 RETURN VARCHAR2
 AS
@@ -55,6 +56,56 @@ BEGIN
                 RETURN RESPUESTA;
             END IF;
 END;
+/
+
+--Funcion 2--
+CREATE OR REPLACE FUNCTION DEVOLVER_RESULTADO (p_EQUIPO_LOCAL VARCHAR2, p_EQUIPO_VISITANTE VARCHAR2)
+RETURN VARCHAR2
+AS
+    v_validacion_equipo_local NUMBER := 0;
+    v_validacion_equipo_visitante NUMBER := 0;
+    v_goles_local NUMBER;
+    v_goles_visitante NUMBER;
+    v_diferencia_goles NUMBER;
+
+    e_no_existe_equipo EXCEPTION;
+BEGIN
+    SELECT COUNT(*) INTO v_conteo_equipos
+    FROM CLASIFICACION
+    WHERE EQUIPO IN (p_EQUIPO_LOCAL, p_EQUIPO_VISITANTE);
+
+    IF v_conteo_equipos < 2 THEN
+        RAISE e_no_existe_equipo;
+    END IF;
+
+    IF v_validacion_equipo_local = 0 THEN
+        RAISE e_no_existe_equipo;
+    ELSIF v_validacion_equipo_visitante = 0 THEN
+        RAISE e_no_existe_equipo;
+    ELSE 
+        SELECT GOLES_LOCAL, GOLES_VISITANTE INTO v_goles_local, v_goles_visitante
+        FROM RESULTADOS
+        WHERE EQUIPO_LOCAL = p_EQUIPO_LOCAL AND EQUIPO_VISITANTE = p_EQUIPO_VISITANTE;
+
+        IF v_goles_local > v_goles_visitante THEN
+            v_diferencia_goles := v_goles_local - v_goles_visitante;
+            RETURN 'El equipo '||p_EQUIPO_LOCAL||' ganó al equipo '||p_EQUIPO_VISITANTE||' por '||v_diferencia_goles ||' goles';
+        ELSIF v_goles_visitante > v_goles_local THEN
+            v_diferencia_goles := v_goles_visitante - v_goles_local;
+            RETURN 'El equipo '||p_EQUIPO_VISITANTE||' ganó al equipo '||p_EQUIPO_LOCAL||' por '||v_diferencia_goles ||' goles';
+        ELSE
+            RETURN 'El equipo '||p_EQUIPO_LOCAL||' y el equipo '|| p_EQUIPO_VISITANTE ||' empataron a '|| v_goles_local || ' goles';
+        END IF;
+    END IF;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RETURN 'Ese partido no se ha jugado.”';
+    WHEN e_no_existe_equipo THEN
+        RETURN 'Alguno de los equipos no existe.';
+    WHEN OTHERS THEN 
+        RETURN 'Codigo de error ' || SQLCODE || ', mensaje de error: '||SQLERRM;
+END;
+/
 
 --EJECUTAR LA FUNCIÓN
 

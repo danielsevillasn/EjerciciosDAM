@@ -20,7 +20,6 @@ BEGIN
     IF :NEW.EQUIPO_LOCAL = :NEW.EQUIPO_VISITANTE THEN
         RAISE_APPLICATION_ERROR(-20002, 'Un equipo no puede jugar contra sí mismo.');
     END IF;
-
 END;
 
 /*PRUEBAS*/
