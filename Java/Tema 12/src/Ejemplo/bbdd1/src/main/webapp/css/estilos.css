@@ -1,0 +1,79 @@
+/* src/main/webapp/css/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* LISTA GENERAL */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* CADA GRUPO (Empleado o Departamento) */
+li.group {
+    background-color: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* DETALLE DENTRO DEL GRUPO */
+li.detail {
+    margin-left: 20px;
+    padding: 5px 0;
+}
+
+/* Alternar colores para distinguir bloques */
+li.group:nth-child(odd) {
+    background-color: #e8f4fa; /* Azul clarito */
+}
+
+li.group:nth-child(even) {
+    background-color: #ffffff; /* Blanco */
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

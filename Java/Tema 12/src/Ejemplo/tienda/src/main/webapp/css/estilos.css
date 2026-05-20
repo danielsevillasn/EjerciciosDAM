@@ -1,0 +1,166 @@
+/* estilos.css */
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezados */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h2, h3 {
+    color: #34495e;
+    text-align: center;
+    margin: 25px 0;
+}
+
+/* Formularios */
+fieldset {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.25);
+}
+
+/* Botones */
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Lista de productos */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+li {
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-3px);
+}
+
+li ul {
+    margin: 10px 0 0 20px;
+}
+
+li li {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 5px 0;
+    margin: 0;
+}
+
+/* Enlaces */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Mensajes de resultado */
+p {
+    background-color: #e9f5ff;
+    color: #004085;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #b8daff;
+    max-width: 600px;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    fieldset {
+        margin: 15px;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+}
