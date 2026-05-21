@@ -1,0 +1,18 @@
+  <!ELEMENT biblioteca (libro*, revista*)>
+  <!ELEMENT libro (titulo, autor, editorial, anio, precio, descripcion?, imagen?)>
+  <!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT autor (#PCDATA)>
+  <!ELEMENT editorial (#PCDATA)>
+  <!ELEMENT anio (#PCDATA)>
+  <!ELEMENT precio (#PCDATA)>
+  <!ELEMENT descripcion (#PCDATA)>
+  <!ELEMENT imagen (#PCDATA)>
+  <!ELEMENT revista (titulo, editorial, anio, precio, articulo*)>
+  <!ELEMENT articulo (titulo, autor, contenido)>
+  <!ELEMENT contenido (#PCDATA)>
+  <!ATTLIST libro id CDATA #REQUIRED>
+  <!ATTLIST libro formato (impreso|digital) "impreso">
+  <!ATTLIST libro idioma CDATA #IMPLIED>
+  <!ENTITY % desc "Un libro interesante sobre programación">
+  <!ENTITY % imagen "portada.jpg">
+  <!ENTITY euro "&#8364;">

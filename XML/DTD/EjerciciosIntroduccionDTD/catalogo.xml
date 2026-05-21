@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo SYSTEM "catalogo.dtd">
+
+<catalogo>
+    <producto id="1">
+        <nombreProducto>Portátil Lenovo IdeaPad</nombreProducto>
+        <descripcion>Portátil de 15 pulgadas con procesador Intel i5</descripcion>
+        <precio moneda="EUR">699.99</precio>
+
+        <caracteristicas>
+            <caracteristica tipo="Batería" valor="8 horas"/>
+            <caracteristica tipo="RAM" valor="16 GB"/>
+            <caracteristica tipo="Almacenamiento" valor="512 GB SSD"/>
+        </caracteristicas>
+    </producto>
+
+    <producto id="2">
+        <nombreProducto>Smartphone Samsung Galaxy</nombreProducto>
+        <descripcion>Pantalla AMOLED de 6.5 pulgadas</descripcion>
+        <precio moneda="EUR">499.50</precio>
+
+        <caracteristicas>
+            <caracteristica tipo="Cámara" valor="64 MP"/>
+            <caracteristica tipo="Batería" valor="5000 mAh"/>
+            <caracteristica tipo="Conectividad" valor="5G"/>
+        </caracteristicas>
+    </producto>
+</catalogo>
