@@ -1,0 +1,47 @@
+{
+    // Nodo raíz: Agrupa toda la estructura de la información de tu proyecto de desarrollo
+    "proyecto": {
+        // Identificador único del proyecto (validado por patrones en XSD/DTD)
+        "id": "P001",
+        // Estado operativo actual de la aplicación
+        "estado": "activo",
+        // Identificador o nombre de usuario del desarrollador responsable
+        "autor": "danielsevilla",
+        // Flag booleano que determina la visibilidad del repositorio (público o privado)
+        "publico": false,
+        
+        // Bloque con la configuración técnica y de infraestructura del entorno
+        "detalles_tecnicos": {
+            // Información del lenguaje base del software backend
+            "lenguaje": {
+                "version": "21",
+                "nombre": "Java"
+            },
+            // Entorno de persistencia y almacenamiento de datos
+            "bbdd": {
+                "tipo": "Oracle",
+                "descripcion": "Despliegue en Docker sobre WSL"
+            }
+        },
+        
+        // Colección ordenada (array) que actúa como log o registro de cambios del proyecto
+        "historial": [
+            {
+                // Primer punto de guardado (commit) registrado
+                "commit": {
+                    "hash" : "a1b2c3d",
+                    "fecha": "2026-05-20",
+                    "mensaje": "Excepcion lib JAR JUnit"
+                }
+            },
+            {
+                // Segundo punto de guardado registrado secuencialmente
+                "commit": {
+                    "hash" : "f9e8d7c",
+                    "fecha": "2026-05-21",
+                    "mensaje": "Agrega lo necesario para el nuevo lenguaje XML en .gitignore"
+                }
+            }
+        ]
+    }
+}

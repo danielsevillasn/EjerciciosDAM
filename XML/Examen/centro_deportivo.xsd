@@ -1,0 +1,63 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--Elemento raíz centro deportivo-->
+    <xs:element name="centroDeportivo">
+        <xs:complexType>
+            <xs:sequence>
+                <!--Elemento actividad que puede aparecer más de una vez-->
+                <xs:element name="actividad" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!--Elemento nombre-->
+                            <xs:element name="nombre" type="xs:string" />
+                            <!--Elemento monitor-->
+                            <xs:element name="monitor">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!--Elementos hijos de monitor-->
+                                        <xs:element name="nombreMonitor" type="xs:string" />
+                                        <xs:element name="telefono" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!--Elemento horario-->
+                            <xs:element name="horario">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!--Elementos hijos de horario-->
+                                        <xs:element name="dia" type="xs:string" />
+                                        <xs:element name="horaInicio" type="xs:string" />
+                                        <xs:element name="duracionMinutos" type="xs:int" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!--Elemento inscripcion-->
+                            <xs:element name="inscripcion">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!--Elementos hijos de inscripcion-->
+                                        <xs:element name="plazasDisponibles" type="xs:int" />
+                                        <xs:element name="precioMensual" type="xs:decimal" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!--Atributos actividad-->
+                        <xs:attribute name="codigo" use="required">
+                            <xs:simpleType>
+                                <!--Restriccion que emplea regex basado en que primero se pone una A y luego 2 numeros del 0 al 9-->
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="A[0-9]{2}" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <!--En estos atributos pongo de predeterminado unos valores por lo que entonces es obligatorio poner el uso en opcional-->
+                        <xs:attribute name="nivel" type="xs:string" use="optional" default="inicial" />
+                        <xs:attribute name="plazoInscripcion" type="xs:string" use="optional" default="abierto"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <!--Atributo centro deportivo-->
+            <xs:attribute name="nombre" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

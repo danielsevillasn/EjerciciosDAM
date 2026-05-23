@@ -1,0 +1,34 @@
+{
+    "biblioteca": {
+        "nombre": "Biblioteca Central",
+        "libro": [
+            {
+                "isbn": "1234567890",
+                "disponible": true,
+                "titulo": "El Quijote",
+                "autor": "Miguel de Cervantes",
+                "precio": {
+                    "moneda": "EUR",
+                    "cantidad": 25.50
+                },
+                "tags": [
+                    "Clasico",
+                    "Aventura"
+                ]
+            },
+            {
+                "isbn": "0987654321",
+                "disponible": false,
+                "titulo": "Cien años de soledad",
+                "autor": "Gabriel García Márquez",
+                "precio": {
+                    "moneda": "USD",
+                    "cantidad": 18.00
+                },
+                "tags": [
+                    "Realismo"
+                ]
+            }
+        ]
+    }
+}

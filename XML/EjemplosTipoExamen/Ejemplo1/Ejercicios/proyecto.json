@@ -1,0 +1,34 @@
+{
+    "proyecto":{
+        "id": "P001",
+        "estado": "activo",
+        "autor": "danielsevilla",
+        "publico": false,
+        "detalles_tecnicos":{
+            "lenguaje": {
+                "version": "21",
+                "nombre": "Java"
+            },
+            "bbdd": {
+                "tipo": "Oracle",
+                "descripcion": "Despliegue en Docker sobre WSL"
+            }
+        },
+        "historial": [
+            {
+                "commit": {
+                    "hash" : "a1b2c3d",
+                    "fecha": "2026-05-20",
+                    "mensaje": "Excepcion lib JAR JUnit"
+                }
+            },
+            {
+                "commit": {
+                    "hash" : "f9e8d7c",
+                    "fecha": "2026-05-21",
+                    "mensaje": "Agrega lo necesario para el nuevo lenguaje XML en .gitignore"
+                }
+            }
+        ]
+    }
+}

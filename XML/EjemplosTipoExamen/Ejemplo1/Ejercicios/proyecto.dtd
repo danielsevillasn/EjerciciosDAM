@@ -1,0 +1,22 @@
+<!ELEMENT proyecto (autor, publico,detalles_tecnicos,historial)>
+<!ATTLIST proyecto id ID #REQUIRED>
+<!ATTLIST proyecto estado (activo|pausado) "activo">
+
+<!ELEMENT autor EMPTY>
+<!ATTLIST autor username CDATA #REQUIRED>
+
+<!ELEMENT publico (#PCDATA)>
+
+<!ELEMENT detalles_tecnicos (lenguaje, (bbdd | ficheros))>
+<!ELEMENT lenguaje (#PCDATA)>
+<!ATTLIST lenguaje version CDATA #REQUIRED>
+<!ELEMENT bbdd (#PCDATA)>
+<!ATTLIST bbdd tipo CDATA #REQUIRED>
+<!ELEMENT ficheros (#PCDATA)>
+<!ATTLIST ficheros tipo CDATA #REQUIRED>
+
+<!ELEMENT historial (commit+)>
+<!ELEMENT commit (fecha, mensaje)>
+<!ATTLIST commit hash CDATA #REQUIRED>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT mensaje (#PCDATA)>

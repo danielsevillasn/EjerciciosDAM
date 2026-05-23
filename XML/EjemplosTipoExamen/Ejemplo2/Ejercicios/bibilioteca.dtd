@@ -1,0 +1,17 @@
+<!ELEMENT biblioteca (libro+)>
+<!ATTLIST biblioteca nombre CDATA #REQUIRED>
+
+<!ELEMENT libro (titulo, autor, precio, tags)>
+<!ATTLIST libro isbn CDATA #REQUIRED>
+<!ATTLIST libro disponible (true | false) "true">
+
+<!ELEMENT titulo (#PCDATA)>
+
+<!ELEMENT autor (#PCDATA)>
+
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda CDATA #REQUIRED>
+
+<!ELEMENT tags (tag+)>
+
+<!ELEMENT tag (#PCDATA)>

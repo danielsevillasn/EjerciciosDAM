@@ -1,0 +1,39 @@
+<!--Elemento raíz centro deportivo-->
+<!ELEMENT centroDeportivo (actividad+)>
+
+<!--Atributos centro deportivo-->
+<!ATTLIST centroDeportivo nombre CDATA #REQUIRED>
+
+<!--Elemento actividad-->
+<!ELEMENT actividad (nombre, monitor, horario, inscripcion)>
+
+<!--Atributos actividad-->
+<!ATTLIST actividad codigo CDATA #REQUIRED>
+<!--Atributos enumerados con varias opciones y con un valor predeterminado que hace que sea opcional obligatoriamente-->
+<!ATTLIST actividad nivel (inicial | medio | avanzado) "inicial">
+<!ATTLIST actividad plazoInscripcion (abierto | cerrado) "abierto">
+
+<!--Elemento nombre-->
+<!ELEMENT nombre (#PCDATA)>
+
+<!--Elemento monitor-->
+<!ELEMENT monitor (nombreMonitor, telefono)>
+
+<!--Elementos hijos de monitor-->
+<!ELEMENT nombreMonitor (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+
+<!--Elemento horario-->
+<!ELEMENT horario (dia, horaInicio, duracionMinutos)>
+
+<!--Elementos hijos de horario-->
+<!ELEMENT dia (#PCDATA)>
+<!ELEMENT horaInicio (#PCDATA)>
+<!ELEMENT duracionMinutos (#PCDATA)>
+
+<!--Elemento inscripcion-->
+<!ELEMENT inscripcion (plazasDisponibles, precioMensual)>
+
+<!--Elementos hijos de inscripcion-->
+<!ELEMENT plazasDisponibles (#PCDATA)>
+<!ELEMENT precioMensual (#PCDATA)>

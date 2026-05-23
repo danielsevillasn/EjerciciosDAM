@@ -1,0 +1,64 @@
+{
+    "centroDeportivo": {
+        "nombre": "Vitalgim",
+        "actividad": [
+            {
+                "codigo": "A01",
+                "nivel": "inicial",
+                "plazoInscripcion": true,
+                "nombre": "Pilates",
+                "monitor": {
+                    "nombreMonitor": "Laura Gómez",
+                    "telefono": 600123456
+                },
+                "horario": {
+                    "dia": "Lunes",
+                    "horaInicio": "18:30:00",
+                    "duracionMinutos": 60
+                },
+                "inscripcion": {
+                    "plazasDisponibles": 15,
+                    "precioMensual": 29.99
+                }
+            },
+            {
+                "codigo": "A02",
+                "nivel": "medio",
+                "plazoInscripcion": true,
+                "nombre": "Spinning",
+                "monitor": {
+                    "nombreMonitor": "Carlos Martín",
+                    "telefono": 600234567
+                },
+                "horario": {
+                    "dia": "Miércoles",
+                    "horaInicio": "19:00:00",
+                    "duracionMinutos": 45
+                },
+                "inscripcion": {
+                    "plazasDisponibles": 8,
+                    "precioMensual": 34.50
+                }
+            },
+            {
+                "codigo": "A03",
+                "nivel": "avanzado",
+                "plazoInscripcion": false,
+                "nombre": "Cross Training",
+                "monitor": {
+                    "nombreMonitor": "Elena Ruiz",
+                    "telefono": 600345678
+                },
+                "horario": {
+                    "dia": "Viernes",
+                    "horaInicio": "20:15:00",
+                    "duracionMinutos": 50
+                },
+                "inscripcion": {
+                    "plazasDisponibles": 0,
+                    "precioMensual": 39.99
+                }
+            }
+        ]
+    }
+}

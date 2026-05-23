@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="centroDeportivo.xsl" type="text/xsl"?>
+<centroDeportivo nombre="Vitalgim">
+
+    <actividad codigo="A01" nivel="inicial" plazoInscripcion="abierto">
+        <nombre>Pilates</nombre>
+        
+        <monitor>
+            <nombreMonitor>Laura Gómez</nombreMonitor>
+            <telefono>600123456</telefono>
+        </monitor>
+        
+        <horario>
+            <dia>Lunes</dia>
+            <horaInicio>18:30:00</horaInicio>
+            <duracionMinutos>60</duracionMinutos>
+        </horario>
+        
+        <inscripcion>
+            <plazasDisponibles>15</plazasDisponibles>
+            <precioMensual>29.99</precioMensual>
+        </inscripcion>
+        
+    
+    </actividad>
+    
+    <actividad codigo="A02" nivel="medio" plazoInscripcion="abierto">
+        <nombre>Spinning</nombre>
+        
+        <monitor>
+            <nombreMonitor>Carlos Martín</nombreMonitor>
+            <telefono>600234567</telefono>
+        </monitor>
+        
+        <horario>
+            <dia>Miércoles</dia>
+            <horaInicio>19:00:00</horaInicio>
+            <duracionMinutos>45</duracionMinutos>
+        </horario>
+        
+        <inscripcion>
+            <plazasDisponibles>8</plazasDisponibles>
+            <precioMensual>34.50</precioMensual>
+        </inscripcion>
+        
+    </actividad>
+    
+    <actividad codigo="A03" nivel="avanzado" plazoInscripcion="cerrado">
+        <nombre>Cross Training</nombre>
+        
+        <monitor>
+            <nombreMonitor>Elena Ruiz</nombreMonitor>
+            <telefono>600345678</telefono>
+        </monitor>
+        
+        <horario>
+            <dia>Viernes</dia>
+            <horaInicio>20:15:00</horaInicio>
+            <duracionMinutos>50</duracionMinutos>
+        </horario>
+        
+        <inscripcion>
+            <plazasDisponibles>0</plazasDisponibles>
+            <precioMensual>39.99</precioMensual>
+        </inscripcion>
+    </actividad>
+
+    <actividad codigo="A04" nivel="inicial" plazoInscripcion="cerrado">
+        <nombre>Pilates 2</nombre>
+
+        <monitor>
+            <nombreMonitor>Pepe González</nombreMonitor>
+            <telefono>6920423</telefono>
+        </monitor>
+
+        <horario>
+            <dia>Jueves</dia>
+            <horaInicio>19:15:30</horaInicio>
+            <duracionMinutos>40</duracionMinutos>
+        </horario>
+
+        <inscripcion>
+            <plazasDisponibles>5</plazasDisponibles>
+            <precioMensual>20.00</precioMensual>
+        </inscripcion>
+    </actividad>
+</centroDeportivo>

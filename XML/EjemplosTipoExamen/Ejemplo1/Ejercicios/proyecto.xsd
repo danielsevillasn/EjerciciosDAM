@@ -1,0 +1,91 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="proyecto">
+        <xs:complexType>
+            <xs:sequence>
+                <!--Elemento
+                autor-->
+                <xs:element name="autor">
+                    <xs:complexType>
+                        <xs:attribute name="username" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <!--Elemento
+                publico-->
+                <xs:element name="publico" type="xs:boolean" />
+                <!--Elemento
+                detalles_tecnicos-->
+                <xs:element name="detalles_tecnicos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lenguaje">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="version" type="xs:string"
+                                                use="required" />
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:choice>
+                                <xs:element name="bbdd">
+                                    <xs:complexType>
+                                        <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                                <xs:attribute name="tipo" type="xs:string"
+                                                    use="required" />
+                                            </xs:extension>
+                                        </xs:simpleContent>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="fichero">
+                                    <xs:complexType>
+                                        <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                                <xs:attribute name="tipo" type="xs:string"
+                                                    use="required" />
+                                            </xs:extension>
+                                        </xs:simpleContent>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:choice>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!--Elemento
+                historial-->
+                <xs:element name="historial">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="commit" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="fecha" type="xs:date" />
+                                        <xs:element name="mensaje" type="xs:string" />
+                                    </xs:sequence>
+                                    <xs:attribute name="hash" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="[a-f0-9]{7}" />
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <!--Atributos
+            proyecto-->
+            <xs:attribute name="id" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="P[0-9]{3}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="estado" type="xs:string" use="optional" default="activo" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

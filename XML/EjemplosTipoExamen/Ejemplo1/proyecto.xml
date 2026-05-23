@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proyecto id="P001" estado="activo">
+    <autor username="danielsevilla" />
+    <publico>false</publico>
+    <detalles_tecnicos>
+        <lenguaje version="21">Java</lenguaje>
+        <bbdd tipo="Oracle">Despliegue en Docker sobre WSL</bbdd>
+    </detalles_tecnicos>
+    <historial>
+        <commit hash="a1b2c3d">
+            <fecha>2026-05-20</fecha>
+            <mensaje>Excepcion lib JAR JUnit</mensaje>
+        </commit>
+        <commit hash="f9e8d7c">
+            <fecha>2026-05-21</fecha>
+            <mensaje>Agrega lo necesario para el nuevo lenguaje XML en .gitignore</mensaje>
+        </commit>
+    </historial>
+</proyecto>
