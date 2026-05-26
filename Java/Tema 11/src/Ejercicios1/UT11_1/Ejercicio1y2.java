@@ -13,24 +13,18 @@ public class Ejercicio1y2 {
         // 2. Creamos el contenedor secundario (el panel)
         JPanel panel1 = new JPanel(); // [cite: 52]
         
-        // ----------------------------------------------------------------
-        // RESOLUCIÓN DEL EJERCICIO 2: Modificación de propiedades de panel1
-        // ----------------------------------------------------------------
-        
         // Modificación de la propiedad de color de fondo (Background)
         // Usamos la clase Color de AWT para pintarlo de un color llamativo (azul)
-        panel1.setBackground(Color.BLUE); 
-        
+        panel1.setBackground(Color.BLUE);
+
         // Modificación de la propiedad de visibilidad (por defecto es true, pero la aseguramos)
         panel1.setVisible(true);
         
         // Modificación de la propiedad ToolTipText (texto de ayuda al pasar el ratón por encima)
         panel1.setToolTipText("Este es el panel principal de nuestra interfaz");
-        
-        // ----------------------------------------------------------------
-        
+
         // 3. Añadimos el panel modificado al JFrame
-        miFrame.add(panel1); // [cite: 52]
+        miFrame.add(panel1);
         
         // 4. Configuraciones esenciales del JFrame para que la aplicación funcione correctamente
         miFrame.setSize(500, 400); // Definimos las dimensiones de la ventana (ancho y alto)
