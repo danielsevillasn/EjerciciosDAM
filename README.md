@@ -1,22 +1,15 @@
-# 📚 Ejercicios DAM - Daniel Sevilla
+# Ejercicios DAM 🚀
 
-Repositorio dedicado a almacenar los ejercicios, prácticas y apuntes del ciclo de **Desarrollo de Aplicaciones Multiplataforma (DAM)**.
+Repositorio personal destinado a centralizar las prácticas, proyectos y ejercicios desarrollados en el grado de **Desarrollo de Aplicaciones Multiplataforma (DAM)**.
 
-## 🛠️ Tecnologías utilizadas
-* **Java**: Programación orientada a objetos, estructuras de datos y lógica.
-* **SQL**: Gestión de bases de datos relacionales.
-* **JavaScript**: Desarrollo web y lógica de cliente.
-* **Git/GitHub**: Control de versiones.
-
-## 📁 Estructura del Proyecto
-* `/Java`: Ejercicios clasificados por temas (Variables, Bucles, POO, Herencia).
-* `/Examenes`: Pruebas evaluables y exámenes de repaso.
-* `/Apuntes_Examen`: Resúmenes rápidos para repasar conceptos clave.
-
-## 🚀 Cómo usar este repo
-Si quieres probar algún ejercicio de Java:
-1. Clona el repo: `git clone https://github.com/danielsevillasn/EjerciciosDAM.git`
-2. Abre la carpeta en VS Code o IntelliJ.
-3. Ejecuta el archivo `.java` que necesites.
+El objetivo de este espacio es mantener un historial estructurado de aprendizaje, código limpio y evolución continua en diversas tecnologías de software.
 
 ---
+
+## 🛠️ Tecnologías y Herramientas
+
+El contenido se amplía progresivamente e incluye (o incluirá próximamente) trabajo en:
+
+* **Lenguajes principales:** Java, C#, SQL, XML
+* **Herramientas y Entornos:** Git, GitHub, Visual Studio Code, Visual Studio
+* **Testing y Calidad:** JUnit, Hamcrest
