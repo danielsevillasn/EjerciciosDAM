@@ -12,3 +12,4 @@ else:
 
 print(bool("Hello"))
 print(bool(["apple", "cherry", "banana"]))
+print(bool(None))
