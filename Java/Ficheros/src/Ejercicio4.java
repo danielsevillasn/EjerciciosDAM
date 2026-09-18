@@ -7,8 +7,8 @@ public class Ejercicio4 {
         File f1 = new File("/home/alumnom/d1");
         File f2 = new File("/home/alumnom/d2");
 
-        f1.mkdirs();
-        f2.mkdirs();
+        f1.mkdir();
+        f2.mkdir();
 
         File f3 = new File(f1, "f11.txt");
         File f4 = new File(f2, "f21.txt");

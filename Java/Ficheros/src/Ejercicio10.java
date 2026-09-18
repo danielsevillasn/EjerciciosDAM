@@ -5,135 +5,52 @@ import java.util.Scanner;
 
 public class Ejercicio10 {
     public static void main(String[] args) throws IOException {
-        Scanner s = new Scanner(System.in);
         File usr1 = new File("/home/alumnom/usr1");
-        while(true){
-            System.out.print("Deseas borrar el directorio usr1?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                System.out.println(usr1.delete());
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
-
+        borrado(usr1);
 
         File f1 = new File("/home/alumnom/usr1","f1");
-                while(true){
-            System.out.print("Deseas borrar el directorio f1?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                System.out.println(f1.delete());
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
+        borrado(f1);
         
         File usr2 = new File("/home/alumnom/usr2");
-                while(true){
-            System.out.print("Deseas borrar el directorio usr2?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                usr2.delete();
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
+        borrado(usr2);
 
         File d1 = new File("/home/alumnom/usr2","d1");
-            while(true){
-            System.out.print("Deseas borrar el directorio d1?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                d1.delete();
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
+        borrado(d1);
 
         File f2 = new File("/home/alumnom/", "f2");
-        while(true){
-            System.out.print("Deseas borrar el directorio f2?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                f2.delete();
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
+        borrado(f2);
 
         File d2 = new File("/home/alumnom/d2");
-        while(true){
-            System.out.print("Deseas borrar el directorio d2?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                d2.delete();
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
+        borrado(d2);
 
         File f3 = new File("/home/alumnom/", "f3");
-        while(true){
-            System.out.print("Deseas borrar el directorio f3?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                f3.delete();
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
+        borrado(f3);
 
         File f4 = new File("/home/alumnom/", "f4");
-        while(true){
-            System.out.print("Deseas borrar el directorio f4?(s/n): ");
-            String respuesta = s.nextLine();
-            
-            if (respuesta.equals("s")){
-                f4.delete();
-                break;
-            }
-
-            if (respuesta.equals("n")){
-                break;
-            }
-        }
+        borrado(f4);
 
         File d3 = new File("/home/alumnom/d3");
+        borrado(d3);
+    }
+
+    /**
+     * Método que pide si desea eliminar el fichero
+     * 
+     * @param fichero objeto file que se pasa por parametro
+     * @return 'nada'
+     */
+    private static void borrado(File fichero) {
+        Scanner s = new Scanner(System.in);
         while(true){
-            System.out.print("Deseas borrar el directorio d3?(s/n): ");
+            System.out.print("Deseas borrar"+fichero.getName()+" ?(s/n): ");
             String respuesta = s.nextLine();
             
             if (respuesta.equals("s")){
-                d3.delete();
+                if(fichero.delete()){
+                    System.out.println("Fichero eliminado");
+                }else{
+                    System.out.println("No se ha podido eliminar el fichero ya que es un directorio que contiene más ficheros");
+                }
                 break;
             }
 
@@ -142,6 +59,5 @@ public class Ejercicio10 {
             }
         }
         s.close();
-
     }
 }

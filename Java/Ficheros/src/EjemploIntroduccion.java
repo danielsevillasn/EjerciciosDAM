@@ -1,6 +1,6 @@
 import java.io.File;
 
-public class App {
+public class EjemploIntroduccion {
     public static void main(String[] args) throws Exception {
         File f = new File("Fichero.txt");
         f.createNewFile();
