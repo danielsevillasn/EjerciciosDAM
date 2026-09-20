@@ -29,6 +29,7 @@ $RECYCLE.BIN/
 
 # IntelliJ IDEA / WebStorm
 .idea/
+workspace.xml
 *.iml
 *.iws
 *.ipr
@@ -58,6 +59,10 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+# Visual Studio
+.vs/
+VSWorkspaceState.json
 
 # ==========================================
 # JAVA
@@ -93,9 +98,21 @@ gradle-app.setting
 
 # Archivos compilados
 bin/
+obj/
 out/
 *.log
 *.ctxt
+
+# ==========================================
+# ANDROID / KOTLIN
+# ==========================================
+.kotlin/
+local.properties
+
+# ==========================================
+# C# / .NET
+# ==========================================
+*.csproj.user
 
 # ==========================================
 # JAVASCRIPT / NODE.JS
@@ -123,6 +140,7 @@ yarn.lock
 *.sqlite3
 *.dbf
 .backup/
+slnx.sqlite
 
 # ==========================================
 # XML
