@@ -19,22 +19,22 @@ $RECYCLE.BIN/
 .Trash-*
 
 # ==========================================
-# IDEs E EDITORES
+# IDEs Y EDITORES (Android Studio / IntelliJ / VS Code)
 # ==========================================
+.idea/
+**/.idea/
+*.iml
+**/*.iml
+*.iws
+*.ipr
+*.idea_modules
+workspace.xml
+
 # Visual Studio Code
 **/.vscode/
 .vscode/
 *.code-workspace
 .devcontainer/
-
-# IntelliJ IDEA / WebStorm
-.idea/
-workspace.xml
-*.iml
-*.iws
-*.ipr
-*.iws
-*.idea_modules
 
 # Eclipse
 .classpath
@@ -65,7 +65,7 @@ nbdist/
 VSWorkspaceState.json
 
 # ==========================================
-# JAVA
+# JAVA & GRADLE (BUILD ARTIFACTS)
 # ==========================================
 *.class
 *.jar
@@ -76,7 +76,22 @@ VSWorkspaceState.json
 *.tar.gz
 *.rar
 
-# EXCEPCIÓN: Permitir librerías de JUnit en UT5 de Entornos
+# Gradle
+.gradle/
+**/.gradle/
+build/
+**/build/
+gradle-app.setting
+.gradletasknamecache
+
+# Archivos compilados
+bin/
+obj/
+out/
+*.log
+*.ctxt
+
+# EXCEPCIÓN: Permitir librerías específicas si las necesitas
 !"Entornos de Desarrollo/UT5 - Diseño y realización de pruebas/lib/"*.jar
 !"Java/Tema11 - /lib/"*.jar
 
@@ -90,24 +105,21 @@ release.properties
 dependency-reduced-pom.xml
 .flattened-pom.xml
 
-# Gradle
-build/
-.gradle
-gradle-app.setting
-.gradletasknamecache
-
-# Archivos compilados
-bin/
-obj/
-out/
-*.log
-*.ctxt
-
 # ==========================================
 # ANDROID / KOTLIN
 # ==========================================
-.kotlin/
+# Clave para evitar conflictos entre Windows y Linux:
 local.properties
+
+# Archivos generados y temporales de Android
+.kotlin/
+*.apk
+*.aab
+*.dex
+captures/
+.externalNativeBuild/
+.cxx/
+.navigation/
 
 # ==========================================
 # C# / .NET
@@ -152,7 +164,6 @@ slnx.sqlite
 # ==========================================
 # SISTEMA
 # ==========================================
-# Archivos temporales
 *.tmp
 *.temp
 *.cache
