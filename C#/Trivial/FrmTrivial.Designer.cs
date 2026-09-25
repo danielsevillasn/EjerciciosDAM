@@ -29,121 +29,119 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTrivial));
-            menuStrip1 = new MenuStrip();
-            partidaToolStripMenuItem = new ToolStripMenuItem();
-            nuevaToolStripMenuItem = new ToolStripMenuItem();
-            salirToolStripMenuItem = new ToolStripMenuItem();
-            opcionesToolStripMenuItem = new ToolStripMenuItem();
+            MStrPrincipal = new MenuStrip();
+            MstrPartida = new ToolStripMenuItem();
+            MstrNueva = new ToolStripMenuItem();
+            MstrSalir = new ToolStripMenuItem();
+            MstrOpciones = new ToolStripMenuItem();
             MStrPokedex = new ToolStripMenuItem();
             MStrPokemon = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            MStrOpciones = new ToolStripMenuItem();
+            SprOpciones = new ToolStripSeparator();
+            MStrMúltipleOpciones = new ToolStripMenuItem();
             MStrRespuesta = new ToolStripMenuItem();
-            TxtBoxBusqueda = new TextBox();
-            LblPokemon = new Label();
-            LblNumPokedex = new Label();
+            LblModo = new Label();
+            LblRespuestas = new Label();
             BtnOpcion1 = new Button();
             BtnOpcion2 = new Button();
             BtnOpcion3 = new Button();
             BtnOpcion4 = new Button();
             PbProgreso = new ProgressBar();
-            menuStrip1.SuspendLayout();
+            LblBusqueda = new Label();
+            MStrPrincipal.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // MStrPrincipal
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { partidaToolStripMenuItem, opcionesToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(384, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            MStrPrincipal.Items.AddRange(new ToolStripItem[] { MstrPartida, MstrOpciones });
+            MStrPrincipal.Location = new Point(0, 0);
+            MStrPrincipal.Name = "MStrPrincipal";
+            MStrPrincipal.Size = new Size(384, 24);
+            MStrPrincipal.TabIndex = 0;
+            MStrPrincipal.Text = "menuStrip1";
             // 
-            // partidaToolStripMenuItem
+            // MstrPartida
             // 
-            partidaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaToolStripMenuItem, salirToolStripMenuItem });
-            partidaToolStripMenuItem.Name = "partidaToolStripMenuItem";
-            partidaToolStripMenuItem.Size = new Size(56, 20);
-            partidaToolStripMenuItem.Text = "Partida";
+            MstrPartida.DropDownItems.AddRange(new ToolStripItem[] { MstrNueva, MstrSalir });
+            MstrPartida.Name = "MstrPartida";
+            MstrPartida.Size = new Size(56, 20);
+            MstrPartida.Text = "Partida";
             // 
-            // nuevaToolStripMenuItem
+            // MstrNueva
             // 
-            nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
-            nuevaToolStripMenuItem.Size = new Size(108, 22);
-            nuevaToolStripMenuItem.Text = "Nueva";
+            MstrNueva.Name = "MstrNueva";
+            MstrNueva.Size = new Size(108, 22);
+            MstrNueva.Text = "Nueva";
+            MstrNueva.Click += MstrNueva_Click;
             // 
-            // salirToolStripMenuItem
+            // MstrSalir
             // 
-            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(108, 22);
-            salirToolStripMenuItem.Text = "Salir";
+            MstrSalir.Name = "MstrSalir";
+            MstrSalir.Size = new Size(108, 22);
+            MstrSalir.Text = "Salir";
+            MstrSalir.Click += MstrSalir_Click;
             // 
-            // opcionesToolStripMenuItem
+            // MstrOpciones
             // 
-            opcionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MStrPokedex, MStrPokemon, toolStripSeparator1, MStrOpciones, MStrRespuesta });
-            opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            opcionesToolStripMenuItem.Size = new Size(69, 20);
-            opcionesToolStripMenuItem.Text = "Opciones";
+            MstrOpciones.DropDownItems.AddRange(new ToolStripItem[] { MStrPokedex, MStrPokemon, SprOpciones, MStrMúltipleOpciones, MStrRespuesta });
+            MstrOpciones.Name = "MstrOpciones";
+            MstrOpciones.Size = new Size(69, 20);
+            MstrOpciones.Text = "Opciones";
             // 
             // MStrPokedex
             // 
             MStrPokedex.Checked = true;
             MStrPokedex.CheckState = CheckState.Checked;
             MStrPokedex.Name = "MStrPokedex";
-            MStrPokedex.Size = new Size(174, 22);
+            MStrPokedex.Size = new Size(180, 22);
             MStrPokedex.Text = "Numero pokédex";
+            MStrPokedex.Click += MStrPokedex_Click;
             // 
             // MStrPokemon
             // 
             MStrPokemon.Name = "MStrPokemon";
-            MStrPokemon.Size = new Size(174, 22);
+            MStrPokemon.Size = new Size(180, 22);
             MStrPokemon.Text = "Nombre pokemon";
+            MStrPokemon.Click += MStrPokemon_Click;
             // 
-            // toolStripSeparator1
+            // SprOpciones
             // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(171, 6);
+            SprOpciones.Name = "SprOpciones";
+            SprOpciones.Size = new Size(177, 6);
             // 
-            // MStrOpciones
+            // MStrMúltipleOpciones
             // 
-            MStrOpciones.Checked = true;
-            MStrOpciones.CheckState = CheckState.Checked;
-            MStrOpciones.Name = "MStrOpciones";
-            MStrOpciones.Size = new Size(174, 22);
-            MStrOpciones.Text = "Múltiples opciones";
+            MStrMúltipleOpciones.Checked = true;
+            MStrMúltipleOpciones.CheckState = CheckState.Checked;
+            MStrMúltipleOpciones.Name = "MStrMúltipleOpciones";
+            MStrMúltipleOpciones.Size = new Size(180, 22);
+            MStrMúltipleOpciones.Text = "Múltiples opciones";
+            MStrMúltipleOpciones.Click += MStrMultiplespciones_Click;
             // 
             // MStrRespuesta
             // 
             MStrRespuesta.Name = "MStrRespuesta";
-            MStrRespuesta.Size = new Size(174, 22);
+            MStrRespuesta.Size = new Size(180, 22);
             MStrRespuesta.Text = "Escribir respuesta";
+            MStrRespuesta.Click += MStrRespuesta_Click;
             // 
-            // TxtBoxBusqueda
+            // LblModo
             // 
-            TxtBoxBusqueda.Location = new Point(142, 79);
-            TxtBoxBusqueda.Name = "TxtBoxBusqueda";
-            TxtBoxBusqueda.Size = new Size(100, 23);
-            TxtBoxBusqueda.TabIndex = 2;
-            TxtBoxBusqueda.TextChanged += TxtBoxBusqueda_TextChanged;
+            LblModo.AutoSize = true;
+            LblModo.ImageAlign = ContentAlignment.TopCenter;
+            LblModo.Location = new Point(161, 50);
+            LblModo.Name = "LblModo";
+            LblModo.Size = new Size(61, 15);
+            LblModo.TabIndex = 3;
+            LblModo.Text = "Pokemon:";
             // 
-            // LblPokemon
+            // LblRespuestas
             // 
-            LblPokemon.AutoSize = true;
-            LblPokemon.ImageAlign = ContentAlignment.TopCenter;
-            LblPokemon.Location = new Point(161, 50);
-            LblPokemon.Name = "LblPokemon";
-            LblPokemon.Size = new Size(61, 15);
-            LblPokemon.TabIndex = 3;
-            LblPokemon.Text = "Pokemon:";
-            // 
-            // LblNumPokedex
-            // 
-            LblNumPokedex.AutoSize = true;
-            LblNumPokedex.Location = new Point(135, 124);
-            LblNumPokedex.Name = "LblNumPokedex";
-            LblNumPokedex.Size = new Size(114, 15);
-            LblNumPokedex.TabIndex = 4;
-            LblNumPokedex.Text = "Numero Pokedédex:";
+            LblRespuestas.AutoSize = true;
+            LblRespuestas.Location = new Point(135, 124);
+            LblRespuestas.Name = "LblRespuestas";
+            LblRespuestas.Size = new Size(114, 15);
+            LblRespuestas.TabIndex = 4;
+            LblRespuestas.Text = "Numero Pokedédex:";
             // 
             // BtnOpcion1
             // 
@@ -153,6 +151,7 @@
             BtnOpcion1.TabIndex = 5;
             BtnOpcion1.Text = "button1";
             BtnOpcion1.UseVisualStyleBackColor = true;
+            BtnOpcion1.Click += BotonRespuesta_Click;
             // 
             // BtnOpcion2
             // 
@@ -162,6 +161,7 @@
             BtnOpcion2.TabIndex = 6;
             BtnOpcion2.Text = "button1";
             BtnOpcion2.UseVisualStyleBackColor = true;
+            BtnOpcion2.Click += BotonRespuesta_Click;
             // 
             // BtnOpcion3
             // 
@@ -171,6 +171,7 @@
             BtnOpcion3.TabIndex = 7;
             BtnOpcion3.Text = "button1";
             BtnOpcion3.UseVisualStyleBackColor = true;
+            BtnOpcion3.Click += BotonRespuesta_Click;
             // 
             // BtnOpcion4
             // 
@@ -180,6 +181,7 @@
             BtnOpcion4.TabIndex = 8;
             BtnOpcion4.Text = "button1";
             BtnOpcion4.UseVisualStyleBackColor = true;
+            BtnOpcion4.Click += BotonRespuesta_Click;
             // 
             // PbProgreso
             // 
@@ -188,50 +190,59 @@
             PbProgreso.Size = new Size(150, 25);
             PbProgreso.TabIndex = 10;
             // 
+            // LblBusqueda
+            // 
+            LblBusqueda.AutoSize = true;
+            LblBusqueda.Location = new Point(173, 87);
+            LblBusqueda.Name = "LblBusqueda";
+            LblBusqueda.Size = new Size(38, 15);
+            LblBusqueda.TabIndex = 11;
+            LblBusqueda.Text = "label1";
+            // 
             // FrmTrivial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(384, 361);
+            Controls.Add(LblBusqueda);
             Controls.Add(PbProgreso);
             Controls.Add(BtnOpcion4);
             Controls.Add(BtnOpcion3);
             Controls.Add(BtnOpcion2);
             Controls.Add(BtnOpcion1);
-            Controls.Add(LblNumPokedex);
-            Controls.Add(LblPokemon);
-            Controls.Add(TxtBoxBusqueda);
-            Controls.Add(menuStrip1);
+            Controls.Add(LblRespuestas);
+            Controls.Add(LblModo);
+            Controls.Add(MStrPrincipal);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = MStrPrincipal;
             Name = "FrmTrivial";
             Text = "Trivial";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            MStrPrincipal.ResumeLayout(false);
+            MStrPrincipal.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem partidaToolStripMenuItem;
-        private ToolStripMenuItem nuevaToolStripMenuItem;
-        private ToolStripMenuItem salirToolStripMenuItem;
-        private ToolStripMenuItem opcionesToolStripMenuItem;
+        private MenuStrip MStrPrincipal;
+        private ToolStripMenuItem MstrPartida;
+        private ToolStripMenuItem MstrNueva;
+        private ToolStripMenuItem MstrSalir;
+        private ToolStripMenuItem MstrOpciones;
         private ToolStripMenuItem MStrPokedex;
         private ToolStripMenuItem MStrPokemon;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripMenuItem MStrOpciones;
+        private ToolStripSeparator SprOpciones;
+        private ToolStripMenuItem MStrMúltipleOpciones;
         private ToolStripMenuItem MStrRespuesta;
-        private TextBox TxtBoxBusqueda;
-        private Label LblPokemon;
-        private Label LblNumPokedex;
+        private Label LblModo;
+        private Label LblRespuestas;
         private Button BtnOpcion1;
         private Button BtnOpcion2;
         private Button BtnOpcion3;
         private Button BtnOpcion4;
         private ProgressBar PbProgreso;
+        private Label LblBusqueda;
     }
 }
