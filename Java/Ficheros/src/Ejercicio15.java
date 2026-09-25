@@ -18,8 +18,7 @@ import java.io.IOException;
 public class Ejercicio15 {
 
     public static void main(String[] args) {
-        // Ejemplo de uso: Mes 5 (Mayo), empezando en Viernes ('V')
-        generarCalendarioMes(5, 'V');
+        generarCalendarioMes(5, "V");
     }
 
     /**
@@ -27,15 +26,13 @@ public class Ejercicio15 {
      * 
      * @param numeroMes Número del mes (1 a 12)
      * @param diaInicio Letra del día de la semana del día 1 ('L', 'M', 'X', 'J', 'V', 'S', 'D')
-     */
-    public static void generarCalendarioMes(int numeroMes, char diaInicio) {
-        // 1. Validar el número de mes
+     */                                                         
+    public static void generarCalendarioMes(int numeroMes, String diaInicio) {
         if (numeroMes < 1 || numeroMes > 12) {
-            System.out.println("Error: El número de mes debe estar comprendido entre 1 y 12.");
+            System.out.println("El número de mes debe estar comprendido entre 1 y 12.");
         }else{
-            // 2. Normalizar y validar la letra del día de inicio
-            char diaMayus = Character.toUpperCase(diaInicio);
-            char[] diasSemana = {'L', 'M', 'X', 'J', 'V', 'S', 'D'};
+            String diaMayus = diaInicio.toUpperCase();
+            String[] diasSemana = {"L", "M", "X", "J", "V", "S", "D"};
             int indiceInicio = -1;
     
             for (int i = 0; i < diasSemana.length; i++) {
@@ -46,28 +43,23 @@ public class Ejercicio15 {
             }
     
             if (indiceInicio == -1) {
-                System.err.println("Error: El día de inicio debe ser una letra válida ('L', 'M', 'X', 'J', 'V', 'S', 'D').");
+                System.out.println("El día de inicio debe ser una letra válida ('L', 'M', 'X', 'J', 'V', 'S', 'D')");
                 return;
             }
     
-            // 3. Obtener el número de días del mes (año estándar, febrero con 28 días)
             int[] diasPorMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
             int totalDias = diasPorMes[numeroMes - 1];
     
-            // 4. Generar el nombre del archivo: "mes" + numeroMes + ".txt"
             String nombreArchivo = "mes" + numeroMes + ".txt";
     
-            // 5. Escritura en el archivo mediante Try-With-Resources
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(nombreArchivo))) {
                 for (int dia = 1; dia <= totalDias; dia++) {
-                    // Cálculo cíclico del día de la semana correspondiente
-                    char letraDiaActual = diasSemana[(indiceInicio + (dia - 1)) % 7];
+                    String letraDiaActual = diasSemana[(indiceInicio + (dia - 1)) % 7];
                     bw.write(dia + " " + letraDiaActual);
                     bw.newLine();
                 }
-                System.out.println("Calendario generado con éxito en el archivo: " + nombreArchivo);
             } catch (IOException e) {
-                System.err.println("Ocurrió un error al escribir el archivo: " + e.getMessage());
+                System.out.println(e.getMessage());
             }
         }
     }
