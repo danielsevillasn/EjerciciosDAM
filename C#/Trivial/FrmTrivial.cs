@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace Trivial
@@ -16,6 +17,7 @@ namespace Trivial
         private Random rnd = new Random();
         private int indiceCorrecto;
         private String respuestaCorrecta;
+        private int preguntasAcertadas = 0;
         private int preguntasRespondidas = 0;
         private const int MAX_PREGUNTAS = 10;
 
@@ -30,14 +32,16 @@ namespace Trivial
         //Métodos
         private void ConfigurarInterfazInicial()
         {
-            PbProgreso.Minimum = 0;
-            PbProgreso.Maximum = MAX_PREGUNTAS;
+            ProBarAcierto.Minimum = 0;
+            ProBarAcierto.Maximum = MAX_PREGUNTAS;
         }
 
         private void IniciarPartida()
         {
             preguntasRespondidas = 0;
-            PbProgreso.Value = 0;
+            ProBarAcierto.Value = 0;
+            LblAcierto.Text = "0%";
+            ActualizarYCentrarLabel(LblAcierto, "0%");
             GenerarPregunta();
         }
 
@@ -54,15 +58,21 @@ namespace Trivial
                 if (MStrPokemon.Checked)
                 {
                     LblModo.Text = "Pokemon:";
+                    ActualizarYCentrarLabel(LblModo, "Pokemon:");
                     LblRespuestas.Text = "Numero Pokédex:";
+                    ActualizarYCentrarLabel(LblRespuestas, "Numero Pokédex:");
                     LblBusqueda.Text = nombresPokemon[indiceCorrecto];
+                    ActualizarYCentrarLabel(LblBusqueda, nombresPokemon[indiceCorrecto]);
                     respuestaCorrecta = numerosPokedex[indiceCorrecto];
                 }
                 else
                 {
                     LblModo.Text = "Numero Pokédex:";
+                    ActualizarYCentrarLabel(LblModo, "Numero Pokédex:");
                     LblRespuestas.Text = "Pokemon:";
+                    ActualizarYCentrarLabel(LblRespuestas, "Pokemon:");
                     LblBusqueda.Text = numerosPokedex[indiceCorrecto];
+                    ActualizarYCentrarLabel(LblBusqueda, numerosPokedex[indiceCorrecto]);
                     respuestaCorrecta = nombresPokemon[indiceCorrecto];
                 }
 
@@ -97,25 +107,43 @@ namespace Trivial
 
         private void ComprobarRespuesta(string respuestaUsuario)
         {
-            if (respuestaUsuario.Equals(respuestaCorrecta))
+            if (respuestaUsuario.Trim().ToLower() == respuestaCorrecta.ToLower())
             {
                 MessageBox.Show("¡Correcto!", "Acierto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                preguntasAcertadas++;
             }
             else
             {
                 MessageBox.Show($"Incorrecto. La respuesta era: {respuestaCorrecta}", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             preguntasRespondidas++;
-            PbProgreso.Value = preguntasRespondidas;
+            ProBarAcierto.Value = preguntasRespondidas;
+            LblAcierto.Text = (preguntasAcertadas * 100) / MAX_PREGUNTAS+"%";
+            ActualizarYCentrarLabel(LblAcierto, (preguntasAcertadas * 100) / MAX_PREGUNTAS + "%");
             GenerarPregunta();
         }
 
+        private void ActualizarYCentrarLabel(System.Windows.Forms.Label lbl, string nuevoTexto)
+        {
+            lbl.Text = nuevoTexto;
+
+            // Si quieres centrarlo respecto a su contenedor o Formulario:
+            lbl.Left = (this.ClientSize.Width - lbl.Width) / 2;
+        }
+
+
+
+        //Eventos de los elementos del formulario
         private void BotonRespuesta_Click(object sender, EventArgs e)
         {
             Button botonPulsado = (Button)sender;
             ComprobarRespuesta(botonPulsado.Text);
+        }        
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            ComprobarRespuesta(TxtBoxRespuesta.Text);
         }
-        //Eventos de los elementos del formulario
+
         private void MstrSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -144,12 +172,26 @@ namespace Trivial
         {
             MStrMúltipleOpciones.Checked = true;
             MStrRespuesta.Checked = false;
+            BtnOpcion1.Visible = true;
+            BtnOpcion2.Visible = true;
+            BtnOpcion3.Visible = true;
+            BtnOpcion4.Visible = true;
+            BtnConfirmar.Visible = false;
+            TxtBoxRespuesta.Visible = false;
         }
 
         private void MStrRespuesta_Click(object sender, EventArgs e)
         {
             MStrRespuesta.Checked = true;
             MStrMúltipleOpciones.Checked = false;
+            BtnOpcion1.Visible = false;
+            BtnOpcion2.Visible = false;
+            BtnOpcion3.Visible = false;
+            BtnOpcion4.Visible = false;
+            BtnConfirmar.Visible = true;
+            TxtBoxRespuesta.Visible = true;
         }
+
+
     }
 }
