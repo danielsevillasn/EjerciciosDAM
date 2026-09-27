@@ -1,27 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace Trivial
 {
-    // Autor: danielsevilla
     public partial class FrmTrivial : Form
     {
-        //Atributos
+        //Atributos//
         private string[] numerosPokedex = new string[] { "0001", "0094", "0133", "0197", "0248", "0249", "0282", "0384", "0443", "0445", "0448", "0658", "0681", "0700", "0722", "0778", "0849", "0887" };
         private string[] nombresPokemon = new string[] { "Bulbasaur", "Gengar", "Eevee", "Umbreon", "Tyranitar", "Lugia", "Gardevoir", "Rayquaza", "Gible", "Garchomp", "Lucario", "Greninja", "Aegislash", "Sylveon", "Rowlet", "Mimikyu", "Toxtricity", "Dragapult" };
 
-        private int lenghtPokemon = 18;
         private Random rnd = new Random();
         private int indiceCorrecto;
         private String respuestaCorrecta;
         private int preguntasAcertadas = 0;
         private int preguntasRespondidas = 0;
-        private const int MAX_PREGUNTAS = 10;
+        private const int NUMERO_PREGUNTAS = 10;
+        private List<int> pokemonsUtilizados = new List<int>();
 
-        //Constructor
+        //Constructor//
         public FrmTrivial()
         {
             InitializeComponent();
@@ -29,65 +27,80 @@ namespace Trivial
             IniciarPartida();
         }
 
-        //Métodos
+        //Métodos//
+
+        //Configura la barra de acierto 
         private void ConfigurarInterfazInicial()
         {
             ProBarAcierto.Minimum = 0;
-            ProBarAcierto.Maximum = MAX_PREGUNTAS;
+            ProBarAcierto.Maximum = NUMERO_PREGUNTAS;
         }
-
+        //Da inicio a la partida reseteando variables
         private void IniciarPartida()
         {
             preguntasRespondidas = 0;
+            preguntasAcertadas = 0;
             ProBarAcierto.Value = 0;
             LblAcierto.Text = "0%";
             ActualizarYCentrarLabel(LblAcierto, "0%");
+            pokemonsUtilizados.Clear();
             GenerarPregunta();
         }
-
+        //Genera la pregunta eligiendo un indice que previamente se guardará para que no se repita 
         private void GenerarPregunta()
         {
-            if (preguntasRespondidas >= MAX_PREGUNTAS)
+            if (preguntasRespondidas >= NUMERO_PREGUNTAS)
             {
-                MessageBox.Show("¡Has completado la partida!", "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("¡Has completado la partida!", "Fin del Juego");
                 IniciarPartida();
+                return;
+            }
+            while (true)
+            {
+                indiceCorrecto = rnd.Next(nombresPokemon.Length);
+                if (!pokemonsUtilizados.Contains(indiceCorrecto))
+                {
+                    break;
+                }
+            }
+
+            pokemonsUtilizados.Add(indiceCorrecto);
+
+            if (MStrPokemon.Checked)
+            {
+                LblModo.Text = "Pokemon:";
+                ActualizarYCentrarLabel(LblModo, "Pokemon:");
+                LblRespuestas.Text = "Numero Pokédex:";
+                ActualizarYCentrarLabel(LblRespuestas, "Numero Pokédex:");
+                LblBusqueda.Text = nombresPokemon[indiceCorrecto];
+                ActualizarYCentrarLabel(LblBusqueda, nombresPokemon[indiceCorrecto]);
+                respuestaCorrecta = numerosPokedex[indiceCorrecto];
             }
             else
             {
-                indiceCorrecto = rnd.Next(lenghtPokemon);
-                if (MStrPokemon.Checked)
-                {
-                    LblModo.Text = "Pokemon:";
-                    ActualizarYCentrarLabel(LblModo, "Pokemon:");
-                    LblRespuestas.Text = "Numero Pokédex:";
-                    ActualizarYCentrarLabel(LblRespuestas, "Numero Pokédex:");
-                    LblBusqueda.Text = nombresPokemon[indiceCorrecto];
-                    ActualizarYCentrarLabel(LblBusqueda, nombresPokemon[indiceCorrecto]);
-                    respuestaCorrecta = numerosPokedex[indiceCorrecto];
-                }
-                else
-                {
-                    LblModo.Text = "Numero Pokédex:";
-                    ActualizarYCentrarLabel(LblModo, "Numero Pokédex:");
-                    LblRespuestas.Text = "Pokemon:";
-                    ActualizarYCentrarLabel(LblRespuestas, "Pokemon:");
-                    LblBusqueda.Text = numerosPokedex[indiceCorrecto];
-                    ActualizarYCentrarLabel(LblBusqueda, numerosPokedex[indiceCorrecto]);
-                    respuestaCorrecta = nombresPokemon[indiceCorrecto];
-                }
+                LblModo.Text = "Numero Pokédex:";
+                ActualizarYCentrarLabel(LblModo, "Numero Pokédex:");
+                LblRespuestas.Text = "Pokemon:";
+                ActualizarYCentrarLabel(LblRespuestas, "Pokemon:");
+                LblBusqueda.Text = numerosPokedex[indiceCorrecto];
+                ActualizarYCentrarLabel(LblBusqueda, numerosPokedex[indiceCorrecto]);
+                respuestaCorrecta = nombresPokemon[indiceCorrecto];
+            }
 
-
+            if (MStrMúltipleOpciones.Checked)
+            {
                 GenerarBotonesMultiples();
             }
         }
-
+        //Genera las respuestas aleatorias en los botones asegurandose de que este la correcta
         private void GenerarBotonesMultiples()
         {
-            List<int> opcionesIndices = new List<int> { indiceCorrecto };
+            List<int> opcionesIndices = new List<int>();
+            opcionesIndices.Add(indiceCorrecto);
 
             while (opcionesIndices.Count < 4)
             {
-                int aleatorio = rnd.Next(lenghtPokemon);
+                int aleatorio = rnd.Next(nombresPokemon.Length);
                 if (!opcionesIndices.Contains(aleatorio))
                 {
                     opcionesIndices.Add(aleatorio);
@@ -97,37 +110,46 @@ namespace Trivial
             opcionesIndices = opcionesIndices.OrderBy(x => rnd.Next()).ToList();
 
             Button[] botones = { BtnOpcion1, BtnOpcion2, BtnOpcion3, BtnOpcion4 };
-            string[] arrayRespuestas = MStrPokedex.Checked ? nombresPokemon : numerosPokedex;
+            string[] fuenteDatos;
 
-            for (int i = 0; i < 4; i++)
+            if (MStrPokemon.Checked)
             {
-                botones[i].Text = arrayRespuestas[opcionesIndices[i]];
+                fuenteDatos = numerosPokedex;
             }
+            else
+            {
+                fuenteDatos = nombresPokemon;
+            }
+            for (int i = 0; i < botones.Length; i++)
+            {
+                botones[i].Text = fuenteDatos[opcionesIndices[i]];
+            }
+
         }
 
+        //Comprueba la respuesta del usuario teniendo en cuenta la correcta y manda un mensaje que determina si es o no correcta
         private void ComprobarRespuesta(string respuestaUsuario)
         {
             if (respuestaUsuario.Trim().ToLower() == respuestaCorrecta.ToLower())
             {
-                MessageBox.Show("¡Correcto!", "Acierto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Acierto", "¡Correcto!");
                 preguntasAcertadas++;
             }
             else
             {
-                MessageBox.Show($"Incorrecto. La respuesta era: {respuestaCorrecta}", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La respuesta correcta era: " + respuestaCorrecta, "¡Incorrecto!");
             }
             preguntasRespondidas++;
             ProBarAcierto.Value = preguntasRespondidas;
-            LblAcierto.Text = (preguntasAcertadas * 100) / MAX_PREGUNTAS+"%";
-            ActualizarYCentrarLabel(LblAcierto, (preguntasAcertadas * 100) / MAX_PREGUNTAS + "%");
+            LblAcierto.Text = (preguntasAcertadas * 100) / NUMERO_PREGUNTAS + "%";
+            ActualizarYCentrarLabel(LblAcierto, (preguntasAcertadas * 100) / NUMERO_PREGUNTAS + "%");
             GenerarPregunta();
         }
 
+        //Actualiza los label de tal forma que cuando aumenten en tamaño no quede mal visualmente
         private void ActualizarYCentrarLabel(System.Windows.Forms.Label lbl, string nuevoTexto)
         {
             lbl.Text = nuevoTexto;
-
-            // Si quieres centrarlo respecto a su contenedor o Formulario:
             lbl.Left = (this.ClientSize.Width - lbl.Width) / 2;
         }
 
@@ -138,10 +160,11 @@ namespace Trivial
         {
             Button botonPulsado = (Button)sender;
             ComprobarRespuesta(botonPulsado.Text);
-        }        
+        }
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
             ComprobarRespuesta(TxtBoxRespuesta.Text);
+            TxtBoxRespuesta.Clear();
         }
 
         private void MstrSalir_Click(object sender, EventArgs e)
@@ -178,6 +201,7 @@ namespace Trivial
             BtnOpcion4.Visible = true;
             BtnConfirmar.Visible = false;
             TxtBoxRespuesta.Visible = false;
+            IniciarPartida();
         }
 
         private void MStrRespuesta_Click(object sender, EventArgs e)
@@ -190,6 +214,7 @@ namespace Trivial
             BtnOpcion4.Visible = false;
             BtnConfirmar.Visible = true;
             TxtBoxRespuesta.Visible = true;
+            IniciarPartida();
         }
 
 
