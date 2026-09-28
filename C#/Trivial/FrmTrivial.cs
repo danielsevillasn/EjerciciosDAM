@@ -217,6 +217,14 @@ namespace Trivial
             IniciarPartida();
         }
 
+        private void TxtBoxRespuesta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ComprobarRespuesta(TxtBoxRespuesta.Text);
+                TxtBoxRespuesta.Clear();
+            }
 
+        }
     }
 }

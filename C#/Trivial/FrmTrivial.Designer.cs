@@ -55,6 +55,7 @@
             // 
             // MStrPrincipal
             // 
+            MStrPrincipal.BackColor = SystemColors.Info;
             MStrPrincipal.Items.AddRange(new ToolStripItem[] { MstrPartida, MstrOpciones });
             MStrPrincipal.Location = new Point(0, 0);
             MStrPrincipal.Name = "MStrPrincipal";
@@ -64,6 +65,7 @@
             // 
             // MstrPartida
             // 
+            MstrPartida.BackColor = SystemColors.Control;
             MstrPartida.DropDownItems.AddRange(new ToolStripItem[] { MstrNueva, MstrSalir });
             MstrPartida.Name = "MstrPartida";
             MstrPartida.Size = new Size(56, 20);
@@ -72,19 +74,20 @@
             // MstrNueva
             // 
             MstrNueva.Name = "MstrNueva";
-            MstrNueva.Size = new Size(108, 22);
+            MstrNueva.Size = new Size(180, 22);
             MstrNueva.Text = "Nueva";
             MstrNueva.Click += MstrNueva_Click;
             // 
             // MstrSalir
             // 
             MstrSalir.Name = "MstrSalir";
-            MstrSalir.Size = new Size(108, 22);
+            MstrSalir.Size = new Size(180, 22);
             MstrSalir.Text = "Salir";
             MstrSalir.Click += MstrSalir_Click;
             // 
             // MstrOpciones
             // 
+            MstrOpciones.BackColor = SystemColors.Control;
             MstrOpciones.DropDownItems.AddRange(new ToolStripItem[] { MStrPokedex, MStrPokemon, SprOpciones, MStrMúltipleOpciones, MStrRespuesta });
             MstrOpciones.Name = "MstrOpciones";
             MstrOpciones.Size = new Size(69, 20);
@@ -95,35 +98,35 @@
             MStrPokedex.Checked = true;
             MStrPokedex.CheckState = CheckState.Checked;
             MStrPokedex.Name = "MStrPokedex";
-            MStrPokedex.Size = new Size(174, 22);
+            MStrPokedex.Size = new Size(180, 22);
             MStrPokedex.Text = "Numero pokédex";
             MStrPokedex.Click += MStrPokedex_Click;
             // 
             // MStrPokemon
             // 
             MStrPokemon.Name = "MStrPokemon";
-            MStrPokemon.Size = new Size(174, 22);
+            MStrPokemon.Size = new Size(180, 22);
             MStrPokemon.Text = "Nombre pokemon";
             MStrPokemon.Click += MStrPokemon_Click;
             // 
             // SprOpciones
             // 
             SprOpciones.Name = "SprOpciones";
-            SprOpciones.Size = new Size(171, 6);
+            SprOpciones.Size = new Size(177, 6);
             // 
             // MStrMúltipleOpciones
             // 
             MStrMúltipleOpciones.Checked = true;
             MStrMúltipleOpciones.CheckState = CheckState.Checked;
             MStrMúltipleOpciones.Name = "MStrMúltipleOpciones";
-            MStrMúltipleOpciones.Size = new Size(174, 22);
+            MStrMúltipleOpciones.Size = new Size(180, 22);
             MStrMúltipleOpciones.Text = "Múltiples opciones";
             MStrMúltipleOpciones.Click += MStrMultiplespciones_Click;
             // 
             // MStrRespuesta
             // 
             MStrRespuesta.Name = "MStrRespuesta";
-            MStrRespuesta.Size = new Size(174, 22);
+            MStrRespuesta.Size = new Size(180, 22);
             MStrRespuesta.Text = "Escribir respuesta";
             MStrRespuesta.Click += MStrRespuesta_Click;
             // 
@@ -195,6 +198,7 @@
             TxtBoxRespuesta.TabIndex = 12;
             TxtBoxRespuesta.TextAlign = HorizontalAlignment.Center;
             TxtBoxRespuesta.Visible = false;
+            TxtBoxRespuesta.KeyDown += TxtBoxRespuesta_KeyDown;
             // 
             // LblModo
             // 
