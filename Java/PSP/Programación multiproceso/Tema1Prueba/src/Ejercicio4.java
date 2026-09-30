@@ -25,7 +25,7 @@ public class Ejercicio4 {
 		Writer wr = new OutputStreamWriter(miProc.getOutputStream());
 		try {
 			wr.write("HOLA\n");
-			wr.flush();
+			wr.flush(); //Se asegura de que el mensaje salga inmediatamente
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
