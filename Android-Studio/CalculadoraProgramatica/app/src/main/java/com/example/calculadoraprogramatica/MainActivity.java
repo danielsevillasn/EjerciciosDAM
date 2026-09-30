@@ -4,18 +4,20 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private EditText etOperando1;
     private EditText etOperando2;
@@ -45,33 +47,14 @@ public class MainActivity extends AppCompatActivity {
         rbMultiplicar=findViewById(R.id.rbMultiplicar);
         rbDividir=findViewById(R.id.rbDividir);
 
-        rbSumar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operacion(v);
-            }
-        });
-
-        rbRestar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operacion(v);
-            }
-        });
-
-        rbMultiplicar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operacion(v);
-            }
-        });
-        rbDividir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operacion(v);
-            }
-        });
-
+        //rbSumar.setOnClickListener(this);
+        //rbRestar.setOnClickListener(this);
+        //rbDividir.setOnClickListener(this);
+        //rbMultiplicar.setOnClickListener(this);
+        rbMultiplicar.setOnCheckedChangeListener(this);
+        rbSumar.setOnCheckedChangeListener(this);
+        rbRestar.setOnCheckedChangeListener(this);
+        rbDividir.setOnCheckedChangeListener(this);
     }
 
     public void operacion(View view) {
@@ -103,5 +86,27 @@ public class MainActivity extends AppCompatActivity {
         } catch (NumberFormatException e) {
             Toast.makeText(getApplicationContext(), "No se puede ingresar palabras o dejar campos vacíos", Toast.LENGTH_LONG).show();
         }
+    }
+
+
+    /**
+     * Metodo que se activa al clickar en un objeto
+     *
+     * @param v The view that was clicked.
+     */
+    @Override
+    public void onClick(View v) {
+        //operacion(v);
+    }
+
+    /**
+     * Metodo que sirve cuando tienes un radio button en el que el requieras el parametro is checked
+     *
+     * @param buttonView The compound button view whose state has changed.
+     * @param isChecked  The new checked state of buttonView.
+     */
+    @Override
+    public void onCheckedChanged(@NonNull CompoundButton buttonView, boolean isChecked) {
+        operacion(buttonView);
     }
 }
