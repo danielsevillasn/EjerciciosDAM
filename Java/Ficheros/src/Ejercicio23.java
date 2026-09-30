@@ -23,7 +23,7 @@ public class Ejercicio23 {
                 System.out.println("Nombre: " + nombre + " | Edad: " + edad);
             }
         } catch (EOFException e) {
-            System.out.println("--- Fin de la lectura del fichero ---");
+            System.out.println("Fin de la lectura del fichero");
         }
     }
 }
