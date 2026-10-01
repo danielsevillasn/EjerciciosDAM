@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOTEL"
+            android:textStyle="bold"
+            android:textColor="#FF0000"
+            android:textSize="20dp"/>
+        <ImageView
+            android:id="@+id/ivImagen"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center">
+        <CheckBox
+            android:id="@+id/chBox1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Desayuno (10€)"
+            />
+        <CheckBox
+            android:id="@+id/chBox2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Comida (25€)"
+            />
+        <CheckBox
+            android:id="@+id/chBox3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Cena (30€)"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/txtVPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Precio: "
+            android:background="#FFF000" />
+    </LinearLayout>
+
+</LinearLayout>
