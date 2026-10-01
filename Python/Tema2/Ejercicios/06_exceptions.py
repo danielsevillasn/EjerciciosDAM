@@ -7,7 +7,10 @@
 # Tarea: Modifica este código para evitar que el programa se bloquee. Usa un bloque try-except para capturar 
 # el error ZeroDivisionError y muestra un mensaje indicando que no se puede dividir por cero.
 print("\nEjercicio 1:")
-resultado = 10 / 0
+try:
+    resultado = 10 / 0
+except:
+    print("No se puede dividir entre 0")
 
 
 # Ejercicio 2: Acceso a índice de lista fuera de rango Código.
@@ -15,8 +18,13 @@ resultado = 10 / 0
 # lista[10]
 #Usa un bloque try-except para capturar el error IndexError y muestra un mensaje al usuario indicando 
 # que el índice está fuera del rango de la lista.
-lista = [1, 2, 3, 4, 5]
-elemento = lista[10]
+print("\nEjercicio 2:")
+try:
+    lista = [1, 2, 3, 4, 5]
+    elemento = lista[10]
+except:
+    print("El índice es incorrecto")
+    
 
 
 # Ejercicio 3: Acceso a clave de diccionario inexistente Código.
@@ -24,6 +32,7 @@ elemento = lista[10]
 # colores['blanco']
 #  Utiliza un bloque try-except para manejar la excepción KeyError que 
 # se produce al intentar acceder a la clave 'blanco', y muestra un mensaje de error apropiado.
+print("\nEjercicio 3:")
 colores = { 'rojo':'red', 'verde':'green', 'negro':'black' }
 colores['blanco']
 

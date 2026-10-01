@@ -62,18 +62,31 @@ print(pares)
 # Ejercicio 1: Imprimir números pares
 # Imprime todos los números pares del 2 al 20 (inclusive) usando un bucle for.
 print("\nEjercicio 1:")
+for i in range(2,21):
+  print(i)
 
 # Ejercicio 2: Calcular la media de una lista
 # Dada la siguiente lista de números:
 # numeros = [10, 20, 30, 40, 50]
 # Calcula la media de los números usando un bucle for.
 print("\nEjercicio 2:")
+numeros = [10, 20, 30, 40, 50]
+suma = 0
+for i in numeros:
+  suma += i
+print("La media es de:",(suma/len(numeros)))
 
 # Ejercicio 3: Buscar el máximo de una lista
 # Dada la siguiente lista de números:
 # numeros = [15, 5, 25, 10, 20]
 # Encuentra el número máximo en la lista usando un bucle for.
 print("\nEjercicio 3:")
+max = float('-inf')
+numeros = [15, 5, 25, 10, 20]
+for i in numeros:
+  if i > max:
+    max = i
+print("El maximo es:",max)
 
 # Ejercicio 4: Filtrar cadenas por longitud
 # Dada la siguiente lista de palabras:
@@ -81,6 +94,13 @@ print("\nEjercicio 3:")
 # Crea una nueva lista que contenga solo las palabras con más de 5 letras
 # usando un bucle for y list comprehension.
 print("\nEjercicio 4:")
+palabras = ["casa", "arbol", "sol", "elefante", "luna"]
+cincoLetras = []
+
+cincoLetras = [i for i in palabras if len(i) > 5]
+
+for i in cincoLetras:
+  print(i)
 
 # Ejercicio 5: Contar palabras que empiezan con una letra
 # Dada la siguiente lista de palabras:
@@ -88,3 +108,11 @@ print("\nEjercicio 4:")
 # Pide al usuario que introduzca una letra.
 # Cuenta cuántas palabras en la lista empiezan con esa letra (sin diferenciar mayúsculas/minúsculas).
 print("\nEjercicio 5:")
+contador = 0
+palabras = ["casa", "arbol", "sol", "elefante", "luna", "coche"]
+letra = input("Introduce una letra:")
+
+for i in palabras:
+  if(i.startswith(letra)):
+    contador += 1
+print("Hay",contador,"palabras que empiezan con esa letra")
