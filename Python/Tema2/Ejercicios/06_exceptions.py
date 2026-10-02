@@ -9,7 +9,7 @@
 print("\nEjercicio 1:")
 try:
     resultado = 10 / 0
-except:
+except ZeroDivisionError:
     print("No se puede dividir entre 0")
 
 
@@ -22,7 +22,7 @@ print("\nEjercicio 2:")
 try:
     lista = [1, 2, 3, 4, 5]
     elemento = lista[10]
-except:
+except IndexError:
     print("El índice es incorrecto")
     
 
@@ -33,15 +33,21 @@ except:
 #  Utiliza un bloque try-except para manejar la excepción KeyError que 
 # se produce al intentar acceder a la clave 'blanco', y muestra un mensaje de error apropiado.
 print("\nEjercicio 3:")
-colores = { 'rojo':'red', 'verde':'green', 'negro':'black' }
-colores['blanco']
+try:
+    colores = { 'rojo':'red', 'verde':'green', 'negro':'black' }
+    colores['blanco']
+except KeyError:
+    print("No existe la clave seleccionada")
 
 
 # Error de tipo de dato
 # resultado = 15 + "20"
 # Escribe un bloque try-except para manejar el TypeError que ocurre al intentar sumar un entero con una cadena.
 print("\nEjercicio 4:")
-resultado = 15 + "20"
+try:
+    resultado = 15 + "20"
+except TypeError:
+    print("No se puede concatenar un entero y un string")
 
 
 # Ejercicio 5: Validación de entrada con bucle 
@@ -49,7 +55,12 @@ resultado = 15 + "20"
 # Utiliza un bloque try-except para capturar ValueError si el usuario ingresa algo que no es un número. 
 # El bucle debe continuar hasta que se ingrese un valor válido.
 print("\nEjercicio 5:")
-
+while True:
+    try:
+        input("Dame un numero: ")
+        break
+    except ValueError:
+        print("Tienes que ingresar un numero, no un carácter")
 
 
 # Ejercicio 6: Función que calcula la raíz cuadrada 
@@ -61,4 +72,16 @@ print("\nEjercicio 5:")
 # La función debe imprimir un mensaje de error o el resultado correcto si no hay ningún error.
 print("\nEjercicio 6:")
 import math
+def calcular_raiz_cuadrada(numero):
+    try:
+        n = float(numero)
+        if n < 0:
+            raise ZeroDivisionError("No se puede hacer la raíz cuadrada de un negativo")
+        print("La raiz cuadrada es",math.sqrt(n))
+    except ValueError as ve:
+        print(ve)
+    except ZeroDivisionError as zde:
+        print(zde)
 
+n = input("Dame un numero:")
+calcular_raiz_cuadrada(n)
