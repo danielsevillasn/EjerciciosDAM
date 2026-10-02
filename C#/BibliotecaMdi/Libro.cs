@@ -12,8 +12,8 @@ namespace BibliotecaMdi
         private String autor;
         private String editorial;
         private Boolean nuevo;
-        private string foto;
-        public Libro(string titulo, string autor, string editorial, Boolean nuevo, string foto)
+        private Bitmap foto;
+        public Libro(string titulo, string autor, string editorial, Boolean nuevo, Bitmap foto)
         {
             this.titulo = titulo;
             this.autor = autor;
@@ -21,7 +21,7 @@ namespace BibliotecaMdi
             this.nuevo = nuevo;
             this.foto = foto;
         }
-        public string Foto { get => foto; set => foto = value; }
+        public Bitmap Foto { get => foto; set => foto = value; }
         public string Autor { get => autor; set => autor = value; }
         public string Editorial { get => editorial; set => editorial = value; }
         public bool Nuevo { get => nuevo; set => nuevo = value; }

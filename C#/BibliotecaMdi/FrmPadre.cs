@@ -1,4 +1,4 @@
-using FrmPadre;
+using System.Collections;
 
 namespace BibliotecaMdi
 {
@@ -6,6 +6,9 @@ namespace BibliotecaMdi
     {
         FrmAlta fAlta;
         FrmConsulta fConsulta;
+        public static List<Libro> listaLibros = new List<Libro>();
+
+
         public FrmPadre()
         {
             InitializeComponent();
@@ -13,6 +16,7 @@ namespace BibliotecaMdi
             fConsulta = new FrmConsulta();
             fAlta.MdiParent = this;
             fConsulta.MdiParent = this;
+            
         }
 
         private void MStrAlta_Click(object sender, EventArgs e)

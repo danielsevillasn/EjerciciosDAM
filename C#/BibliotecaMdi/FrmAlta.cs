@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaMdi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FrmPadre
+namespace BibliotecaMdi
 {
     public partial class FrmAlta : Form
     {
@@ -17,5 +18,36 @@ namespace FrmPadre
             InitializeComponent();
         }
 
+        private void btnCargarFoto_Click(object sender, EventArgs e)
+        {
+            ofdFoto.FileName = "";
+            ofdFoto.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            ofdFoto.InitialDirectory = "C:\\";
+            ofdFoto.ShowDialog();
+            Bitmap imagen = new Bitmap(ofdFoto.FileName);
+            pcbPortada.Image = imagen;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtboxAutor.Text.Equals(""))
+                MessageBox.Show("Has dejado vacío el autor");
+            else if (txtboxTitulo.Text.Equals(""))
+                MessageBox.Show("Has dejado vacío el titulo");
+            else if (txtEditorial.Text.Equals(""))
+                MessageBox.Show("Has dejado vacío el editorial");
+            else
+            {
+                Libro l = new Libro(txtboxTitulo.Text, txtboxAutor.Text, txtEditorial.Text, chboxNuevo.Checked, new Bitmap(ofdFoto.FileName));
+                FrmPadre.listaLibros.Add(l);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtboxAutor.Text = null;
+            txtboxTitulo.Text = null;
+            txtEditorial.Text = null;
+        }
     }
 }

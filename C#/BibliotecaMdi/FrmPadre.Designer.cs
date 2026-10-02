@@ -59,7 +59,7 @@
             // 
             MStrAlta.Name = "MStrAlta";
             MStrAlta.ShortcutKeys = Keys.Control | Keys.A;
-            MStrAlta.Size = new Size(180, 22);
+            MStrAlta.Size = new Size(162, 22);
             MStrAlta.Text = "Alta";
             MStrAlta.Click += MStrAlta_Click;
             // 
@@ -67,26 +67,26 @@
             // 
             MStrConsulta.Name = "MStrConsulta";
             MStrConsulta.ShortcutKeys = Keys.Control | Keys.B;
-            MStrConsulta.Size = new Size(180, 22);
+            MStrConsulta.Size = new Size(162, 22);
             MStrConsulta.Text = "Consulta";
             MStrConsulta.Click += MStrConsulta_Click;
             // 
             // MStrSeparator1
             // 
             MStrSeparator1.Name = "MStrSeparator1";
-            MStrSeparator1.Size = new Size(177, 6);
+            MStrSeparator1.Size = new Size(159, 6);
             // 
             // MStrSalir
             // 
             MStrSalir.Name = "MStrSalir";
             MStrSalir.ShortcutKeys = Keys.Control | Keys.S;
-            MStrSalir.Size = new Size(180, 22);
+            MStrSalir.Size = new Size(162, 22);
             MStrSalir.Text = "Salir";
             MStrSalir.Click += MStrSalir_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(288, 174);
+            button1.Location = new Point(0, 425);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(453, 152);
+            button2.Location = new Point(725, 425);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 5;
