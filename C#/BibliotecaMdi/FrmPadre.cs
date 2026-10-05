@@ -16,8 +16,9 @@ namespace BibliotecaMdi
             fConsulta = new FrmConsulta();
             fAlta.MdiParent = this;
             fConsulta.MdiParent = this;
-            listaLibros.Add(new Libro("Don Quijote", "Miguel de Cervantes", "Juan de la Cuesta", false, new Bitmap("Z:\\Diseño grafico\\Imagenes\\DonQuijote")));
-            
+            listaLibros.Add(new Libro("Don Quijote", "Miguel de Cervantes", "Juan de la Cuesta", false, new Bitmap("Z:\\BibliotecaMdi\\Imagenes\\DonQuijote.jpg")));
+            listaLibros.Add(new Libro("Lazarillo de Tormes", "Anónimo", "Cátedra", true, new Bitmap("Z:\\BibliotecaMdi\\Imagenes\\Lazarillo de tormes.jpg")));
+
         }
 
         private void MStrAlta_Click(object sender, EventArgs e)

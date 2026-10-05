@@ -41,5 +41,23 @@ namespace BibliotecaMdi
                 }
             }
         }
+
+        private void ltBoxTitulos_DoubleClick(object sender, EventArgs e)
+        {
+            foreach (Libro l in FrmPadre.listaLibros)
+            {
+                if (l.Titulo == ltBoxTitulos.SelectedItem.ToString())
+                {
+                    pcbPortada.Image = l.Foto;
+                    break;
+                }
+            }
+        }
+
+        private void FrmConsulta_Load(object sender, EventArgs e)
+        {
+            rdBtnEditorial_CheckedChanged(null, null);
+
+        }
     }
 }
