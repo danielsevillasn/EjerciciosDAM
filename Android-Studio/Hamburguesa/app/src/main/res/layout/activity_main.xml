@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BURGUER"
+        android:textStyle="bold"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Base:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Ternera"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Pollo"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Pescado"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/ivImagen"
+            android:layout_width="200dp"
+            android:layout_height="100dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extras:"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <CheckBox
+            android:id="@+id/chBox1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Bacon (1€)"
+            />
+        <CheckBox
+            android:id="@+id/chBox2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Huevo (1€)"
+            />
+        <CheckBox
+            android:id="@+id/chBox3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Pepinillo (0,25€)"
+            />
+        <CheckBox
+            android:id="@+id/chBox4"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Queso (0,5€)"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/txtVPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Precio: "
+            android:background="#FFF000" />
+    </LinearLayout>
+
+</LinearLayout>
