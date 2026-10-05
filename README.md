@@ -10,31 +10,30 @@ El objetivo de este espacio es mantener un historial estructurado de aprendizaje
 
 ### Programación Orientada a Objetos
 
-![Java](https://img.shields.io/badge/Java-81.5%25-007396?logo=java&logoColor=white&style=flat-square)
-![C#](badges/CSharp.svg) ![C# 2.4%](https://img.shields.io/badge/2.4%25-239120?style=flat-square)
+<img src="https://img.shields.io/badge/Java-81.5%25-007396?logo=java&logoColor=white&style=flat-square" height="28">
+<img src="badges/CSharp.svg" height="28"> <img src="https://img.shields.io/badge/2.4%25-239120?style=flat-square" height="28">
 
 ### Bases de Datos
 
-![PLSQL](badges/PlSql.svg) ![PLSQL 3.6%](https://img.shields.io/badge/3.6%25-CC2927?style=flat-square)
+<img src="badges/PlSql.svg" height="28"> <img src="https://img.shields.io/badge/3.6%25-CC2927?style=flat-square" height="28">
 
 ### Frontend & Marcado
 
-![JavaScript](badges/JavaScript.svg) ![JavaScript 2.8%](https://img.shields.io/badge/2.8%25-F7DF1E?style=flat-square)
-![HTML](https://img.shields.io/badge/HTML-2.0%25-E34C26?logo=html5&logoColor=white&style=flat-square)
-![CSS](badges/Css.svg) ![CSS](https://img.shields.io/badge/used-F7DF1E?style=flat-square)
+<img src="badges/JavaScript.svg" height="28"> <img src="https://img.shields.io/badge/2.8%25-F7DF1E?style=flat-square" height="28">
+<img src="https://img.shields.io/badge/HTML-2.0%25-E34C26?logo=html5&logoColor=white&style=flat-square" height="28">
+<img src="badges/Css.svg" height="28"> <img src="https://img.shields.io/badge/used-F7DF1E?style=flat-square" height="28">
 
 ### Scripting & Utilidades
 
-![Python](badges/Python.svg) ![Python 3.5%](https://img.shields.io/badge/3.5%25-3776AB?style=flat-square)
-![Bash](https://img.shields.io/badge/Bash-used-4C4C4C?logo=gnubash&logoColor=white&style=flat-square)
+<img src="badges/Python.svg" height="28"> <img src="https://img.shields.io/badge/3.5%25-3776AB?style=flat-square" height="28">
+<img src="https://img.shields.io/badge/Bash-used-4C4C4C?logo=gnubash&logoColor=white&style=flat-square" height="28">
 
-### ⚙️ Configuración & Datos
+### Configuración & Datos
 
-![JSON](badges/Json.svg) ![JSON](https://img.shields.io/badge/used-F7DF1E?style=flat-square)
-![XML](https://img.shields.io/badge/XML-used-FF6600?logo=xml&logoColor=white&style=flat-square)
----
+<img src="badges/Json.svg" height="28"> <img src="https://img.shields.io/badge/used-F7DF1E?style=flat-square" height="28">
+<img src="https://img.shields.io/badge/XML-used-FF6600?logo=xml&logoColor=white&style=flat-square" height="28">
 
-## 📚 Créditos
+## Créditos
 
 - Iconos visuales: [Badges4-README.md-Profile](https://github.com/alexandresanlim/Badges4-README.md-Profile)
 - Estadísticas de porcentaje: [Shields.io](https://shields.io)
