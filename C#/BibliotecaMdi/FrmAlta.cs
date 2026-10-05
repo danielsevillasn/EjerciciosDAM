@@ -21,7 +21,7 @@ namespace BibliotecaMdi
         private void btnCargarFoto_Click(object sender, EventArgs e)
         {
             ofdFoto.FileName = "";
-            ofdFoto.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            ofdFoto.Filter = "Archivos JPG (*.jpg)|*.jpg";
             ofdFoto.InitialDirectory = "C:\\";
             ofdFoto.ShowDialog();
             if (pcbPortada.Image == null)

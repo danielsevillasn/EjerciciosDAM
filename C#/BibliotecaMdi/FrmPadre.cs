@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Windows.Forms;
 
 namespace BibliotecaMdi
 {
@@ -7,18 +8,34 @@ namespace BibliotecaMdi
         FrmAlta fAlta;
         FrmConsulta fConsulta;
         public static List<Libro> listaLibros = new List<Libro>();
+        private System.Windows.Forms.Timer relojTimer; 
+        private Label lblReloj;   // Añadir etiqueta para el reloj
 
 
         public FrmPadre()
         {
             InitializeComponent();
+            ConfigurarReloj();
             fAlta = new FrmAlta();
             fConsulta = new FrmConsulta();
             fAlta.MdiParent = this;
             fConsulta.MdiParent = this;
-            listaLibros.Add(new Libro("Don Quijote", "Miguel de Cervantes", "Juan de la Cuesta", false, new Bitmap("Z:\\BibliotecaMdi\\Imagenes\\DonQuijote.jpg")));
-            listaLibros.Add(new Libro("Lazarillo de Tormes", "Anónimo", "Cátedra", true, new Bitmap("Z:\\BibliotecaMdi\\Imagenes\\Lazarillo de tormes.jpg")));
+            listaLibros.Add(new Libro("Don Quijote", "Miguel de Cervantes", "Juan de la Cuesta", false, new Bitmap("..\\..\\..\\Imagenes\\DonQuijote.jpg")));
+            listaLibros.Add(new Libro("Lazarillo de Tormes", "Anónimo", "Cátedra", true, new Bitmap("..\\..\\..\\Imagenes\\Lazarillo de tormes.jpg")));
 
+        }
+        private void ConfigurarReloj()
+        {
+            lblReloj = new Label();
+            lblReloj.Dock = DockStyle.Bottom;
+            lblReloj.TextAlign = ContentAlignment.BottomRight;
+            lblReloj.Font = new Font("Arial", 12, FontStyle.Bold);
+            this.Controls.Add(lblReloj);
+
+            relojTimer = new System.Windows.Forms.Timer(); 
+            relojTimer.Interval = 1000; // Actualizar cada segundo
+            relojTimer.Tick += (s, e) => { lblReloj.Text = "Hora Actual: " + DateTime.Now.ToString("HH:mm:ss"); };
+            relojTimer.Start();
         }
 
         private void MStrAlta_Click(object sender, EventArgs e)
@@ -37,26 +54,13 @@ namespace BibliotecaMdi
                 fAlta.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            foreach (Form f in MdiChildren)
-            {
-                MessageBox.Show(f.GetType().ToString());
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
         private void MStrSalir_Click(object sender, EventArgs e)
         {
             string mensaje = "¿Deseas cerrar el programa?";
             string título = "Salir del programa";
             DialogResult result;
 
-            result = MessageBox.Show(mensaje, título, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = MessageBox.Show(mensaje, título, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
                 Application.Exit();
