@@ -8,12 +8,13 @@ El objetivo de este espacio es mantener un historial estructurado de aprendizaje
 
 ## 📊 Estadísticas de lenguajes
 
-Los porcentajes se actualizan automáticamente cada día a las 23:59 UTC.
-
-![Java](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/danielsevillasn/EjerciciosDAM/main/badges/java.json)
-![C#](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/danielsevillasn/EjerciciosDAM/main/badges/csharp.json)
-![SQL](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/danielsevillasn/EjerciciosDAM/main/badges/sql.json)
-![XML](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/danielsevillasn/EjerciciosDAM/main/badges/xml.json)
+[![Java](https://img.shields.io/badge/Java-81.5%25-007396?logo=java&logoColor=white)](#)
+[![PLSQL](https://img.shields.io/badge/PLSQL-3.6%25-CC2927?logo=postgresql&logoColor=white)](#)
+[![Python](https://img.shields.io/badge/Python-3.5%25-3776AB?logo=python&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-2.8%25-F7DF1E?logo=javascript&logoColor=black)](#)
+[![C#](https://img.shields.io/badge/C%23-2.4%25-239120?logo=csharp&logoColor=white)](#)
+[![HTML](https://img.shields.io/badge/HTML-2.0%25-E34C26?logo=html5&logoColor=white)](#)
+[![Other](https://img.shields.io/badge/Other-4.2%25-808080)](#)
 
 ---
 
