@@ -24,8 +24,16 @@ namespace BibliotecaMdi
             ofdFoto.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
             ofdFoto.InitialDirectory = "C:\\";
             ofdFoto.ShowDialog();
-            Bitmap imagen = new Bitmap(ofdFoto.FileName);
-            pcbPortada.Image = imagen;
+            if (pcbPortada.Image == null)
+            {
+                MessageBox.Show("No has seleccionado ninguna imagen");
+            }
+            else
+            {
+                Bitmap imagen = new Bitmap(ofdFoto.FileName);
+                pcbPortada.Image = imagen;
+            }
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -36,10 +44,20 @@ namespace BibliotecaMdi
                 MessageBox.Show("Has dejado vacío el titulo");
             else if (txtEditorial.Text.Equals(""))
                 MessageBox.Show("Has dejado vacío el editorial");
+            else if (pcbPortada.Image == null)
+            {
+                MessageBox.Show("No has ingresado ninguna imagen");
+            }
             else
             {
                 Libro l = new Libro(txtboxTitulo.Text, txtboxAutor.Text, txtEditorial.Text, chboxNuevo.Checked, new Bitmap(ofdFoto.FileName));
                 FrmPadre.listaLibros.Add(l);
+                txtboxAutor.Text = null;
+                txtboxTitulo.Text = null;
+                txtEditorial.Text = null;
+                chboxNuevo.Checked = false;
+                pcbPortada.Image = null;
+                MessageBox.Show("Libro guardado correctamente");
             }
         }
 

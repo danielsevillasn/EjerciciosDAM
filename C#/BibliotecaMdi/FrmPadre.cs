@@ -16,6 +16,7 @@ namespace BibliotecaMdi
             fConsulta = new FrmConsulta();
             fAlta.MdiParent = this;
             fConsulta.MdiParent = this;
+            listaLibros.Add(new Libro("Don Quijote", "Miguel de Cervantes", "Juan de la Cuesta", false, new Bitmap("Z:\\Diseño grafico\\Imagenes\\DonQuijote")));
             
         }
 
@@ -50,7 +51,15 @@ namespace BibliotecaMdi
 
         private void MStrSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            string mensaje = "¿Deseas cerrar el programa?";
+            string título = "Salir del programa";
+            DialogResult result;
+
+            result = MessageBox.Show(mensaje, título, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

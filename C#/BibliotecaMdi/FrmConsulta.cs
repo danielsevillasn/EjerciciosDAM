@@ -16,5 +16,30 @@ namespace BibliotecaMdi
         {
             InitializeComponent();
         }
+
+        private void rdBtnEditorial_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FrmPadre.listaLibros == null)
+            {
+                ltBoxTitulos.Items.Clear();
+            }
+            else
+            {
+                ltBoxTitulos.Items.Clear();
+                ltBoxAutorEditorial.Items.Clear(); ;
+                foreach (Libro l in FrmPadre.listaLibros)
+                {
+                    ltBoxTitulos.Items.Add(l.Titulo);
+                    if (rdBtnAutor.Checked)
+                    {
+                        ltBoxAutorEditorial.Items.Add(l.Autor);
+                    }
+                    if (rdBtnEditorial.Checked)
+                    {
+                        ltBoxAutorEditorial.Items.Add(l.Editorial);
+                    }
+                }
+            }
+        }
     }
 }
