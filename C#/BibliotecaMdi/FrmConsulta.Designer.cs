@@ -51,6 +51,7 @@
             rdBtnAutor.TabStop = true;
             rdBtnAutor.Text = "Autor";
             rdBtnAutor.UseVisualStyleBackColor = true;
+            rdBtnAutor.CheckedChanged += rdBtnEditorial_CheckedChanged;
             // 
             // rdBtnEditorial
             // 

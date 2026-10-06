@@ -33,16 +33,19 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/btnTernera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Ternera"/>
         <Button
+            android:id="@+id/btnPollo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Pollo"/>
         <Button
+            android:id="@+id/btnPescado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -76,28 +79,32 @@
             android:textSize="20sp"
             android:textStyle="bold"/>
         <CheckBox
-            android:id="@+id/chBox1"
+            android:id="@+id/chBoxBacon"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Bacon (1€)"
+            android:onClick="calculoPrecioCheckBox"
             />
         <CheckBox
-            android:id="@+id/chBox2"
+            android:id="@+id/chBoxHuevo"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Huevo (1€)"
+            android:onClick="calculoPrecioCheckBox"
             />
         <CheckBox
-            android:id="@+id/chBox3"
+            android:id="@+id/chBoxPepinillo"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Pepinillo (0,25€)"
+            android:onClick="calculoPrecioCheckBox"
             />
         <CheckBox
-            android:id="@+id/chBox4"
+            android:id="@+id/chBoxQueso"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Queso (0,5€)"
+            android:onClick="calculoPrecioCheckBox"
             />
     </LinearLayout>
     <LinearLayout

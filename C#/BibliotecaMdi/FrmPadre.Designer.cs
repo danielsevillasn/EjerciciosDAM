@@ -34,8 +34,6 @@
             MStrConsulta = new ToolStripMenuItem();
             MStrSeparator1 = new ToolStripSeparator();
             MStrSalir = new ToolStripMenuItem();
-            button1 = new Button();
-            button2 = new Button();
             MnuPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,33 +82,11 @@
             MStrSalir.Text = "Salir";
             MStrSalir.Click += MStrSalir_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(0, 425);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(725, 425);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 5;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // FrmPadre
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(MnuPrincipal);
             IsMdiContainer = true;
             MainMenuStrip = MnuPrincipal;
@@ -130,7 +106,5 @@
         private ToolStripMenuItem MStrConsulta;
         private ToolStripSeparator MStrSeparator1;
         private ToolStripMenuItem MStrSalir;
-        private Button button1;
-        private Button button2;
     }
 }
