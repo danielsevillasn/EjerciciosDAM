@@ -25,32 +25,67 @@
         />
 
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
+        android:stretchColumns="*"
         android:gravity="center">
 
-        <Button
-            android:id="@+id/btnTernera"
-            android:layout_width="wrap_content"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Ternera"/>
-        <Button
-            android:id="@+id/btnPollo"
-            android:layout_width="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnTernera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Ternera" />
+
+            <Button
+                android:id="@+id/btnPollo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Pollo" />
+
+            <Button
+                android:id="@+id/btnPescado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Pescado" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Pollo"/>
-        <Button
-            android:id="@+id/btnPescado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Pescado"/>
-    </LinearLayout>
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtPrecioTernera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2,50€" />
+
+            <TextView
+                android:id="@+id/txtPrecioPollo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2,00€" />
+
+            <TextView
+                android:id="@+id/txtPrecioPescado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2,25€" />
+        </TableRow>
+    </TableLayout>
 
 
     <LinearLayout
