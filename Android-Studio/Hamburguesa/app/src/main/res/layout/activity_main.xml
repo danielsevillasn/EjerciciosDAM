@@ -141,18 +141,41 @@
             android:text="Queso (0,5€)"
             android:onClick="calculoPrecioCheckBox"
             />
+        <Button
+            android:id="@+id/btnPagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagar"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swcDescuento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:visibility="invisible"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/txtDescuento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="Descuento por bono estudiante (10%)"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="20dp">
         <TextView
             android:id="@+id/txtVPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:text="Precio: "
             android:background="#FFF000" />
     </LinearLayout>

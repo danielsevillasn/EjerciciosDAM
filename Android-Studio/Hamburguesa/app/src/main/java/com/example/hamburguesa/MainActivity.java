@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -18,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
     private Button btnTernera;
     private Button btnPollo;
     private Button btnPescado;
+    private Button btnPagar;
     private CheckBox chBoxQueso;
     private CheckBox chBoxBacon;
     private CheckBox chBoxHuevo;
     private CheckBox chBoxPepinillo;
     private TextView txtViewPrecio;
+    private TextView txtDescuento;
     private ImageView imgViewBase;
+    private SwitchCompat swcDescuento;
     private double precioCheckBox = 0;
     private double precioButton = 0;
     private  boolean clickBotonTernera = false;
@@ -51,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         chBoxHuevo = findViewById(R.id.chBoxHuevo);
         chBoxPepinillo = findViewById(R.id.chBoxPepinillo);
         imgViewBase = findViewById(R.id.ivImagen);
+        swcDescuento = findViewById(R.id.swcDescuento);
+        btnPagar = findViewById(R.id.btnPagar);
+        txtDescuento = findViewById(R.id.txtDescuento);
 
         btnTernera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +91,30 @@ public class MainActivity extends AppCompatActivity {
                 imgViewBase.setImageResource(R.drawable.solo_pollo);
             }
         });
+
+        swcDescuento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull CompoundButton compoundButton, boolean b) {
+                if (b){
+                    double precioTotal = (precioCheckBox+precioButton)*0.90;
+                    double precioRedondeado = Math.round(precioTotal * 100.0) / 100.0;
+                    txtViewPrecio.setText("Precio: "+ precioRedondeado+"€");
+                    txtDescuento.setTextColor(getResources().getColor(R.color.verde));
+                }else{
+                    txtViewPrecio.setText("Precio: "+ (precioCheckBox+precioButton)+"€");
+                    txtDescuento.setTextColor(getResources().getColor(R.color.black));
+                }
+            }
+        });
+
+        btnPagar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swcDescuento.setVisibility(View.VISIBLE);
+                txtDescuento.setVisibility(View.VISIBLE);
+            }
+        });
+
     }
 
     public void calculoPrecioCheckBox(View v){
