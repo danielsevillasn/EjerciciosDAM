@@ -17,7 +17,11 @@ namespace BibliotecaMdi
             InitializeComponent();
         }
 
-        private void rdBtnEditorial_CheckedChanged(object sender, EventArgs e)
+        /**
+         * Método asignado al evento checked change del boton radio editorial y autor,
+         * el cual ingresa la editorial o el autor de los libros guardados
+         */
+        private void rdBtnEditorialyAutor_CheckedChanged(object sender, EventArgs e)
         {
             if (FrmPadre.listaLibros == null)
             {
@@ -42,6 +46,10 @@ namespace BibliotecaMdi
             }
         }
 
+        /**
+         * Método asignado al evento doble click del label titulos,
+         * el cual muestra la imagen del titulo seleccionado
+         */
         private void ltBoxTitulos_DoubleClick(object sender, EventArgs e)
         {
             foreach (Libro l in FrmPadre.listaLibros)
@@ -54,9 +62,13 @@ namespace BibliotecaMdi
             }
         }
 
+        /**
+         * Método asignado al evento load del formulario,
+         * el cual establece por preterminado los valores de editorial y autor a null
+         */
         private void FrmConsulta_Load(object sender, EventArgs e)
         {
-            rdBtnEditorial_CheckedChanged(null, null);
+            rdBtnEditorialyAutor_CheckedChanged(null, null);
 
         }
     }

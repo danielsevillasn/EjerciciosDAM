@@ -51,7 +51,7 @@
             rdBtnAutor.TabStop = true;
             rdBtnAutor.Text = "Autor";
             rdBtnAutor.UseVisualStyleBackColor = true;
-            rdBtnAutor.CheckedChanged += rdBtnEditorial_CheckedChanged;
+            rdBtnAutor.CheckedChanged += rdBtnEditorialyAutor_CheckedChanged;
             // 
             // rdBtnEditorial
             // 
@@ -63,7 +63,7 @@
             rdBtnEditorial.TabStop = true;
             rdBtnEditorial.Text = "Editorial";
             rdBtnEditorial.UseVisualStyleBackColor = true;
-            rdBtnEditorial.CheckedChanged += rdBtnEditorial_CheckedChanged;
+            rdBtnEditorial.CheckedChanged += rdBtnEditorialyAutor_CheckedChanged;
             // 
             // gpBoxTipoConsulta
             // 

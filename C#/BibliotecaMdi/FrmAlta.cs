@@ -18,24 +18,25 @@ namespace BibliotecaMdi
             InitializeComponent();
         }
 
+        /**
+         * Método asignado al evento click del boton cargar foto,
+         * el cual muestra los archivos jpg de la carpeta raiz para cargar una imagen
+         */
         private void btnCargarFoto_Click(object sender, EventArgs e)
         {
             ofdFoto.FileName = "";
             ofdFoto.Filter = "Archivos JPG (*.jpg)|*.jpg";
             ofdFoto.InitialDirectory = "C:\\";
             ofdFoto.ShowDialog();
-            if (pcbPortada.Image == null)
-            {
-                MessageBox.Show("No has seleccionado ninguna imagen");
-            }
-            else
-            {
-                Bitmap imagen = new Bitmap(ofdFoto.FileName);
-                pcbPortada.Image = imagen;
-            }
-
+            Bitmap imagen = new Bitmap(ofdFoto.FileName);
+            pcbPortada.Image = imagen;
         }
 
+        /**
+         * Método asignado al evento click del boton guardar,
+         * el cual guarda en la lista de libros con verificación previa
+         * las especificaciones del libro indicadas en los elementos
+         */
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtboxAutor.Text.Equals(""))
@@ -61,11 +62,16 @@ namespace BibliotecaMdi
             }
         }
 
+        /**
+         * Método asignado al evento click del boton limpiar,
+         * el cual pone a null todos los txt box y la imagen
+         */
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtboxAutor.Text = null;
             txtboxTitulo.Text = null;
             txtEditorial.Text = null;
+            pcbPortada.Image = null;
         }
     }
 }
