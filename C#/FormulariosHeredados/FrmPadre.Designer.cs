@@ -81,6 +81,7 @@
             Controls.Add(MstrPrincipal);
             MainMenuStrip = MstrPrincipal;
             Name = "FrmPadre";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPadre";
             MstrPrincipal.ResumeLayout(false);
             MstrPrincipal.PerformLayout();
