@@ -4,14 +4,14 @@ import java.io.File;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
-public class EjemploLeerXML {
+public class LecturaEmpleadoXml {
     public static void main(String[] args) {
         // creamos una instancia de DocumentBuilderFactory para construir el parser y
         // cargamos el documento con el método parse()
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(new File("Empleados.xml"));
+            Document document = builder.parse(new File("xml/Empleados.xml"));
             // Elimina nodos vacios y combina adyacentes en caso de que los hubiera
             document.getDocumentElement().normalize();
             System.out.printf("Elemento raiz: %s %n",
