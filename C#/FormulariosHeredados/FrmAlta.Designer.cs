@@ -244,8 +244,8 @@
             Controls.Add(label1);
             Controls.Add(lblClientes);
             Name = "FrmAlta";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAlta";
+            Load += FrmAlta_Load;
             Controls.SetChildIndex(lblClientes, 0);
             Controls.SetChildIndex(label1, 0);
             Controls.SetChildIndex(lsBoxClientes, 0);

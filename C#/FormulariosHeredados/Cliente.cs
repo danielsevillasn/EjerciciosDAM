@@ -15,12 +15,11 @@ namespace FormulariosHeredados
         private string comentario;
         private Boolean vip;
 
-        public Cliente(string nombre, string apellido, string ciudad, string correo, string comentario, bool vip)
+        public Cliente(string nombre, string apellido, string ciudad, string comentario, bool vip)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.ciudad = ciudad;
-            this.correo = correo;
             this.comentario = comentario;
             this.vip = vip;
         }

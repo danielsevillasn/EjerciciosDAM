@@ -12,6 +12,11 @@ namespace FormulariosHeredados
         public FrmPadre()
         {
             InitializeComponent();
+            if (listaClientes.Count == 0)
+            {
+                listaClientes.Add("prueba1@gmail.com", new Cliente("Pepe", "Gárcia", "Madrid", "Rata", false));
+                listaClientes.Add("prueba2@gmail.com", new Cliente("Juan", "Federico", "Barcelona", "Rico", true));
+            }
         }
 
         public void MstrAlta_Click(object sender, EventArgs e)
