@@ -68,7 +68,6 @@ VSWorkspaceState.json
 # JAVA & GRADLE (BUILD ARTIFACTS)
 # ==========================================
 *.class
-*.jar
 *.war
 *.nar
 *.ear

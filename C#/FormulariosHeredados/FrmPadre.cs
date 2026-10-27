@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace FormulariosHeredados
 {
     public partial class FrmPadre : Form
@@ -5,10 +7,16 @@ namespace FormulariosHeredados
         FrmAlta frmAlta;
         FrmConsultaList frmConsultaList;
         FrmConsultaTree frmConsultaTree;
+        public static SortedList<string,Cliente> listaClientes = new SortedList<string, Cliente>();
 
         public FrmPadre()
         {
             InitializeComponent();
+            if (listaClientes.Count == 0)
+            {
+                listaClientes.Add("prueba1@gmail.com", new Cliente("Pepe", "Gárcia", "Madrid", "Rata", false));
+                listaClientes.Add("prueba2@gmail.com", new Cliente("Juan", "Federico", "Barcelona", "Rico", true));
+            }
         }
 
         public void MstrAlta_Click(object sender, EventArgs e)
@@ -53,18 +61,18 @@ namespace FormulariosHeredados
         private void MstrConsultaTree_Click(object sender, EventArgs e)
         {
             Hide();
-            if (frmAlta == null || !frmAlta.IsDisposed)
+            if (frmConsultaTree == null || !frmConsultaTree.IsDisposed)
             {
-                frmAlta = new FrmAlta();
-                frmAlta.WindowState = FormWindowState.Normal;
-                frmAlta.Show();
+                frmConsultaTree = new FrmConsultaTree();
+                frmConsultaTree.WindowState = FormWindowState.Normal;
+                frmConsultaTree.Show();
             }
-            if ((frmConsultaList != null && frmConsultaTree != null))
+            if ((frmConsultaList != null && frmAlta != null))
             {
-                if (frmConsultaList.Visible || frmConsultaTree.Visible)
+                if (frmConsultaList.Visible || frmAlta.Visible)
                 {
                     frmConsultaList.Visible = false;
-                    frmConsultaTree.Visible = false;
+                    frmAlta.Visible = false;
                 }
             }
         }
