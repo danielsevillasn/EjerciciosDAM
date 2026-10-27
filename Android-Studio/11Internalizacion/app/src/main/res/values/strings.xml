@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">11Internalizacion</string>
+    <string name="nombre">Indique Nombre: </string>
+    <string name="apellido">Indique Apellidos: </string>
+    <string name="telefono">Indique nº de Teléfono</string>
+    <string name="titulo">Formulario</string>
+</resources>
