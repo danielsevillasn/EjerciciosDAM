@@ -9,6 +9,12 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:hint="Introduzca usuario"/>
+
     <Button
         android:id="@+id/btnIrASegundaActividad"
         android:layout_width="wrap_content"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnIrASegundaActividad;
+    private EditText etnNombre;
 
 
     @Override
@@ -27,10 +29,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         btnIrASegundaActividad = (Button) findViewById(R.id.btnIrASegundaActividad);
+        etnNombre = (EditText) findViewById(R.id.etNombre);
         btnIrASegundaActividad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SegundaActividad.class);
+                intent.putExtra("nombreUsuario",etnNombre.getText().toString());
                 startActivity(intent);
             }
         });
