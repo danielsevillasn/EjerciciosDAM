@@ -19,21 +19,62 @@ namespace FormulariosHeredados
 
         private void FrmConsultaList_Load(object sender, EventArgs e)
         {
-            ListViewItem l = lsvClientes.Items.Add("Pepe", 0);
-            l.SubItems.Add("Federico");
-            l.SubItems.Add("pepe@gmail.com");
-            l.SubItems.Add("Cliente leal");
+            cargarClientes("");
+
             cmbVista.Items.Clear();
             cmbVista.Items.Add("Iconos grandes");
             cmbVista.Items.Add("Detalles");
             cmbVista.Items.Add("Iconos pequeños");
             cmbVista.Items.Add("Lista");
             cmbVista.Items.Add("Mosaico");
+            cmbVista.SelectedIndex = 0;
+
+            foreach (Cliente c in listaClientes.Values)
+            {
+                cmbCiudad.Items.Add(c.Ciudad);
+            }
+            cmbCiudad.Items.Add("Todos");
+
+        }
+
+        private void cargarClientes(String ciudad)
+        {
+            int vip;
+            for (int i = 0; i < listaClientes.Count; i++)
+            {
+                Cliente c = listaClientes.GetValueAtIndex(i);
+                if(ciudad.Equals(""))
+                {
+                    vip = 0;
+                    if (c.Vip)
+                    {
+                        vip = 1;
+                    }
+                    ListViewItem l = lsvClientes.Items.Add(c.Nombre, vip);
+                    l.SubItems.Add(c.Apellido);
+                    l.SubItems.Add(listaClientes.GetKeyAtIndex(i).ToString());
+                    l.SubItems.Add(c.Comentario);
+                }
+
+                if (ciudad.Equals(c.Ciudad))
+                {
+                    vip = 0;
+                    if (c.Vip)
+                    {
+                        vip = 1;
+                    }
+                    ListViewItem l = lsvClientes.Items.Add(c.Nombre, vip);
+                    l.SubItems.Add(c.Apellido);
+                    l.SubItems.Add(listaClientes.GetKeyAtIndex(i).ToString());
+                    l.SubItems.Add(c.Comentario);
+                }
+
+            }
         }
 
         private void cmbVista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbVista.SelectedItem.ToString() != null)
+            if (cmbVista.SelectedItem.ToString() != null)
             {
                 switch (cmbVista.SelectedItem.ToString())
                 {
@@ -53,6 +94,22 @@ namespace FormulariosHeredados
                         lsvClientes.View = View.Tile;
                         break;
 
+                }
+            }
+        }
+
+        private void cmbCiudad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lsvClientes.Items.Clear();
+            if(cmbCiudad.SelectedIndex.ToString() != null)
+            {
+                if (cmbCiudad.SelectedItem.ToString().ToLower().Equals("todos"))
+                {
+                    cargarClientes("");
+                }
+                else
+                {
+                    cargarClientes(cmbCiudad.SelectedItem.ToString());
                 }
             }
         }

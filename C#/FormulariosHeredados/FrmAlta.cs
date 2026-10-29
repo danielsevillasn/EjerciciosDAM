@@ -136,5 +136,30 @@ namespace FormulariosHeredados
         {
             cargarLista();
         }
+
+        private void strBtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lsBoxClientes.SelectedItem != null)
+            {
+                String correoItemSeleccionado = "";
+                int indexItemSeleccionado = 0;
+                String[] itemSeleccionado = lsBoxClientes.SelectedItem.ToString().Split(" ");
+                for (int i = 0; i < FrmPadre.listaClientes.Values.Count; i++)
+                {
+                    if (FrmPadre.listaClientes.Values[i].Nombre.Equals(itemSeleccionado[0]))
+                    {
+                        correoItemSeleccionado = FrmPadre.listaClientes.GetKeyAtIndex(i);
+                        indexItemSeleccionado = i;
+                    }
+                }
+                listaClientes.RemoveAt(indexItemSeleccionado);
+                lsBoxClientes.SelectedItem = null;
+                cargarLista();
+            }
+            else
+            {
+                MessageBox.Show("No puedes eliminar ya que no hay ningún cliente seleccionado");
+            }
+        }
     }
 }

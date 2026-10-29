@@ -47,6 +47,7 @@
             // lsvClientes
             // 
             lsvClientes.Columns.AddRange(new ColumnHeader[] { Nombre, Apellidos, Email, Comentarios });
+            lsvClientes.LargeImageList = imgListLsv;
             lsvClientes.Location = new Point(37, 202);
             lsvClientes.Name = "lsvClientes";
             lsvClientes.Size = new Size(717, 217);
@@ -81,7 +82,7 @@
             imgListLsv.ImageStream = (ImageListStreamer)resources.GetObject("imgListLsv.ImageStream");
             imgListLsv.TransparentColor = Color.Transparent;
             imgListLsv.Images.SetKeyName(0, "user.png");
-            imgListLsv.Images.SetKeyName(1, "home.png");
+            imgListLsv.Images.SetKeyName(1, "vip.png");
             // 
             // imgFondoClientes
             // 
@@ -120,7 +121,9 @@
             cmbCiudad.Location = new Point(360, 109);
             cmbCiudad.Name = "cmbCiudad";
             cmbCiudad.Size = new Size(202, 23);
+            cmbCiudad.Sorted = true;
             cmbCiudad.TabIndex = 12;
+            cmbCiudad.SelectedIndexChanged += cmbCiudad_SelectedIndexChanged;
             // 
             // cmbVista
             // 
@@ -128,6 +131,7 @@
             cmbVista.Location = new Point(626, 109);
             cmbVista.Name = "cmbVista";
             cmbVista.Size = new Size(124, 23);
+            cmbVista.Sorted = true;
             cmbVista.TabIndex = 13;
             cmbVista.SelectedIndexChanged += cmbVista_SelectedIndexChanged;
             // 

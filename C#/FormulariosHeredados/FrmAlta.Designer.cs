@@ -66,7 +66,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(362, 224);
+            label1.Location = new Point(362, 211);
             label1.Name = "label1";
             label1.Size = new Size(76, 19);
             label1.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             lblApellidos.AutoSize = true;
             lblApellidos.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblApellidos.Location = new Point(357, 263);
+            lblApellidos.Location = new Point(357, 250);
             lblApellidos.Name = "lblApellidos";
             lblApellidos.Size = new Size(86, 19);
             lblApellidos.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             lblCiudad.AutoSize = true;
             lblCiudad.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCiudad.Location = new Point(365, 300);
+            lblCiudad.Location = new Point(365, 287);
             lblCiudad.Name = "lblCiudad";
             lblCiudad.Size = new Size(70, 19);
             lblCiudad.TabIndex = 5;
@@ -136,6 +136,7 @@
             strBtnEliminar.Name = "strBtnEliminar";
             strBtnEliminar.Size = new Size(70, 22);
             strBtnEliminar.Text = "Eliminar";
+            strBtnEliminar.Click += strBtnEliminar_Click;
             // 
             // picBoxImagenFondo
             // 
@@ -152,7 +153,7 @@
             // 
             lblCorreo.AutoSize = true;
             lblCorreo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCorreo.Location = new Point(369, 341);
+            lblCorreo.Location = new Point(369, 328);
             lblCorreo.Name = "lblCorreo";
             lblCorreo.Size = new Size(62, 19);
             lblCorreo.TabIndex = 8;
@@ -162,7 +163,7 @@
             // 
             lblComentario.AutoSize = true;
             lblComentario.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblComentario.Location = new Point(348, 378);
+            lblComentario.Location = new Point(348, 365);
             lblComentario.Name = "lblComentario";
             lblComentario.Size = new Size(104, 19);
             lblComentario.TabIndex = 9;
@@ -172,7 +173,7 @@
             // 
             lblVip.AutoSize = true;
             lblVip.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblVip.Location = new Point(380, 414);
+            lblVip.Location = new Point(380, 418);
             lblVip.Name = "lblVip";
             lblVip.Size = new Size(40, 19);
             lblVip.TabIndex = 10;
@@ -180,43 +181,44 @@
             // 
             // txtBoxNombre
             // 
-            txtBoxNombre.Location = new Point(460, 222);
+            txtBoxNombre.Location = new Point(460, 209);
             txtBoxNombre.Name = "txtBoxNombre";
             txtBoxNombre.Size = new Size(277, 23);
             txtBoxNombre.TabIndex = 11;
             // 
             // txtBoxApellidos
             // 
-            txtBoxApellidos.Location = new Point(460, 261);
+            txtBoxApellidos.Location = new Point(460, 248);
             txtBoxApellidos.Name = "txtBoxApellidos";
             txtBoxApellidos.Size = new Size(277, 23);
             txtBoxApellidos.TabIndex = 12;
             // 
             // txtBoxCiudad
             // 
-            txtBoxCiudad.Location = new Point(460, 298);
+            txtBoxCiudad.Location = new Point(460, 285);
             txtBoxCiudad.Name = "txtBoxCiudad";
             txtBoxCiudad.Size = new Size(277, 23);
             txtBoxCiudad.TabIndex = 13;
             // 
             // txtBoxCorreo
             // 
-            txtBoxCorreo.Location = new Point(460, 339);
+            txtBoxCorreo.Location = new Point(460, 326);
             txtBoxCorreo.Name = "txtBoxCorreo";
             txtBoxCorreo.Size = new Size(277, 23);
             txtBoxCorreo.TabIndex = 14;
             // 
             // txtBoxComentario
             // 
-            txtBoxComentario.Location = new Point(460, 376);
+            txtBoxComentario.Location = new Point(460, 363);
+            txtBoxComentario.Multiline = true;
             txtBoxComentario.Name = "txtBoxComentario";
-            txtBoxComentario.Size = new Size(277, 23);
+            txtBoxComentario.Size = new Size(277, 49);
             txtBoxComentario.TabIndex = 15;
             // 
             // chBoxVip
             // 
             chBoxVip.AutoSize = true;
-            chBoxVip.Location = new Point(460, 414);
+            chBoxVip.Location = new Point(460, 422);
             chBoxVip.Name = "chBoxVip";
             chBoxVip.Size = new Size(15, 14);
             chBoxVip.TabIndex = 16;

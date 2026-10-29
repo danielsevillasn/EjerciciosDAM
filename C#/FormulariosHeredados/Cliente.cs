@@ -27,7 +27,6 @@ namespace FormulariosHeredados
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string Ciudad { get => ciudad; set => ciudad = value; }
-        public string Correo { get => correo; set => correo = value; }
         public string Comentario { get => comentario; set => comentario = value; }
         public bool Vip { get => vip; set => vip = value; }
     }
