@@ -1,0 +1,61 @@
+1. Calculadora segura
+
+Pide al usuario dos números y una operación (+, -, *, /).
+Repite hasta que el usuario quiera salir.
+Debes controlar:
+
+    División entre cero.
+    Introducción de valores no numéricos.
+
+2. Contador con control de errores
+
+El programa pide un número entero positivo n y cuenta desde 1 hasta n.
+Si el usuario introduce algo que no sea entero o menor que 1, se pide de nuevo.
+Si se interrumpe con Ctrl + C, el programa se despide limpiamente.
+
+3. Simulador de ahorro mensual
+
+Pide un saldo inicial y una cantidad a ahorrar cada mes.
+Muestra el saldo mes a mes durante un año.
+Controla errores de tipo o de entrada no numérica.
+
+Extra: si el saldo supera cierto umbral (por ejemplo, 10 000), muestra un mensaje especial (“¡Meta alcanzada!”).
+
+4. Adivina el número (versión con excepciones)
+
+El programa genera un número secreto.
+El usuario intenta adivinarlo introduciendo números.
+Controla:
+
+    Entradas no numéricas.
+
+Requisitos:
+
+    Mensajes “mayor” o “menor” según la comparación.
+    Cuando acierta, felicita y muestra el número de intentos.
+
+5. Verificador de operaciones matemáticas
+
+El programa pide al usuario una expresión matemática simple como texto (por ejemplo, "3 + 2").
+Usa eval() para evaluarla dentro de un try–except.
+Controla:
+
+    SyntaxError si la expresión está mal escrita.
+    TypeError si se intenta una operación inválida (por ejemplo, 3 + "hola").
+    ZeroDivisionError si hay división entre 0.
+     
+    Ayuda: eval() es una función incorporada de Python que interpreta una cadena de texto como si fuera código Python y devuelve el resultado de evaluarla. Es decir, si tienes texto que representa una expresión matemática o lógica, eval() puede calcular su resultado.
+    eval(expresion)
+        expresion → una cadena (str) que contiene una expresión válida de Python.
+        Devuelve → el resultado de esa expresión.
+
+Ejemplo sencillo: Supongamos que un usuario escribe una fórmula matemática como texto:
+
+    expresion = "10 * (2 + 3)"
+    resultado = eval(expresion)
+    print("Resultado:", resultado)
+    Salida: Resultado: 50
+    Python evalúa el texto "10 * (2 + 3)" como si lo hubieras escrito directamente en código.
+
+Precaución: eval() ejecuta cualquier código que se le pase, no solo operaciones matemáticas.
+Por eso no debe usarse con texto introducido por usuarios desconocidos o sin control. Para contextos educativos y ejercicios en clase, puede usarse siempre que se limite a expresiones numéricas o lógicas sencillas.
