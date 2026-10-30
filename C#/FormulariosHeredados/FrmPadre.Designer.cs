@@ -83,6 +83,7 @@
             Name = "FrmPadre";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPadre";
+            FormClosing += FrmPadre_FormClosing;
             MstrPrincipal.ResumeLayout(false);
             MstrPrincipal.PerformLayout();
             ResumeLayout(false);

@@ -25,13 +25,13 @@ namespace FormulariosHeredados
                 MessageBox.Show("Has dejado vacio el apellido");
             else if (txtBoxCiudad.Text.Equals(""))
                 MessageBox.Show("Has dejado vacio el ciudad");
-            else if (txtBoxCorreo.Text.Equals(""))
-                MessageBox.Show("Has dejado vacio el correo");
+            else if (txtBoxCorreo.Text.Equals("") || listaClientes.ContainsKey(txtBoxCorreo.Text))
+                MessageBox.Show("Has dejado vacio el correo o el correo es igual al de otro usuario");
             else if (txtBoxComentario.Text.Equals(""))
                 MessageBox.Show("Has dejado vacio el comentario");
             else
             {
-                MessageBox.Show("Cliente guardado correctamente");
+                MessageBox.Show("Cliente guardado correctamente","app",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 FrmPadre.listaClientes.Add(txtBoxCorreo.Text, new Cliente(txtBoxNombre.Text, txtBoxApellidos.Text, txtBoxCiudad.Text, txtBoxComentario.Text, chBoxVip.Checked));
                 txtBoxNombre.Text = "";
                 txtBoxApellidos.Text = "";

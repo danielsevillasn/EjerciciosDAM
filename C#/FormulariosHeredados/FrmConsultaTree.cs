@@ -22,7 +22,10 @@ namespace FormulariosHeredados
             for (int i = 0; i < listaClientes.Count; i++)
             {
                 Cliente c = listaClientes.GetValueAtIndex(i);
-                trvClientes.Nodes.Add(c.Ciudad, c.Ciudad, 0, 0).Tag = listaClientes.GetKeyAtIndex(i);
+                if (!trvClientes.Nodes.ContainsKey(c.Ciudad))
+                {
+                    trvClientes.Nodes.Add(c.Ciudad, c.Ciudad, 0, 0);
+                }
             }
         }
 
@@ -46,7 +49,7 @@ namespace FormulariosHeredados
                 for (int i = 0; i < listaClientes.Count; i++)
                 {
                     Cliente c = listaClientes.GetValueAtIndex(i);
-                    if (listaClientes.GetKeyAtIndex(i).Equals(trvClientes.SelectedNode.Tag))
+                    if (c.Ciudad == trvClientes.SelectedNode.Text)
                     {
                         vip = 1;
                         if (c.Vip)
@@ -54,22 +57,24 @@ namespace FormulariosHeredados
                             vip = 2;
                         }
                         trvClientes.SelectedNode.Nodes.Add(c.Nombre, c.Nombre, vip, vip).Tag = listaClientes.GetKeyAtIndex(i);
-
                     }
                 }
             }
             else
             {
-                for (int i = 0; i < listaClientes.Count; i++)
+                if (trvClientes.SelectedNode.Tag != null)
                 {
                     Cliente c = listaClientes[trvClientes.SelectedNode.Tag.ToString()];
-                    txtBoxNombre.Text = c.Nombre;
-                    txtBoxApellidos.Text = c.Apellido;
-                    txtBoxCiudad.Text = c.Ciudad;
-                    txtBoxCorreo.Text = listaClientes.GetKeyAtIndex(i);
-                    txtBoxComentario.Text = c.Comentario;
-
+                    if (c != null)
+                    {
+                        txtBoxNombre.Text = c.Nombre;
+                        txtBoxApellidos.Text = c.Apellido;
+                        txtBoxCiudad.Text = c.Ciudad;
+                        txtBoxCorreo.Text = trvClientes.SelectedNode.Tag.ToString();
+                        txtBoxComentario.Text = c.Comentario;
+                    }
                 }
+
             }
         }
     }

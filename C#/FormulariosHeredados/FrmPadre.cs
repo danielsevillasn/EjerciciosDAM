@@ -7,7 +7,7 @@ namespace FormulariosHeredados
         FrmAlta frmAlta;
         FrmConsultaList frmConsultaList;
         FrmConsultaTree frmConsultaTree;
-        public static SortedList<string,Cliente> listaClientes = new SortedList<string, Cliente>();
+        public static SortedList<string, Cliente> listaClientes = new SortedList<string, Cliente>();
 
         public FrmPadre()
         {
@@ -28,9 +28,9 @@ namespace FormulariosHeredados
                 frmAlta.WindowState = FormWindowState.Normal;
                 frmAlta.Show();
             }
-            if((frmConsultaList != null && frmConsultaTree != null))
+            if ((frmConsultaList != null && frmConsultaTree != null))
             {
-                 if (frmConsultaList.Visible || frmConsultaTree.Visible)
+                if (frmConsultaList.Visible || frmConsultaTree.Visible)
                 {
                     frmConsultaList.Visible = false;
                     frmConsultaTree.Visible = false;
@@ -78,6 +78,11 @@ namespace FormulariosHeredados
         }
 
         private void MstrSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FrmPadre_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
