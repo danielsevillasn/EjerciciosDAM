@@ -172,3 +172,19 @@ slnx.sqlite
 # ==========================================
 !*.pdf
 !.gitkeep
+
+# ==========================================
+# PYTHON
+# ==========================================
+__pycache__/
+*.pyc
+
+# Entornos virtuales (si usas venv o poetry)
+.venv/
+env/
+venv/
+
+# Caché de herramientas de desarrollo (VS Code / Pylance)
+.pytest_cache/
+.mypy_cache/
+.vscode/
