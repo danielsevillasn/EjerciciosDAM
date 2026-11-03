@@ -3,10 +3,6 @@
 # Las variables sirven para guardar datos en memoria.
 # Python es un lenguaje de tipado dinámico y de tipado fuerte.
 ###
-
-from os import system
-if system("clear") != 0: system("cls")
-
 # Para asignar una variable solo hace falta poner el nombre de la variable y asignarle un valor
 my_name = "midudev"
 print(my_name)  # Imprime el valor de la variable my_name
@@ -18,7 +14,7 @@ print(age)  # Imprime el valor de la variable age)
 age = 39
 print(age)  # Ahora la variable age tiene el valor 39
 
-# Tipado dinámico: el tipo de dato se determine en tiempo de ejecución
+# Tipado dinámico: el tipo de dato se determina en tiempo de ejecución
 # No es necesario declarar explícitamente el tipo de variable
 name = "midudev"
 print(type(name))  # Muestra el tipo de dato de la variable name (str)
