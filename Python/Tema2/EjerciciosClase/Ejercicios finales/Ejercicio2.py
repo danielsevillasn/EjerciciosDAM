@@ -5,12 +5,14 @@ def definirValor():
             if n < 1:
                 print("El numero ha de ser mayor o igual que 1")
             else:
-                break;
-                
+                break
         except ValueError:
             print("Tienen que ser numeros los valores")
-    return(n)
+    return n
 try:
-    print(definirValor())
+    n = definirValor()
+    print(f"Contando desde 1 hasta {n}:")
+    for i in range(1,n+1):
+        print(i)
 except KeyboardInterrupt:
     print("\nPrograma finalizado")

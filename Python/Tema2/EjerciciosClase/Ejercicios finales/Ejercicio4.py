@@ -4,7 +4,7 @@ def definirValor(entrada):
     while True:
         try:
             n = int(input(entrada))
-            break;
+            break
         except ValueError:
             print("Tienen que ser numeros los valores")
     return(n)

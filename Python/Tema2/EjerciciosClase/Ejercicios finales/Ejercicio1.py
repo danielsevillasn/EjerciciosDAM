@@ -32,13 +32,16 @@ while True:
             except ZeroDivisionError:
                 operacionValida = False
                 print("No se puede dividir entre 0, da infinito")
+        case _:
+            operacionValida = False
+            print("Opción no válida")
     
     if operacionValida:
         print(operacion)
         
 
     respuesta = input("Quieres salir si o no(s/n):")
-    if respuesta.lower == "s".lower:
+    if respuesta.lower == "s":
         print("Saliendo...")
         break;
     
