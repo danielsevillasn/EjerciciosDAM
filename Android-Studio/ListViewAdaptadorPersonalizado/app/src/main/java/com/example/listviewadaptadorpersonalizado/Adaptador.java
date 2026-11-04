@@ -1,10 +1,12 @@
 package com.example.listviewadaptadorpersonalizado;
 
 import android.content.Context;
-import android.view.ContentInfo;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,9 +18,9 @@ public class Adaptador extends BaseAdapter {
     private Context miContexto;
     private ArrayList<ModeloPersona> miArrayList;
 
-    public Adaptador(ArrayList<ModeloPersona> miArrayList, Context miContexto) {
-        this.miArrayList = miArrayList;
+    public Adaptador(Context miContexto, ArrayList<ModeloPersona> miArrayList) {
         this.miContexto = miContexto;
+        this.miArrayList = miArrayList;
     }
 
     @Override
@@ -38,6 +40,20 @@ public class Adaptador extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        if (convertView == null) {
+            LayoutInflater constructorLayout = LayoutInflater.from(miContexto);
+            convertView = constructorLayout.inflate(R.layout.item, parent, false);
+        }
+
+        //Instanciamiento de elementos
+        TextView tvNombre = convertView.findViewById(R.id.tvNombre);
+        TextView tvDescripcion = convertView.findViewById(R.id.tvDescripvion);
+        ImageView imgFoto = convertView.findViewById(R.id.imgFoto);
+
+        tvNombre.setText(miArrayList.get(position).getNombre());
+        tvDescripcion.setText(miArrayList.get(position).getDescripcion());
+        imgFoto.setImageResource(miArrayList.get(position).getFoto());
+
+        return convertView;
     }
 }

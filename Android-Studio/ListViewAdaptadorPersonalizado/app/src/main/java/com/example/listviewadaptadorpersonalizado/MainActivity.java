@@ -1,6 +1,9 @@
 package com.example.listviewadaptadorpersonalizado;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -25,8 +28,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         lvAgenda = findViewById(R.id.lvAgenda);
-        personas = new ArrayList<>();
-        personas.add(new ModeloPersona("serio","pepe",101001,R.drawable.pepe));
+
+        personas = new ArrayList<ModeloPersona>();
+        personas.add(new ModeloPersona("Chaval serio y dispuesto","Pepe",101001,R.drawable.pepe));
+
+        Adaptador adaptador = new Adaptador(getApplicationContext(), personas);
+
+        lvAgenda.setAdapter(adaptador);
+        lvAgenda.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), DetallePersona.class);
+                intent.putExtra("personas",personas.get(position));
+                startActivity(intent);
+            }
+        });
     }
 
 }
