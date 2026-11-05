@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cuentas>
+    <cuenta>
+        <nombreTitular>pepe</nombreTitular>
+        <numCuenta>12020</numCuenta>
+        <saldo>10.0</saldo>
+    </cuenta>
+    <cuenta>
+        <nombreTitular>juan</nombreTitular>
+        <numCuenta>2933</numCuenta>
+        <saldo>40.0</saldo>
+    </cuenta>
+</cuentas>

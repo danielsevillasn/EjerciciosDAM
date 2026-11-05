@@ -1,3 +1,5 @@
+package EjerciciosPropuestosRepaso;
+
 import java.io.File;
 
 public class Ejercicio2 {
