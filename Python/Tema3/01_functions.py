@@ -4,6 +4,7 @@
 ###
 
 import os
+import math
 import subprocess
 
 # Comprobamos el tipo de sistema operativo
@@ -49,19 +50,27 @@ print(f"El factorial es: {factorial(5)}")
 #La función debe recibir la cantidad sin IVA y el porcentaje de IVA a aplicar, 
 #y devolver el total de la factura. Si se invoca la función sin pasarle 
 # el porcentaje de IVA, deberá aplicar un 21%.
+def factura(factura : int = 5, porcentaje :float = 0.21) -> int:
+    return factura*porcentaje+factura
 
-
+print(factura(5))
 
 
 
 #Escribir una función que calcule el área de un círculo 
 #y otra que calcule el volumen de un cilindro usando la primera función.
-
-
-
+def area_circulo(radio :float) -> float:
+    return math.pi*radio**2
+def volumen_cilindro(radio, altura :float) -> float:
+    return round(area_circulo(radio)*altura,2)
+print(volumen_cilindro(5,3))
 
 
 #Escribir una función que reciba una muestra de números en una lista y 
 #devuelva otra lista con sus cuadrados.
-
-
+def lista_cuadrados(lista :tuple):
+    resultado = []
+    for l in lista:
+        resultado.append(l**2)
+    return resultado
+print(lista_cuadrados([1,2,3,4]))
