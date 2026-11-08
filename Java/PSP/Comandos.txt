@@ -1,0 +1,6 @@
+Linux:
+which java
+
+Windows:
+(Get-Command java).Source
+where java
