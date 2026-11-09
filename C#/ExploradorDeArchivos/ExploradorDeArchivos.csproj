@@ -58,6 +58,12 @@
     <Compile Include="Explorador.Designer.cs">
       <DependentUpon>Explorador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nuevo_Carpeta_Archivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nuevo_Carpeta_Archivo.Designer.cs">
+      <DependentUpon>Nuevo_Carpeta_Archivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BlocDeNotas.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Explorador.resx">
       <DependentUpon>Explorador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo_Carpeta_Archivo.resx">
+      <DependentUpon>Nuevo_Carpeta_Archivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

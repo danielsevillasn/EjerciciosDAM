@@ -55,11 +55,21 @@ namespace ExploradorDeArchivos
                 String[] ficheros = Directory.GetFiles(unidad);
                 foreach (String fichero in ficheros)
                 {
-                    ListViewItem lvi = lsvFicheros.Items.Add(Path.GetFileName(fichero));
-                    lvi.Tag = fichero;
-                    lvi.SubItems.Add(File.GetCreationTime(fichero).ToString());
-                    lvi.SubItems.Add(File.GetLastWriteTime(fichero).ToString());
-                    lvi.SubItems.Add(File.GetLastAccessTime(fichero).ToString());
+                    if (Path.GetExtension(fichero).Equals(".txt")){
+                        ListViewItem lvi = lsvFicheros.Items.Add(Path.GetFileName(fichero), 0);
+                        lvi.Tag = fichero;
+                        lvi.SubItems.Add(File.GetCreationTime(fichero).ToString());
+                        lvi.SubItems.Add(File.GetLastWriteTime(fichero).ToString());
+                        lvi.SubItems.Add(File.GetLastAccessTime(fichero).ToString());
+                    }
+                    else
+                    {
+                        ListViewItem lvi = lsvFicheros.Items.Add(Path.GetFileName(fichero),1);
+                        lvi.Tag = fichero;
+                        lvi.SubItems.Add(File.GetCreationTime(fichero).ToString());
+                        lvi.SubItems.Add(File.GetLastWriteTime(fichero).ToString());
+                        lvi.SubItems.Add(File.GetLastAccessTime(fichero).ToString());
+                    }
                 }
             }
         }
@@ -71,18 +81,56 @@ namespace ExploradorDeArchivos
 
         private void lsvFicheros_DoubleClick(object sender, EventArgs e)
         {
-            if (lsvFicheros.SelectedItems == null)
+            if (lsvFicheros.SelectedItems.Count == 0)
             {
                 MessageBox.Show("No has seleccionado ningun item");
                 return;
             }
-            String unidad = Path.GetExtension(lsvFicheros.SelectedItems[0].Tag.ToString());
+            String rutaArchivo = lsvFicheros.SelectedItems[0].Tag.ToString();
+            String unidad = Path.GetExtension(rutaArchivo);
             if (Path.GetExtension(unidad).Equals(".txt"))
             {
-                String contenidoTxt = File.ReadAllText(lsvFicheros.SelectedItems[0].Tag.ToString());
-                BlocDeNotas bloc = new BlocDeNotas(contenidoTxt);
+                String contenidoTxt = File.ReadAllText(rutaArchivo);
+                BlocDeNotas bloc = new BlocDeNotas(contenidoTxt, rutaArchivo);
                 bloc.ShowDialog();
             }
+        }
+
+        private void strBtnIconosGrandes_Click(object sender, EventArgs e)
+        {
+            lsvFicheros.View = View.LargeIcon;
+        }
+
+        private void strBtnDetalles_Click(object sender, EventArgs e)
+        {
+            lsvFicheros.View = View.Details;
+        }
+
+        private void strBtnIconosPequeños_Click(object sender, EventArgs e)
+        {
+            lsvFicheros.View = View.SmallIcon;
+        }
+
+        private void strBtnLista_Click(object sender, EventArgs e)
+        {
+            lsvFicheros.View = View.List;
+        }
+
+        private void strBtnMosaico_Click(object sender, EventArgs e)
+        {
+            lsvFicheros.View = View.Tile;
+        }
+
+        private void strBtnCarpeta_Click(object sender, EventArgs e)
+        {
+            Nuevo_Carpeta_Archivo carpeta = new Nuevo_Carpeta_Archivo(false, true, trvArchivos.SelectedNode.Tag.ToString());
+            carpeta.ShowDialog();
+        }
+
+        private void strBtnFichero_Click(object sender, EventArgs e)
+        {
+            Nuevo_Carpeta_Archivo fichero = new Nuevo_Carpeta_Archivo(true, false, trvArchivos.SelectedNode.Tag.ToString());
+            fichero.ShowDialog();
         }
     }
 }

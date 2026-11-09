@@ -1,4 +1,6 @@
-﻿namespace ExploradorDeArchivos
+﻿using System.Windows.Forms;
+
+namespace ExploradorDeArchivos
 {
     partial class BlocDeNotas
     {
@@ -33,10 +35,12 @@
             // 
             // txtContenido
             // 
-            this.txtContenido.Location = new System.Drawing.Point(98, 41);
+            this.txtContenido.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContenido.Location = new System.Drawing.Point(0, 0);
             this.txtContenido.Multiline = true;
+            this.txtContenido.ScrollBars = ScrollBars.Both;
             this.txtContenido.Name = "txtContenido";
-            this.txtContenido.Size = new System.Drawing.Size(602, 388);
+            this.txtContenido.Size = new System.Drawing.Size(800, 449);
             this.txtContenido.TabIndex = 0;
             // 
             // BlocDeNotas
@@ -48,6 +52,7 @@
             this.Name = "BlocDeNotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloc_de_notas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BlocDeNotas_FormClosing);
             this.Load += new System.EventHandler(this.Bloc_de_notas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
