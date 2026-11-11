@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableRow android:layout_marginBottom="24dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro de producto"
+            android:gravity="center"
+            android:layout_span="3"/>
+            <!-- Hace que ocupe dos columnas-->
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Codigo:"
+            android:layout_marginRight="20dp"/>
+        <EditText
+            android:id="@+id/etCodigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Escribe un número"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/btnLimpiar"
+            android:layout_marginStart="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Limpiar"/>
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_marginStart="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Guardar"/>
+    </TableRow>
+
+</TableLayout>
