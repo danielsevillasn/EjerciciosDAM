@@ -1,0 +1,16 @@
+Primero, debemos ir a la ruta C:\app\profesor\product\18.0.0\dbhomeXE\network\admin, y cambiar las siguientes líneas en dos ficheros:
+
+1. En listener.ora, cambiar la ip 10.X.X.X por localhost en HOST, quedando algo así:
+
+(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+
+2. En tnsnames.ora, cambiar la ip 10.X.X.X por localhost en HOST, quedando algo así:
+LISTENER_XE =
+  (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+
+Luego de cambiarlo, iniciar con tecla Windows + R el programa services.msc.
+Ahí buscar los servicios que empiezan por Oracle, y detener TODOS aquellos que estén en ejecución. Una vez detenidos todos, volver a iniciarlos.
+
+Conectar a la base de datos creada en sqldeveloper, e iniciar con:
+usuario: system
+contraseña: admin
