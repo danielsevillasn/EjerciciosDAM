@@ -1,3 +1,0 @@
-EjerCompleto2 datos.txt
-EjerCompleto2 datos2.txt
-EjerCompleto2 datos3.txt
