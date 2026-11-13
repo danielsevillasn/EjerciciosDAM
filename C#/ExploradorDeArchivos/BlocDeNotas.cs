@@ -29,12 +29,23 @@ namespace ExploradorDeArchivos
 
         private void BlocDeNotas_FormClosing(object sender, FormClosingEventArgs e)
         {
-            contenido = txtContenido.Text;
-            DialogResult resultado = MessageBox.Show("¿Deseas guardar las modificaciones que has hecho?","Confirmar guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
+            if (txtContenido.Text != contenido)
             {
-                File.WriteAllText(ruta, contenido );
+                DialogResult resultado = MessageBox.Show("¿Deseas guardar las modificaciones que has hecho?", "Confirmar guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    try
+                    {
+                        File.WriteAllText(ruta, txtContenido.Text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo guardar el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+
+
         }
     }
 }

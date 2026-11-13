@@ -28,13 +28,13 @@ namespace ExploradorDeArchivos
         {
             if (esArchivo)
             {
-                lblTitulo.Text = "Crear nuevo archivo en+"+ruta+":";
+                lblTitulo.Text = "Crear nuevo archivo en "+ruta+":";
                 lblExtension.Visible = true;
                 txtBoxExtension.Visible = true;
             }
             if (esDirectorio)
             {
-                lblTitulo.Text = "Crear nuevo directorio en+" + ruta + ":";
+                lblTitulo.Text = "Crear nuevo directorio en " + ruta + ":";
                 lblExtension.Visible = false;
                 txtBoxExtension.Visible = false;
             }
@@ -43,24 +43,39 @@ namespace ExploradorDeArchivos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtBoxNombre.Text == null)
+            if (txtBoxNombre.Text.Equals(""))
             {
+                MessageBox.Show("Debes introducir un nombre válido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (esArchivo)
+            try
             {
-                ruta += txtBoxNombre.Text.Trim() + txtBoxExtension.Text.Trim();
-                File.CreateText(ruta);
+                if (esArchivo)
+                {
+                    string extension = txtBoxExtension.Text.Trim();
+                    if (!string.IsNullOrEmpty(extension) && !extension.StartsWith("."))
+                    {
+                        extension = "." + extension;
+                    }
+
+                    string rutaCompleta = Path.Combine(ruta, txtBoxNombre.Text.Trim() + extension);
+                    using (StreamWriter sw = File.CreateText(rutaCompleta)) { }
+                }
+
+                if (esDirectorio)
+                {
+                    string rutaCompleta = Path.Combine(ruta, txtBoxNombre.Text.Trim());
+                    Directory.CreateDirectory(rutaCompleta);
+                }
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo crear el elemento: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (esDirectorio)
-            {
-                ruta += txtBoxNombre.Text.Trim();
-                Directory.CreateDirectory(ruta);
-            }
-
-            this.Close();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

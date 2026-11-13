@@ -36,6 +36,7 @@
             this.FechaCreacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.fechaModificacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.fechaAcceso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imgList = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.strBtnNuevo = new System.Windows.Forms.ToolStripDropDownButton();
             this.strBtnCarpeta = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@
             this.strBtnIconosPequeños = new System.Windows.Forms.ToolStripMenuItem();
             this.strBtnLista = new System.Windows.Forms.ToolStripMenuItem();
             this.strBtnMosaico = new System.Windows.Forms.ToolStripMenuItem();
-            this.imgList = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,7 @@
             this.fechaAcceso});
             this.lsvFicheros.GridLines = true;
             this.lsvFicheros.HideSelection = false;
+            this.lsvFicheros.LargeImageList = this.imgList;
             this.lsvFicheros.Location = new System.Drawing.Point(283, 85);
             this.lsvFicheros.Name = "lsvFicheros";
             this.lsvFicheros.Size = new System.Drawing.Size(397, 278);
@@ -99,6 +100,13 @@
             this.fechaAcceso.Text = "Fecha de acceso";
             this.fechaAcceso.Width = 125;
             // 
+            // imgList
+            // 
+            this.imgList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList.ImageStream")));
+            this.imgList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgList.Images.SetKeyName(0, "text-format.png");
+            this.imgList.Images.SetKeyName(1, "document.png");
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -127,7 +135,7 @@
             // 
             this.strBtnCarpeta.Image = ((System.Drawing.Image)(resources.GetObject("strBtnCarpeta.Image")));
             this.strBtnCarpeta.Name = "strBtnCarpeta";
-            this.strBtnCarpeta.Size = new System.Drawing.Size(180, 22);
+            this.strBtnCarpeta.Size = new System.Drawing.Size(115, 22);
             this.strBtnCarpeta.Text = "Carpeta";
             this.strBtnCarpeta.Click += new System.EventHandler(this.strBtnCarpeta_Click);
             // 
@@ -135,7 +143,7 @@
             // 
             this.strBtnFichero.Image = ((System.Drawing.Image)(resources.GetObject("strBtnFichero.Image")));
             this.strBtnFichero.Name = "strBtnFichero";
-            this.strBtnFichero.Size = new System.Drawing.Size(180, 22);
+            this.strBtnFichero.Size = new System.Drawing.Size(115, 22);
             this.strBtnFichero.Text = "Fichero";
             this.strBtnFichero.Click += new System.EventHandler(this.strBtnFichero_Click);
             // 
@@ -157,44 +165,37 @@
             // strBtnIconosGrandes
             // 
             this.strBtnIconosGrandes.Name = "strBtnIconosGrandes";
-            this.strBtnIconosGrandes.Size = new System.Drawing.Size(180, 22);
+            this.strBtnIconosGrandes.Size = new System.Drawing.Size(164, 22);
             this.strBtnIconosGrandes.Text = "Iconos grandes";
             this.strBtnIconosGrandes.Click += new System.EventHandler(this.strBtnIconosGrandes_Click);
             // 
             // strBtnDetalles
             // 
             this.strBtnDetalles.Name = "strBtnDetalles";
-            this.strBtnDetalles.Size = new System.Drawing.Size(180, 22);
+            this.strBtnDetalles.Size = new System.Drawing.Size(164, 22);
             this.strBtnDetalles.Text = "Detalles";
             this.strBtnDetalles.Click += new System.EventHandler(this.strBtnDetalles_Click);
             // 
             // strBtnIconosPequeños
             // 
             this.strBtnIconosPequeños.Name = "strBtnIconosPequeños";
-            this.strBtnIconosPequeños.Size = new System.Drawing.Size(180, 22);
+            this.strBtnIconosPequeños.Size = new System.Drawing.Size(164, 22);
             this.strBtnIconosPequeños.Text = "Iconos pequeños";
             this.strBtnIconosPequeños.Click += new System.EventHandler(this.strBtnIconosPequeños_Click);
             // 
             // strBtnLista
             // 
             this.strBtnLista.Name = "strBtnLista";
-            this.strBtnLista.Size = new System.Drawing.Size(180, 22);
+            this.strBtnLista.Size = new System.Drawing.Size(164, 22);
             this.strBtnLista.Text = "Lista";
             this.strBtnLista.Click += new System.EventHandler(this.strBtnLista_Click);
             // 
             // strBtnMosaico
             // 
             this.strBtnMosaico.Name = "strBtnMosaico";
-            this.strBtnMosaico.Size = new System.Drawing.Size(180, 22);
+            this.strBtnMosaico.Size = new System.Drawing.Size(164, 22);
             this.strBtnMosaico.Text = "Mosaico";
             this.strBtnMosaico.Click += new System.EventHandler(this.strBtnMosaico_Click);
-            // 
-            // imgList
-            // 
-            this.imgList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList.ImageStream")));
-            this.imgList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgList.Images.SetKeyName(0, "text-format.png");
-            this.imgList.Images.SetKeyName(1, "document.png");
             // 
             // Explorador
             // 
