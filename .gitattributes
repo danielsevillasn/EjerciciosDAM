@@ -1,0 +1,5 @@
+#Para que Windows (CRLF) no rompa los permisos ni los saltos de línea del script gradlew en Linux (LF)
+* text=auto
+gradlew text eol=lf
+*.sh text eol=lf
+gradlew.bat text eol=crlf

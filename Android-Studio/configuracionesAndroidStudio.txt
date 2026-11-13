@@ -1,0 +1,13 @@
+Filtro logcat errores:
+package:mine level:error
+
+Aumentar tamaño con el raton:
+• Settings > Editor > General.
+• Configuración: Marca Change font size with Ctrl+Mouse Wheel in: Active editor.
+
+
+Importación automática de clases (Auto-Import)
+
+• Ruta: Settings > Editor > General > Auto Import.
+• Configuración: Marca las casillas Add unambiguous imports on the fly y Optimize imports on the fly (en las secciones de Java y Kotlin). Android Studio importará librerías automáticamente mientras escribes y borrará las que no uses, sin tener que pulsar Alt + Enter constantemente.
+

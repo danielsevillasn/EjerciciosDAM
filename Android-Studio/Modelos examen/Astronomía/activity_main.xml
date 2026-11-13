@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/sol">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sistema Solar"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnProximidad"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:text="PLANETAS POR PRÓXIMIDAD AL SOL"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnDiametro"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:text="PLANETAS POR TAMAÑO"/>
+            <Button
+                android:id="@+id/btnAlfabetico"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:text="PLANETAS POR ORDEN ALFABÉTICO"/>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

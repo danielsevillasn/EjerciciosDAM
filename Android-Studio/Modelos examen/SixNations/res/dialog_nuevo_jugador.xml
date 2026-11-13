@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar Jugador"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/etNombreJugador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Inserte Nombre"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Elija nacionalidad"
+        android:gravity="center"/>
+
+    <Spinner
+        android:id="@+id/spNacionalidad"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+
+    <ImageView
+        android:id="@+id/imgBandera"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/six_nations"/>
+
+    <EditText
+        android:id="@+id/etValoracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Inserte valoración (0 - 10)"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar"/>
+    </LinearLayout>
+
+
+</LinearLayout>

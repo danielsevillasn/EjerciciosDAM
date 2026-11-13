@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Sistema de citas</string>
+    <string name="hint_mascota">Nombre de la mascota</string>
+    <string name="hint_telefono">Teléfono del propietario</string>
+    <string name="perro">Canino</string>
+    <string name="gato">Felino</string>
+    <string name="exotico">Exótico</string>
+    <string name="atencion_urgente">¿Atención Urgente 24h?</string>
+    <string name="btn_fecha">Seleccionar Fecha</string>
+    <string name="btn_hora">Seleccionar Hora</string>
+    <string name="btn_registrar">Registrar Cita</string>
+    <string name="error_campos_vacios">Por favor, rellene todos los campos</string>
+    <string name="cita_registrada">Cita registrada correctamente</string>
+    <string name="menu_web">Sitio Web</string>
+    <string name="menu_telefono">Llamar Urgencias</string>
+    <string name="menu_mapa">Ver en Maps</string>
+    <string name="menu_rotar">Modo Paisaje</string>
+
+    <!-- Recursos faltantes -->
+    <string name="titulo_detalle">Detalle de Cita</string>
+    <string name="desc_icono_especie">Icono de la especie</string>
+    <string name="btn_volver">Volver</string>
+    <string name="btn_salir">Salir</string>
+    <string name="label_especie">Especie:</string>
+    <string name="fecha_defecto">DD/MM/AAAA</string>
+    <string name="hora_defecto">HH:MM</string>
+    <string name="titulo_listado">Citas Programadas</string>
+    <string name="tag_urgencia">URGENCIA 24H</string>
+</resources>

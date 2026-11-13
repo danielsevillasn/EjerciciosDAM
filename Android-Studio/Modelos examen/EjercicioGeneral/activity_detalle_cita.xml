@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    tools:context=".DetalleCitaActivity">
+
+    <!-- TÍTULO DE LA PANTALLA -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_detalle"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul_primario"
+        android:layout_marginBottom="20dp" />
+
+    <!-- IMAGEN DESTACADA DE LA ESPECIE -->
+    <ImageView
+        android:id="@+id/ivDetalleFoto"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/desc_icono_especie"
+        android:layout_marginBottom="16dp" />
+
+    <!-- NOMBRE DE LA MASCOTA -->
+    <TextView
+        android:id="@+id/tvDetalleNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre Mascota"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:layout_marginBottom="6dp" />
+
+    <!-- ESPECIE -->
+    <TextView
+        android:id="@+id/tvDetalleEspecie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especie: Canino"
+        android:textSize="18sp"
+        android:textColor="@color/gris_oscuro"
+        android:layout_marginBottom="10dp" />
+
+    <!-- FECHA Y HORA -->
+    <TextView
+        android:id="@+id/tvDetalleFechaHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha: 12/11/2026 a las 10:30"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul_primario"
+        android:layout_marginBottom="10dp" />
+
+    <!-- TELÉFONO -->
+    <TextView
+        android:id="@+id/tvDetalleTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tel: 600123456"
+        android:textSize="17sp"
+        android:textColor="@color/negro"
+        android:layout_marginBottom="12dp" />
+
+    <!-- ESTADO DE URGENCIA -->
+    <TextView
+        android:id="@+id/tvDetalleUrgencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consulta Ordinaria"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/gris_oscuro"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- ESPACIADOR FLEXIBLE -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- BOTONES DE ACCIÓN INFERIOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Botón Volver: invoca finish() -->
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_volver"
+            android:backgroundTint="@color/azul_primario"
+            android:textColor="@color/blanco"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Botón Salir: invoca finishAffinity() -->
+        <Button
+            android:id="@+id/btnSalir"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_salir"
+            android:backgroundTint="@color/rojo_urgencia"
+            android:textColor="@color/blanco"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</LinearLayout>

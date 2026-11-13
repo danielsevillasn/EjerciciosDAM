@@ -119,6 +119,10 @@ captures/
 .externalNativeBuild/
 .cxx/
 .navigation/
+*.ap_
+*.hprof
+hs_err_pid*
+replay_pid*
 
 # ==========================================
 # C# / .NET

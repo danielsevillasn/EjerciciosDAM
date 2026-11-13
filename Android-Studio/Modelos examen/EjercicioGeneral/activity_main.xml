@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- CABECERA DE LA APLICACIÓN -->
+    <TextView
+        android:id="@+id/tvTituloApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul_primario"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <!-- SECCIÓN FORMULARIO (DENTRO DE SCROLLVIEW PARA PANTALLAS PEQUEÑAS) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Nombre de la mascota -->
+            <EditText
+                android:id="@+id/etNombreMascota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_mascota"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Teléfono del propietario -->
+            <EditText
+                android:id="@+id/etTelefonoPropietario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_telefono"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Selección de especie (RadioGroup con RadioButtons) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_especie"
+                android:textStyle="bold"
+                android:textColor="@color/gris_oscuro"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rgEspecie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <RadioButton
+                    android:id="@+id/rbPerro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perro"
+                    android:checked="true"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/rbGato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gato"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/rbExotico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/exotico"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+            <!-- Conmutador de urgencia (SwitchCompat) -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swcUrgencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/atencion_urgente"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="15sp"
+                android:minHeight="48dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Selector de Fecha (DatePickerDialog) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/btnFecha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="@string/btn_fecha"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/tvFecha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/fecha_defecto"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/azul_primario" />
+            </LinearLayout>
+
+            <!-- Selector de Hora (TimePickerDialog) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/btnHora"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="@string/btn_hora"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/tvHora"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/hora_defecto"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/azul_primario" />
+            </LinearLayout>
+
+            <!-- Botón de Registro de Cita -->
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_registrar"
+                android:backgroundTint="@color/azul_primario"
+                android:textColor="@color/blanco"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- DIVISOR VISUAL ENTRE FORMULARIO Y LISTA -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gris_claro"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_listado"
+        android:textStyle="bold"
+        android:textColor="@color/gris_oscuro"
+        android:textSize="15sp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- LISTVIEW RESPALDADO POR EL ADAPTADOR PERSONALIZADO -->
+    <ListView
+        android:id="@+id/lvCitas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/gris_claro"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

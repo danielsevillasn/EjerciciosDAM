@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="10dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- ICONO DE LA ESPECIE (PERRO, GATO, EXÓTICO) -->
+    <ImageView
+        android:id="@+id/ivIconoEspecie"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/desc_icono_especie"
+        android:layout_marginEnd="12dp" />
+
+    <!-- INFORMACIÓN CENTRAL DE LA CITA -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Nombre de la mascota y especie -->
+        <TextView
+            android:id="@+id/tvNombreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tobby (Canino)"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/negro" />
+
+        <!-- Fecha y hora de la cita -->
+        <TextView
+            android:id="@+id/tvFechaHoraItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12/11/2026 - 10:30"
+            android:textSize="14sp"
+            android:textColor="@color/gris_oscuro"
+            android:layout_marginTop="2dp" />
+
+        <!-- Teléfono de contacto rápido -->
+        <TextView
+            android:id="@+id/tvTelefonoItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tel: 600123456"
+            android:textSize="12sp"
+            android:textColor="@color/gris_medio"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- ETIQUETA DESTACADA DE URGENCIA 24H -->
+    <TextView
+        android:id="@+id/tvUrgenciaItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tag_urgencia"
+        android:textColor="@color/rojo_urgencia"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:background="@drawable/badge_urgencia"
+        android:visibility="gone" />
+
+</LinearLayout>
