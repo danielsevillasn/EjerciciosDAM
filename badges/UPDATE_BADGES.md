@@ -43,12 +43,11 @@ El archivo `README.md` contiene las siguientes secciones de badges, en este orde
 
 ## Reglas importantes
 
-1. **JSON siempre es "used"**: Nunca asignes un porcentaje a JSON. Mantén siempre el badge con el texto "used" y el color `F7DF1E`.
-2. **No cambies la estructura de categorías**: No añadas, elimines ni reordenes las secciones `###` del README. Solo actualiza los valores numéricos de los porcentajes.
-3. **No cambies los colores**: Cada lenguaje tiene un color hexadecimal fijo en su badge. No lo modifiques.
-4. **Usa los datos de GitHub**: Los porcentajes deben provenir exclusivamente de la API de GitHub, no de conteo local de archivos.
-5. **Redondea a 1 decimal**: Los porcentajes se muestran con 1 decimal (ej: `81.6`).
-6. **Nuevos lenguajes**: Si la API de GitHub devuelve un lenguaje que no está en el README y no es JSON:
+1. **No cambies la estructura de categorías**: No añadas, elimines ni reordenes las secciones `###` del README. Solo actualiza los valores numéricos de los porcentajes.
+2. **No cambies los colores**: Cada lenguaje tiene un color hexadecimal fijo en su badge. No lo modifiques.
+3. **Usa los datos de GitHub**: Los porcentajes deben provenir exclusivamente de la API de GitHub, no de conteo local de archivos.
+4. **Redondea a 1 decimal**: Los porcentajes se muestran con 1 decimal (ej: `81.6`).
+5. **Nuevos lenguajes**: Si la API de GitHub devuelve un lenguaje que no está en el README:
    - Si el lenguaje es significativo (> 0.5%), añade un nuevo badge en la categoría más apropiada.
    - Si el lenguaje es trivial (≤ 0.5%), puedes ignorarlo.
    - Si no estás seguro de en qué categoría colocar un nuevo lenguaje, pregunta al usuario.
