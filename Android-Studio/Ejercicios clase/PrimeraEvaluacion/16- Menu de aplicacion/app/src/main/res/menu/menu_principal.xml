@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-    android:id="@+id/item1"
-    android:title="Ir a Idealista"/>
-    <item
-        android:id="@+id/item2"
+        android:id="@+id/google"
         android:title="Ir a google"/>
+
+    <item
+        android:id="@+id/menuInmobiliarios"
+        android:title="Portales inmobiliarios">
+
+        <menu>
+            <item
+                android:id="@+id/idealista"
+                android:title="Ir a Idealista"/>
+            <item
+                android:id="@+id/fotocasa"
+                android:title="Ir a foto casa" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menuPeriodicos"
+        android:title="Periodicos deportivos">
+
+        <menu>
+            <item
+                android:id="@+id/marca"
+                android:title="Ir a marca" />
+            <item
+                android:id="@+id/diarioAs"
+                android:title="Ir a diario as" />
+        </menu>
+    </item>
 
 </menu>

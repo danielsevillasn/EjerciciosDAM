@@ -38,12 +38,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.item1) {
+        if (id == R.id.idealista) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.idealista.com"));
             startActivity(intent);
             return true;
-        } else if (id == R.id.item2) {
+        } else if (id == R.id.google) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.fotocasa){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.fotocasa.es/es/"));
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.marca){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.marca.com/"));
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.diarioAs){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://as.com/"));
             startActivity(intent);
             return true;
         }
