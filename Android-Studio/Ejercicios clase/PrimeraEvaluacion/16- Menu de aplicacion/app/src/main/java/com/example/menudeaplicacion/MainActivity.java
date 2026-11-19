@@ -9,7 +9,6 @@ import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -29,36 +28,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater infladorMenu = getMenuInflater();
-        infladorMenu.inflate(R.menu.menu_principal, menu);
-        return true;
-    }
+        public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater infladorMenu = this.getMenuInflater();
+            infladorMenu.inflate(R.menu.menu_principal, menu);
+            return true;
+        }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Intent intent = null;
+
         if (id == R.id.idealista) {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.idealista.com"));
-            startActivity(intent);
-            return true;
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.idealista.com"));
         } else if (id == R.id.google) {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.fotocasa){
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.fotocasa.es/es/"));
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.marca){
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.marca.com/"));
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.diarioAs){
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://as.com/"));
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
+        } else if (id == R.id.fotocasa) {
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.fotocasa.es/es/"));
+        } else if (id == R.id.marca) {
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.marca.com/"));
+        } else if (id == R.id.diarioAs) {
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://as.com/"));
+        }
+        if (intent != null) {
             startActivity(intent);
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
