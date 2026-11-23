@@ -62,14 +62,14 @@ namespace PracticaReloj
 
         private void ItemPais_Click(object sender, EventArgs e)
         {
-            if (sender is ToolStripMenuItem item)
-            {
-                paisSeleccionado = item.Text;
-                diferenciaHoraria = (int)item.Tag;
+            ToolStripMenuItem itemSeleccionado = (ToolStripMenuItem)sender;
 
-                ActualizarYCentrarLabel(lblHoraPaís, $"Hora en {paisSeleccionado}");
-                txtBoxHoraPaís.Text = DateTime.Now.AddHours(diferenciaHoraria).ToString("HH:mm:ss");
-            }
+            paisSeleccionado = itemSeleccionado.Text;
+            diferenciaHoraria = (int)itemSeleccionado.Tag;
+
+            ActualizarYCentrarLabel(lblHoraPaís, $"Hora en {paisSeleccionado}");
+            txtBoxHoraPaís.Text = DateTime.Now.AddHours(diferenciaHoraria).ToString("HH:mm:ss");
+            
         }
 
         private void mstrBorrar_Click(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace PracticaReloj
             frm.Dispose();
         }
 
-        private void ActualizarYCentrarLabel(System.Windows.Forms.Label lbl, string nuevoTexto)
+        private void ActualizarYCentrarLabel(Label lbl, string nuevoTexto)
         {
             lbl.Text = nuevoTexto;
             lbl.Left = (this.ClientSize.Width - lbl.Width) / 2;
