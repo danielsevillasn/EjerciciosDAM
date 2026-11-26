@@ -28,12 +28,7 @@ namespace EjercicioPeliculas
 
         public override string ToString()
         {
-            string resultado = titulo + " # ";
-            foreach (string autor in actores)
-            {
-                resultado += autor;
-            }
-            resultado += " # " + director + " # " + clasificacion;
+            string resultado = titulo + " # "+actores+" # "+director+" # "+clasificacion;
 
             return resultado;
         }
